@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE EXTRACTION // DATA SHEET</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #161616;
+            --accent: #ff4d00;
+            --text: #e0e0e0;
+            --dim: #666;
+            --white: #ffffff;
+            --green: #00ff41;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: #000;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .header-block {
+            border-left: 10px solid var(--accent);
+            padding-left: 20px;
+            margin-bottom: 50px;
+        }
+
+        h1 { font-size: 3rem; margin: 0; color: var(--accent); text-transform: uppercase; }
+        h2 { font-size: 1.5rem; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 40px; }
+
+        /* Data Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--surface);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #333;
+        }
+
+        th { background: #222; color: var(--accent); font-size: 0.8rem; text-transform: uppercase; }
+
+        /* CSS Chart Styles */
+        .chart-container {
+            margin: 40px 0;
+            padding: 20px;
+            background: #000;
+            border: 1px solid #333;
+        }
+
+        .bar-wrapper { margin-bottom: 20px; }
+        .bar-label { font-size: 0.8rem; margin-bottom: 5px; display: block; }
+        .bar-bg { background: #222; width: 100%; height: 30px; position: relative; }
+        .bar-fill { height: 100%; background: var(--accent); display: flex; align-items: center; padding-left: 10px; font-weight: bold; font-size: 0.8rem; color: #000; }
+        .bar-fill.green { background: var(--green); }
+
+        .fact-list { list-style: none; padding: 0; }
+        .fact-list li {
+            padding: 15px;
+            border-bottom: 1px solid #222;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .fact-list li::before { content: ">>"; color: var(--accent); margin-right: 15px; font-weight: bold; }
+
+        .hidden-agenda {
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .split-view { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+        @media (max-width: 800px) {
+            .split-view { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#en">English</a> | <a href="#es">Español</a>
+</nav>
+
+<div class="container" id="en">
+    <div class="header-block">
+        <h1>The Extraction</h1>
+        <p>A Technical Analysis of the Austin ISD Budget Crisis & State Recapture</p>
+    </div>
+
+    <section>
+        <h2>I. The Funding Gap</h2>
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Value (2026)</th>
+                <th>Context</th>
+            </tr>
+            <tr>
+                <td>AISD Deficit</td>
+                <td>$181,000,000</td>
+                <td>Current projected shortfall.</td>
+            </tr>
+            <tr>
+                <td>Annual Recapture</td>
+                <td>$715,500,000</td>
+                <td>Local taxes extracted by the State.</td>
+            </tr>
+            <tr>
+                <td>Basic Allotment</td>
+                <td>$6,160</td>
+                <td>Stagnant per-student value since 2019.</td>
+            </tr>
+        </table>
+    </section>
+
+    <div class="chart-container">
+        <span class="bar-label">STATE SURPLUS (THE HOARD) - $30,000,000,000</span>
+        <div class="bar-bg"><div class="bar-fill green" style="width: 100%;">SURPLUS</div></div>
+        
+        <br>
+        
+        <span class="bar-label">AISD RECAPTURE EXTRACTION - $715,500,000</span>
+        <div class="bar-bg"><div class="bar-fill" style="width: 2.3%;">RECAPTURE</div></div>
+
+        <br>
+
+        <span class="bar-label">AISD DEFICIT (Librarian/Staff Cuts) - $181,000,000</span>
+        <div class="bar-bg"><div class="bar-fill" style="width: 0.6%;">DEFICIT</div></div>
+        <p style="font-size: 0.7rem; color: var(--dim);">*Chart scaled relative to total State Surplus.</p>
+    </div>
+
+    <div class="split-view">
+        <div>
+            <h2>II. History: SB 7 (1993)</h2>
+            <ul class="fact-list">
+                <li><strong>Origin:</strong> Created in 1993 to satisfy court orders regarding school equity.</li>
+                <li><strong>Design:</strong> Intended as a temporary "fix" for a lack of state income tax.</li>
+                <li><strong>Outcome:</strong> Has evolved into a tool the state uses to reduce its own financial responsibility.</li>
+            </ul>
+        </div>
+        <div>
+            <h2>III. The Math: WADA</h2>
+            <ul class="fact-list">
+                <li><strong>Definition:</strong> Weighted Average Daily Attendance.</li>
+                <li><strong>De-humanization:</strong> Students are converted into decimals (1.0 for general ed, 1.2+ for low income).</li>
+                <li><strong>The Flaw:</strong> Multipliers are useless if the "Basic Allotment" doesn't reflect the cost of 2026 survival.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hidden-agenda">
+        THE HIDDEN AGENDA: By keeping funding stagnant ($6,160) during record inflation, the state creates an artificial crisis. This "manufactured starvation" is used as leverage to promote private school vouchers while the State Vault remains full.
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #333; margin: 80px 0;">
+
+    <div id="es">
+        <div class="header-block" style="border-color: var(--white);">
+            <h1 style="color: var(--white);">La Extracción</h1>
+            <p>Análisis Técnico de la Crisis Presupuestaria de Austin ISD y la Recaudación Estatal</p>
+        </div>
+
+        <table>
+            <tr>
+                <th>Categoría</th>
+                <th>Valor (2026)</th>
+                <th>Contexto</th>
+            </tr>
+            <tr>
+                <td>Déficit de AISD</td>
+                <td>$181,000,000</td>
+                <td>Faltante proyectado actual.</td>
+            </tr>
+            <tr>
+                <td>Recaudación Anual</td>
+                <td>$715,500,000</td>
+                <td>Impuestos locales extraídos por el Estado.</td>
+            </tr>
+            <tr>
+                <td>Asignación Básica</td>
+                <td>$6,160</td>
+                <td>Valor estancado por estudiante desde 2019.</td>
+            </tr>
+        </table>
+
+        <div class="split-view">
+            <div>
+                <h2>Historia: SB 7 (1993)</h2>
+                <p>El sistema "Robin Hood" comenzó como una solución temporal en 1993. Ahora es una herramienta permanente para que el estado use impuestos locales para pagar deudas estatales.</p>
+            </div>
+            <div>
+                <h2>La Realidad Social</h2>
+                <p>Más del 52% de los estudiantes de Austin viven en la pobreza. El estado etiqueta al distrito como "rico" basándose en el valor de la tierra, no en los ingresos de las familias.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 40px; color: var(--dim); font-size: 0.7rem;">
+    DATA SOURCE: TEXAS EDUCATION AGENCY (TEA) & AISD FINANCIAL REPORTS FY2026
+</footer>
+
+</body>
+</html>
