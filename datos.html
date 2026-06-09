@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SOLATX financial data sheet — AISD deficit, recapture, basic allotment, and wealthy recapture analysis from public records.">
-  <title>Financial Data Sheet — SOLATX</title>
+  <meta name="description" content="Hoja de datos financieros SOLATX — déficit de AISD, recaptura estatal, asignación básica y análisis de recaptura de riqueza, con registros públicos.">
+  <title>Hoja de Datos Financieros — SOLATX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -29,6 +29,7 @@
     nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
     nav a.nav-cta { background: #7ec8c8; color: var(--navy); font-weight: 700; }
     nav a.nav-cta:hover { background: #9dd9d9; }
+    nav a.nav-active { background: rgba(126,200,200,0.2); color: #fff; }
 
     .page-hero { background: linear-gradient(165deg, var(--navy) 0%, #243044 55%, #2d4a4a 100%); color: #fff; padding: 3rem 1.5rem 3.5rem; }
     .page-hero-inner { max-width: var(--max); margin: 0 auto; }
@@ -127,199 +128,169 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo" href="index.html">SOLA<span>TX</span></a>
-    <nav aria-label="Site pages">
-      <a href="index.html">Home</a>
-      <a href="index.html#wealthy-recapture">Recapture</a>
-      <a href="financeial.html">Data Sheet</a>
-      <a href="history.html">History</a>
-      <a href="library-stories.html">Library Stories</a>
-      <a href="inicio.html">Español</a>
-      <a href="#feedback">Feedback</a>
-      <a class="nav-cta" href="mailto:board@austinisd.org?subject=Community%20Feedback%20-%20AISD%20Budget%20%26%20Libraries">Email AISD</a>
+    <a class="logo" href="inicio.html">SOLA<span>TX</span></a>
+    <nav aria-label="Páginas del sitio">
+      <a href="inicio.html">Inicio</a>
+      <a href="inicio.html#recaptura-riqueza">Recaptura</a>
+      <a href="datos.html" class="nav-active">Datos</a>
+      <a href="historia.html">Historia</a>
+      <a href="historias-biblioteca.html">Historias</a>
+      <a href="index.html" style="opacity:0.75">English</a>
+      <a href="#comentarios">Comentarios</a>
+      <a class="nav-cta" href="mailto:board@austinisd.org?subject=Comentarios%20de%20la%20Comunidad%20-%20Presupuesto%20AISD">Escribir a AISD</a>
     </nav>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="page-hero-inner reveal">
-    <span class="eyebrow">Public records · FY 2025–2026</span>
-    <h1>Financial data sheet</h1>
-    <p>AISD deficit, state recapture, basic allotment, and wealthy-recapture figures — compiled from TEA and AISD budget documents for community reference.</p>
+    <span class="eyebrow">Registros públicos · AF 2025–2026</span>
+    <h1>Hoja de datos financieros</h1>
+    <p>Déficit de AISD, recaptura estatal, asignación básica y cifras de recaptura de riqueza — compiladas de documentos presupuestales de la TEA y AISD para consulta comunitaria.</p>
   </div>
 </section>
 
 <main>
 
   <div class="lang-tabs reveal">
-    <a href="#en" class="active">English</a>
-    <a href="#es">Español</a>
-    <a href="historia.html">Historia (ES-MX)</a>
+    <a href="financeial.html">English</a>
+    <a href="datos.html" class="active">Español (México)</a>
+    <a href="historia.html">Historia</a>
   </div>
 
-  <section id="en">
-    <p class="section-label reveal">Core figures</p>
-    <h2 class="reveal">The funding gap</h2>
+  <section id="cifras">
+    <p class="section-label reveal">Cifras clave</p>
+    <h2 class="reveal">La brecha de financiamiento</h2>
 
     <div class="stats-grid">
       <div class="stat-card reveal">
         <div class="stat-value warm">$181M</div>
-        <div class="stat-label">AISD projected deficit (2026–27)</div>
-        <div class="stat-source"><a href="https://www.austinisd.org/budget" target="_blank" rel="noopener">AISD Budget Office</a></div>
+        <div class="stat-label">Déficit proyectado de AISD (2026–27)</div>
+        <div class="stat-source"><a href="https://www.austinisd.org/budget" target="_blank" rel="noopener">Oficina de Presupuesto de AISD</a></div>
       </div>
       <div class="stat-card reveal">
         <div class="stat-value">$715.5M</div>
-        <div class="stat-label">Annual recapture to the state</div>
-        <div class="stat-source"><a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">AISD Recapture page</a></div>
+        <div class="stat-label">Recaptura anual al estado</div>
+        <div class="stat-source"><a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">Página de recaptura de AISD</a></div>
       </div>
       <div class="stat-card reveal">
         <div class="stat-value">$6,160</div>
-        <div class="stat-label">Basic allotment per student (2019–2024)</div>
-        <div class="stat-source"><a href="https://tea.texas.gov/finance-and-grants/state-funding" target="_blank" rel="noopener">TEA State Funding</a></div>
+        <div class="stat-label">Asignación básica por estudiante (2019–2024)</div>
+        <div class="stat-source"><a href="https://tea.texas.gov/finance-and-grants/state-funding" target="_blank" rel="noopener">Financiamiento estatal (TEA)</a></div>
       </div>
       <div class="stat-card reveal">
         <div class="stat-value warm">$30B+</div>
-        <div class="stat-label">Reported state budget surplus</div>
-        <div class="stat-source"><a href="https://comptroller.texas.gov/economy/fiscal-notes/" target="_blank" rel="noopener">Texas Comptroller</a></div>
+        <div class="stat-label">Superávit presupuestal estatal reportado</div>
+        <div class="stat-source"><a href="https://comptroller.texas.gov/economy/fiscal-notes/" target="_blank" rel="noopener">Contralor de Texas</a></div>
       </div>
     </div>
 
     <div class="chart-panel reveal" id="scale-chart">
-      <h3 style="margin-top:0">Scale comparison — relative to state surplus</h3>
-      <p class="muted">Visualizing how AISD recapture and deficit compare to the reported state surplus.</p>
+      <h3 style="margin-top:0">Comparación de escala — respecto al superávit estatal</h3>
+      <p class="muted">Cómo se comparan la recaptura y el déficit de AISD con el superávit estatal reportado.</p>
       <div class="bar-row">
-        <div class="bar-meta"><span>State surplus</span><span>$30B</span></div>
+        <div class="bar-meta"><span>Superávit estatal</span><span>$30B</span></div>
         <div class="bar-track"><div class="bar-fill mint" data-width="100">$30B+</div></div>
       </div>
       <div class="bar-row">
-        <div class="bar-meta"><span>AISD annual recapture</span><span>$715.5M</span></div>
+        <div class="bar-meta"><span>Recaptura anual de AISD</span><span>$715.5M</span></div>
         <div class="bar-track"><div class="bar-fill teal" data-width="2.4">$715.5M</div></div>
       </div>
       <div class="bar-row">
-        <div class="bar-meta"><span>AISD projected deficit</span><span>$181M</span></div>
+        <div class="bar-meta"><span>Déficit proyectado de AISD</span><span>$181M</span></div>
         <div class="bar-track"><div class="bar-fill warm" data-width="0.6">$181M</div></div>
       </div>
-      <p class="chart-note">Bars scaled relative to state surplus. Source: AISD budget reports, Texas Comptroller.</p>
+      <p class="chart-note">Barras escaladas respecto al superávit estatal. Fuente: reportes presupuestales de AISD, Contralor de Texas.</p>
     </div>
 
     <div class="chart-panel reveal" id="growth-chart" style="margin-top:1.25rem">
-      <h3 style="margin-top:0">Recapture growth — AISD</h3>
-      <p class="muted">Recapture payments grew roughly 400% from FY2014–15 to recent years.</p>
+      <h3 style="margin-top:0">Crecimiento de la recaptura — AISD</h3>
+      <p class="muted">Los pagos de recaptura crecieron aproximadamente 400% del AF 2014–15 a los años recientes.</p>
       <div class="bar-row">
-        <div class="bar-meta"><span>FY2014–15 recapture</span><span>~$181M</span></div>
+        <div class="bar-meta"><span>Recaptura AF 2014–15</span><span>~$181M</span></div>
         <div class="bar-track"><div class="bar-fill navy" data-width="22">$181M</div></div>
       </div>
       <div class="bar-row">
-        <div class="bar-meta"><span>Recent peak (FY2024–25)</span><span>~$821M</span></div>
+        <div class="bar-meta"><span>Pico reciente (AF 2024–25)</span><span>~$821M</span></div>
         <div class="bar-track"><div class="bar-fill warm" data-width="100">$821M</div></div>
       </div>
-      <p class="chart-note">Source: <a href="https://www.austinisd.org/budget/recapture">AISD recapture reports</a></p>
+      <p class="chart-note">Fuente: <a href="https://www.austinisd.org/budget/recapture">reportes de recaptura de AISD</a></p>
     </div>
 
     <div class="fact-bomb-row warm reveal" style="margin-top:1.5rem">
-      <span class="fact-bomb warm">Fact: This pattern reflects state-level funding design — not a single year's local spending decision.</span>
+      <span class="fact-bomb warm">Dato: Este patrón refleja el diseño del financiamiento estatal — no la decisión de gasto local de un solo año.</span>
     </div>
 
     <div class="two-col">
       <div class="panel reveal">
-        <h3 style="margin-top:0">History: SB 7 (1993)</h3>
+        <h3 style="margin-top:0">Historia: Ley del Senado 7 (1993)</h3>
         <ul class="checklist">
-          <li>Created after <em>Edgewood ISD v. Kirby</em> court rulings on equity</li>
-          <li>Described as a temporary fix — no state income tax</li>
-          <li>Evolved into a tool that reduces state financial responsibility</li>
+          <li>Creada después de las sentencias de <em>Edgewood ISD v. Kirby</em> sobre equidad</li>
+          <li>Descrita como arreglo temporal — sin impuesto estatal sobre la renta</li>
+          <li>Evolucionó a una herramienta que reduce la responsabilidad financiera del estado</li>
         </ul>
       </div>
       <div class="panel reveal">
-        <h3 style="margin-top:0">The math: WADA</h3>
+        <h3 style="margin-top:0">Los números: WADA</h3>
         <ul class="checklist">
-          <li>Weighted Average Daily Attendance — students as decimal weights</li>
-          <li>Low-income, bilingual, and special ed carry higher multipliers</li>
-          <li>Multipliers fail if the basic allotment ($6,160) doesn't keep pace with costs</li>
+          <li>Asistencia Diaria Promedio Ponderada — estudiantes como pesos decimales</li>
+          <li>Estudiantes de bajos ingresos, bilingües y educación especial tienen multiplicadores más altos</li>
+          <li>Los multiplicadores fallan si la asignación básica ($6,160) no alcanza a los costos</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="recapture">
-    <p class="section-label reveal">A formula mismatch</p>
-    <h2 class="reveal">Wealthy recapture — Austin</h2>
-    <p class="reveal"><span class="fact-bomb accent">Wealthy recapture does not mean Austin families are rich.</span> The state labels AISD <strong>property-wealthy</strong> based on land values per student — not family income. Nearly <span class="fact-bomb warm">48.4%</span> of students are economically disadvantaged (TEA).</p>
+  <section id="recaptura">
+    <p class="section-label reveal">Una fórmula que no cuadra</p>
+    <h2 class="reveal">Recaptura de riqueza — Austin</h2>
+    <p class="reveal"><span class="fact-bomb accent">La recaptura de riqueza no significa que las familias de Austin sean ricas.</span> El estado etiqueta a AISD como <strong>rico en propiedad</strong> según el valor de la tierra por estudiante — no los ingresos familiares. Casi el <span class="fact-bomb warm">48.4%</span> de los estudiantes son económicamente desfavorecidos (TEA).</p>
 
     <table class="reveal">
-      <thead><tr><th>Measure</th><th>Value</th><th>Source</th></tr></thead>
+      <thead><tr><th>Medida</th><th>Valor</th><th>Fuente</th></tr></thead>
       <tbody>
-        <tr><td>Total recapture paid (FY2000–FY2024–25)</td><td><span class="fact-bomb accent">$8.3 billion+</span></td><td>AISD recapture reports</td></tr>
-        <tr><td>Recapture growth since FY2014–15</td><td><span class="fact-bomb">~400%</span></td><td>AISD recapture table</td></tr>
-        <tr><td>Share of general fund per dollar</td><td><span class="fact-bomb">~46¢</span> to recapture</td><td>AISD FY2024–25 budget</td></tr>
-        <tr><td>Local revenue subject to recapture</td><td><span class="fact-bomb">~52%</span></td><td>AISD recapture page</td></tr>
-        <tr><td>Largest recapture payer in Texas</td><td><span class="fact-bomb warm">AISD (#1)</span></td><td>AISD recapture reports</td></tr>
+        <tr><td>Total de recaptura pagada (AF 2000–AF 2024–25)</td><td><span class="fact-bomb accent">$8.3 mil millones+</span></td><td>Reportes de recaptura de AISD</td></tr>
+        <tr><td>Crecimiento de recaptura desde AF 2014–15</td><td><span class="fact-bomb">~400%</span></td><td>Tabla de recaptura de AISD</td></tr>
+        <tr><td>Parte del fondo general por cada dólar</td><td><span class="fact-bomb">~46¢</span> a recaptura</td><td>Presupuesto AISD AF 2024–25</td></tr>
+        <tr><td>Ingresos locales sujetos a recaptura</td><td><span class="fact-bomb">~52%</span></td><td>Página de recaptura de AISD</td></tr>
+        <tr><td>Mayor pagador de recaptura en Texas</td><td><span class="fact-bomb warm">AISD (#1)</span></td><td>Reportes de recaptura de AISD</td></tr>
       </tbody>
     </table>
 
     <div class="fact-bomb-row reveal">
-      <span class="fact-bomb accent">Land rich ≠ family rich. Property values rise; student need stays high.</span>
+      <span class="fact-bomb accent">Rico en tierra ≠ rico en familia. Suben los valores de la propiedad; la necesidad estudiantil sigue alta.</span>
     </div>
 
     <p class="reveal" style="margin-top:1.25rem">
-      <a href="library-stories.html" style="font-weight:700;font-size:1.05rem">Share your library story →</a>
+      <a href="historias-biblioteca.html" style="font-weight:700;font-size:1.05rem">Comparte tu historia de biblioteca →</a>
       <span class="muted"> · </span>
-      <a href="index.html#wealthy-recapture" style="font-weight:600">Full briefing on solatx.org</a>
+      <a href="inicio.html#recaptura-riqueza" style="font-weight:600">Informe completo en solatx.org</a>
     </p>
   </section>
 
-  <section id="es">
-    <p class="section-label reveal">Datos en español</p>
-    <h2 class="reveal">La extracción — resumen</h2>
-
-    <div class="stats-grid">
-      <div class="stat-card reveal">
-        <div class="stat-value warm">$181M</div>
-        <div class="stat-label">Déficit proyectado de AISD</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-value">$715.5M</div>
-        <div class="stat-label">Recaudación anual al estado</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-value">48.4%</div>
-        <div class="stat-label">Estudiantes económicamente desfavorecidos</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-value warm">#1</div>
-        <div class="stat-label">Mayor pagador de recaptura en Texas</div>
-      </div>
-    </div>
-
-    <div class="panel reveal" style="margin-top:1.25rem">
-      <span class="fact-bomb accent">Recaptura de riqueza no significa que las familias de Austin sean ricas.</span>
-      <p>El estado etiqueta al distrito como "rico" por el valor de la propiedad, no por los ingresos familiares. Los bibliotecarios — piedra angular de la educación — aparecen en listas de recortes.</p>
-      <p style="margin:0"><a href="historia.html" style="font-weight:700">Leer historia completa (español mexicano) →</a></p>
-    </div>
-  </section>
-
-  <section id="feedback">
-    <p class="section-label reveal">Public comment</p>
-    <h2 class="reveal">Send feedback to AISD</h2>
+  <section id="comentarios">
+    <p class="section-label reveal">Comentario público</p>
+    <h2 class="reveal">Enviar comentarios a AISD</h2>
     <div class="panel feedback-form reveal">
-      <p class="muted">Use this form to prepare a message to the Board of Trustees. Your email app will open with the message ready to send.</p>
+      <p class="muted">Usa este formulario para preparar un mensaje para la Junta Directiva. Se abrirá tu correo con el mensaje listo para enviar.</p>
       <form id="feedback-form">
-        <label for="name">Your name</label>
-        <input type="text" id="name" placeholder="Optional — or 'Austin parent', 'Teacher', etc.">
-        <label for="email">Your email</label>
-        <input type="email" id="email" placeholder="Optional — if you want a reply">
-        <label for="topic">Topic</label>
+        <label for="name">Tu nombre</label>
+        <input type="text" id="name" placeholder="Opcional — o «padre/madre de Austin», «maestro/a», etc.">
+        <label for="email">Tu correo</label>
+        <input type="email" id="email" placeholder="Opcional — si quieres una respuesta">
+        <label for="topic">Tema</label>
         <select id="topic">
-          <option value="School libraries">School libraries</option>
-          <option value="Budget and deficit">Budget and deficit</option>
-          <option value="Recapture / school finance">Recapture / school finance</option>
-          <option value="Staff and program cuts">Staff and program cuts</option>
-          <option value="Other">Other</option>
+          <option value="Bibliotecas escolares">Bibliotecas escolares</option>
+          <option value="Presupuesto y déficit">Presupuesto y déficit</option>
+          <option value="Recaptura / financiamiento escolar">Recaptura / financiamiento escolar</option>
+          <option value="Recortes de personal y programas">Recortes de personal y programas</option>
+          <option value="Otro">Otro</option>
         </select>
-        <label for="message">Your message</label>
-        <textarea id="message" required placeholder="Share your concerns, questions, or support. Cite numbers from this data sheet if helpful…"></textarea>
+        <label for="message">Tu mensaje</label>
+        <textarea id="message" required placeholder="Comparte tus inquietudes, preguntas o apoyo. Cita cifras de esta hoja de datos si te sirve…"></textarea>
         <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
-          <button type="submit" class="btn btn-primary">Send to board@austinisd.org</button>
-          <a href="https://www.austinisd.org/board" class="btn btn-secondary" target="_blank" rel="noopener">Board meetings</a>
+          <button type="submit" class="btn btn-primary">Enviar a board@austinisd.org</button>
+          <a href="https://www.austinisd.org/board" class="btn btn-secondary" target="_blank" rel="noopener">Juntas de la junta directiva</a>
         </div>
       </form>
     </div>
@@ -328,9 +299,9 @@
 </main>
 
 <footer>
-  <p><strong>SOLATX</strong> — Built from public information for public understanding.</p>
-  <p style="margin-top:0.5rem">Data sources: Texas Education Agency (TEA), AISD financial reports FY2026, Texas Comptroller.</p>
-  <p style="margin-top:0.5rem">Not affiliated with AISD or the State of Texas</p>
+  <p><strong>SOLATX</strong> — Hecho con información pública para que la gente entienda.</p>
+  <p style="margin-top:0.5rem">Fuentes de datos: Agencia Educativa de Texas (TEA), reportes financieros de AISD AF 2026, Contralor de Texas.</p>
+  <p style="margin-top:0.5rem">No estamos afiliados con AISD ni con el Estado de Texas.</p>
 </footer>
 
 <script>
@@ -341,13 +312,13 @@
     var topic = document.getElementById('topic').value;
     var msg = document.getElementById('message').value.trim();
     if (!msg) return;
-    var body = 'Topic: ' + topic + '\n\n' + msg;
+    var body = 'Tema: ' + topic + '\n\n' + msg;
     if (name) body += '\n\n— ' + name;
     if (email) body += '\n(' + email + ')';
-    body += '\n\n(Sent via SOLATX data sheet — solatx.org/financeial.html)';
+    body += '\n\n(Enviado desde la hoja de datos SOLATX — solatx.org/datos.html)';
     var cc = 'cc=feebo.atx.tees@gmail.com&';
     window.location.href = 'mailto:board@austinisd.org?' + cc + 'subject=' +
-      encodeURIComponent('Community Feedback - ' + topic) + '&body=' + encodeURIComponent(body);
+      encodeURIComponent('Comentarios de la Comunidad - ' + topic) + '&body=' + encodeURIComponent(body);
   });
 
   function animateBars(container) {

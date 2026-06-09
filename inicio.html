@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SOLATX — Informe comunitario sobre el financiamiento escolar de Austin ISD, la recaptura estatal y las bibliotecas. Datos públicos, español mexicano.">
+  <title>SOLATX — Financiamiento Escolar y Bibliotecas en Austin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --surface: #ffffff;
+      --text: #1a2332;
+      --muted: #5c6778;
+      --border: #e2e0da;
+      --accent: #2d6a6a;
+      --accent-light: #e8f4f4;
+      --warm: #c45c3e;
+      --warm-light: #fdf0ec;
+      --navy: #1a2332;
+      --shadow: 0 4px 24px rgba(26, 35, 50, 0.06);
+      --radius: 12px;
+      --max: 1080px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
+
+    /* Header */
+    .site-header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo span { color: #7ec8c8; }
+
+    nav {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+    nav a.nav-cta {
+      background: #7ec8c8;
+      color: var(--navy);
+      font-weight: 700;
+      margin-left: 0.25rem;
+    }
+
+    nav a.nav-cta:hover {
+      background: #9dd9d9;
+      color: var(--navy);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(165deg, var(--navy) 0%, #243044 55%, #2d4a4a 100%);
+      color: #fff;
+      padding: 4rem 1.5rem 5rem;
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(126, 200, 200, 0.15);
+      color: #9dd9d9;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0 0 1.25rem;
+      max-width: 18ch;
+    }
+
+    .hero-lead {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.88);
+      max-width: 58ch;
+      margin: 0 0 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.35rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: #7ec8c8;
+      color: var(--navy);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.35);
+    }
+
+    /* Main layout */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    section {
+      margin-top: 3.5rem;
+      scroll-margin-top: 5rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 700;
+      margin: 0 0 1rem;
+      color: var(--navy);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 1.5rem 0 0.6rem;
+      color: var(--navy);
+    }
+
+    p { margin: 0 0 1rem; color: var(--text); }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+
+    /* Stat cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-value {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.15;
+    }
+
+    .stat-value.warm { color: var(--warm); }
+
+    /* Fact bombs — key stats & statements */
+    .fact-bomb {
+      display: block;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(1.4rem, 3vw, 1.85rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.35;
+      margin: 0.75rem 0;
+    }
+
+    .fact-bomb.accent { color: var(--accent); }
+    .fact-bomb.warm { color: var(--warm); }
+
+    p .fact-bomb,
+    li .fact-bomb {
+      display: inline;
+      font-size: 1.35rem;
+    }
+
+    .fact-bomb-row {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 1rem 0;
+    }
+
+    .fact-bomb-row.warm {
+      background: var(--warm-light);
+      border-left-color: var(--warm);
+    }
+
+    .stat-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-top: 0.35rem;
+    }
+
+    .stat-source {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .stat-source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .stat-source a:hover { text-decoration: underline; }
+
+    .source-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .source-group {
+      margin-top: 2rem;
+    }
+
+    .source-group h3 {
+      font-size: 1rem;
+      margin: 0 0 0.75rem;
+      color: var(--navy);
+    }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .repo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+
+    .repo-card h4 {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+
+    .repo-card p {
+      margin: 0 0 0.75rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .repo-card a {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+    }
+
+    .repo-card a:hover { text-decoration: underline; }
+
+    /* Cards & panels */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      margin-top: 1.25rem;
+    }
+
+    .panel-accent {
+      border-left: 4px solid var(--accent);
+    }
+
+    .panel-warm {
+      background: var(--warm-light);
+      border-color: #e8cfc6;
+      border-left: 4px solid var(--warm);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      margin-top: 1.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 1.75rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.85rem;
+      top: 0.35rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+    }
+
+    .timeline-year {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-item p { margin: 0.25rem 0 0; font-size: 0.98rem; }
+
+    /* Flow diagram */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 1.5rem;
+    }
+
+    .flow-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      position: relative;
+    }
+
+    .flow-step strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .flow-arrow {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.2rem;
+      padding: 0.25rem 0;
+    }
+
+    /* Lists */
+    ul.checklist {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+
+    ul.checklist li {
+      padding: 0.65rem 0 0.65rem 1.75rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.98rem;
+    }
+
+    ul.checklist li:last-child { border-bottom: none; }
+
+    ul.checklist li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Glossary */
+    dl.glossary dt {
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 1rem;
+    }
+
+    dl.glossary dd {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Action CTA */
+    .action-banner {
+      background: linear-gradient(135deg, var(--accent) 0%, #1f5050 100%);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+
+    .action-banner h2 { color: #fff; margin-bottom: 0.75rem; }
+
+    .action-banner p {
+      color: rgba(255,255,255,0.9);
+      max-width: 52ch;
+      margin: 0 auto 1.5rem;
+    }
+
+    .action-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .action-links a {
+      background: #fff;
+      color: var(--accent);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .action-links a:hover { background: var(--accent-light); }
+
+    /* Sources */
+    .sources {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .sources ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .sources a {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    .sources a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      margin-top: 4rem;
+    }
+
+    footer strong { color: rgba(255,255,255,0.9); }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stat-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(26, 35, 50, 0.1);
+    }
+
+    .panel {
+      transition: box-shadow 0.25s ease;
+    }
+
+    .panel:hover {
+      box-shadow: 0 6px 28px rgba(26, 35, 50, 0.08);
+    }
+
+    .feedback-form label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+      color: var(--navy);
+    }
+
+    .feedback-form input,
+    .feedback-form textarea,
+    .feedback-form select {
+      width: 100%;
+      padding: 0.7rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .feedback-form textarea { min-height: 120px; resize: vertical; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .stat-card, .panel { transition: none; }
+      .stat-card:hover { transform: none; }
+    }
+
+    @media (max-width: 640px) {
+      nav { display: none; }
+      .hero { padding: 2.5rem 1.25rem 3.5rem; }
+      main { padding: 0 1.25rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="inicio.html">SOLA<span>TX</span></a>
+    <nav aria-label="Páginas del sitio">
+      <a href="inicio.html">Inicio</a>
+      <a href="inicio.html#recaptura-riqueza">Recaptura</a>
+      <a href="datos.html">Datos</a>
+      <a href="historia.html">Historia</a>
+      <a href="historias-biblioteca.html">Historias</a>
+      <a href="index.html" style="opacity:0.75">English</a>
+      <a class="nav-cta" href="mailto:board@austinisd.org?subject=Comentarios%20de%20la%20Comunidad%20-%20Presupuesto%20AISD">Escribir a AISD</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Informe comunitario · Datos públicos</span>
+    <h1>Entender la crisis del financiamiento escolar en Austin</h1>
+    <p class="hero-lead">
+      SOLATX explica cómo la política de financiamiento escolar de Texas afecta a Austin ISD, sus bibliotecas y las escuelas del barrio — con registros públicos verificados, no opiniones.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#cifras">Ver las cifras</a>
+      <a class="btn btn-secondary" href="datos.html">Hoja de datos</a>
+      <a class="btn btn-secondary" href="mailto:board@austinisd.org?subject=Comentarios%20de%20la%20Comunidad%20-%20Presupuesto%20AISD">Enviar comentarios a AISD</a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="acerca">
+    <p class="section-label">Sobre este proyecto</p>
+    <h2>Qué es SOLATX</h2>
+    <p>
+      SOLATX es un proyecto de educación comunitaria. Traduce la ley de financiamiento escolar de Texas, la historia judicial y los documentos presupuestales a lenguaje claro para que la gente entienda <em>por qué</em> Austin ISD enfrenta déficits una y otra vez — y <em>qué</em> se puede cambiar a nivel de política pública.
+    </p>
+    <div class="panel panel-accent">
+      <p style="margin:0"><strong>Nuestro enfoque:</strong> Presentar hechos documentados, nombrar las causas estructurales, separar síntomas de problemas de raíz y señalar caminos ciudadanos para un cambio duradero. No hablamos por AISD ni por el Estado de Texas.</p>
+    </div>
+
+    <div class="panel panel-warm" style="margin-top:1.25rem">
+      <h3 style="margin-top:0;color:var(--warm)">Por qué existe esto</h3>
+      <p>
+        SOLATX lo inició un <strong>tejano de aquí</strong> — nacido y criado en Austin, de <strong>raíces étnicas mixtas</strong>, y <strong>producto de las escuelas públicas</strong>. Este proyecto no es voz del gobierno. Es un vecino tratando de explicar una fórmula rota antes de que le recorten más a las aulas que nos formaron.
+      </p>
+        <p class="fact-bomb warm">Una persona no puede con todo. Cada quien puede hacer algo.</p>
+        <p style="margin:0">La meta no es el coraje — es el <strong>equilibrio</strong>: financiamiento justo, familias informadas y escuelas donde cada niño siga teniendo bibliotecario.</p>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section id="cifras">
+    <p class="section-label">Registros públicos · AF 2025–2026</p>
+    <h2>Las cifras</h2>
+    <p class="muted">Los números vienen de documentos presupuestales de AISD, informes de la TEA y datos de la Junta Presupuestal de Texas. Cada dato enlaza a fuentes oficiales y a la hoja de datos de SOLATX. Cifras redondeadas para facilitar la lectura.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value warm">$181M</div>
+        <div class="stat-label">Déficit presupuestal proyectado de AISD (2026–27)</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://www.austinisd.org/budget" target="_blank" rel="noopener">Oficina de Presupuesto AISD</a>
+            <a href="datos.html">Hoja de datos SOLATX</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">$715.5M</div>
+        <div class="stat-label">Recaptura anual pagada al estado</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">Página de recaptura AISD</a>
+            <a href="datos.html">Hoja de datos SOLATX</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">$6,160</div>
+        <div class="stat-label">Asignación básica por estudiante (2019–2024)</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://tea.texas.gov/finance-and-grants/state-funding" target="_blank" rel="noopener">TEA State Funding</a>
+            <a href="https://www.raiseyourhandtexas.org/research/basic-allotment/" target="_blank" rel="noopener">Raise Your Hand Texas analysis</a>
+            <a href="datos.html">Hoja de datos SOLATX</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">$30B+</div>
+        <div class="stat-label">Superávit presupuestal estatal reportado (ciclo reciente)</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://comptroller.texas.gov/economy/fiscal-notes/" target="_blank" rel="noopener">Texas Comptroller — Fiscal Notes</a>
+            <a href="datos.html">Hoja de datos SOLATX</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:1.5rem">
+      <h3 style="margin-top:0">Qué significan juntas estas cifras</h3>
+      <p>
+        Austin ISD recauda mucho en impuestos a la propiedad, pero bajo la "recaptura" de Texas (a veces llamada Robin Hood), una gran parte regresa al estado. Al mismo tiempo, la fórmula por estudiante no alcanzó a la inflación durante varios años. El distrito proyecta un déficit fuerte mientras el estado reporta un superávit grande.
+      </p>
+      <div class="fact-bomb-row">
+        <span class="fact-bomb accent">Dato: Este patrón refleja el diseño del financiamiento estatal — no una sola decisión de gasto local.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTY WEALTH VS STUDENT POVERTY -->
+  <section id="poverty-gap">
+    <p class="section-label">Un desajuste en la fórmula</p>
+    <h2>Distrito con propiedades caras, estudiantes con muchas necesidades</h2>
+    <p>
+      El financiamiento escolar de Texas etiqueta a Austin ISD como un distrito <strong>con mucha riqueza inmobiliaria</strong>. Esa etiqueta se basa en el <strong>valor de las propiedades locales dividido entre los estudiantes inscritos</strong> — no en cuánto ganan realmente las familias. El resultado: Austin puede pagar entre las facturas de recaptura más altas del estado mientras atiende a una población estudiantil con necesidad económica significativa.
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value warm">48.4%</div>
+        <div class="stat-label">Estudiantes en situación de desventaja económica</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://schools.texastribune.org/districts/austin-isd/" target="_blank" rel="noopener">Texas Tribune Schools Explorer (datos TEA)</a>
+            <a href="https://txschools.gov/?view=district&id=227901" target="_blank" rel="noopener">TX Schools — perfil AISD</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">~52%</div>
+        <div class="stat-label">Ingresos de impuestos a la propiedad sujetos a recaptura</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">Página de recaptura AISD (AF2024–25)</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value warm">−17.4%</div>
+        <div class="stat-label">Cambio en inscripción desde 2016 (69,074 estudiantes en 2026)</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://schools.texastribune.org/districts/austin-isd/" target="_blank" rel="noopener">Texas Tribune — datos de inscripción</a>
+            <a href="https://www.austinisd.org/planning-asset-management/district-demographics" target="_blank" rel="noopener">Demografía AISD</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">#1</div>
+        <div class="stat-label">Mayor pagador de recaptura entre los distritos escolares de Texas</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">Informes de recaptura AISD</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:1.5rem">
+      <div class="panel panel-accent">
+        <h3 style="margin-top:0;color:var(--accent)">Lo que mide el estado</h3>
+        <ul class="checklist">
+          <li><strong>Riqueza inmobiliaria</strong> — valor de propiedad gravable por estudiante ponderado (WADA)</li>
+          <li><strong>Disparador de recaptura</strong> — cuando los ingresos locales superan lo que permite la fórmula estatal</li>
+          <li><strong>Valores del suelo</strong> — el mercado inmobiliario en alza de Austin refuerza la etiqueta de "rico"</li>
+          <li><strong>Lo que no mide</strong> — ingreso familiar, carga de la renta ni tasa de pobreza del vecindario</li>
+        </ul>
+      </div>
+      <div class="panel panel-warm">
+        <h3 style="margin-top:0;color:var(--warm)">Lo que las escuelas atienden en la realidad</h3>
+        <ul class="checklist">
+          <li><strong>Casi la mitad</strong> de los estudiantes clasificados en desventaja económica</li>
+          <li><strong>Escuelas Title I</strong> — muchas califican para apoyo federal por pobreza</li>
+          <li><strong>Mayores necesidades</strong> — bilingüe, educación especial y fondos compensatorios siguen dependiendo de un presupuesto base apretado</li>
+          <li><strong>Menos estudiantes</strong> — la inscripción bajó mientras los costos fijos y las obligaciones de recaptura siguen ahí</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:1.25rem">
+      <h3 style="margin-top:0">Por qué los impuestos a la propiedad y la pobreza tiran en direcciones opuestas</h3>
+      <p>
+        Cuando suben los valores de las casas en Austin, el distrito puede recaudar más en impuestos a la propiedad — pero la fórmula estatal también trata a Austin como "rico" y exige pagos de recaptura más grandes. Al mismo tiempo, Texas pondera gran parte del financiamiento en la <strong>asistencia diaria promedio</strong>, no en la inscripción. Si bajan los estudiantes, los ingresos pueden encogerse aunque la necesidad en la comunidad siga alta.
+      </p>
+      <p>
+        Bibliotecas, consejeros y programas de lectura suelen ser lo primero en los planes de déficit — y justo esos servicios importan más en escuelas donde los estudiantes enfrentan inestabilidad de vivienda, inseguridad alimentaria y poco acceso a libros y tecnología en casa.
+      </p>
+      <p class="muted" style="margin:0">
+        Fuentes: <a href="https://www.austinisd.org/budget/recapture">Recaptura AISD</a> · <a href="https://schools.texastribune.org/districts/austin-isd/">Texas Tribune / TEA inscripción</a> · <a href="historia.html">historia.html</a>
+      </p>
+    </div>
+
+    <!-- WEALTHY RECAPTURE — extended perspective -->
+    <div id="recaptura-riqueza" style="margin-top:2.5rem;scroll-margin-top:5rem">
+      <p class="section-label">Recaptura por riqueza inmobiliaria</p>
+      <h2>Qué significa en realidad la "recaptura de distrito rico" para Austin</h2>
+      <p>
+        La <strong>recaptura por riqueza inmobiliaria</strong> no significa que las familias de Austin sean ricas. Significa que la <strong>fórmula estatal</strong> decidió que Austin recauda más impuestos a la propiedad por estudiante de lo que la fórmula permite conservar. Bajo el Capítulo 49, ese "excedente" se envía a Austin (la capital) — no necesariamente de vuelta a las aulas que lo generaron.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">$8.3B+</div>
+          <div class="stat-label">Recaptura total pagada por AISD (AF2000–01 hasta AF2024–25)</div>
+          <div class="stat-source">
+            <a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">Informes de recaptura AISD</a>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value warm">~400%</div>
+          <div class="stat-label">Crecimiento de recaptura desde AF2014–15 ($181M → $821M adoptados)</div>
+          <div class="stat-source">
+            <a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">Tabla comparativa de recaptura AISD</a>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">46¢</div>
+          <div class="stat-label">De cada dólar del fondo general estimado para recaptura (AF2024–25)</div>
+          <div class="stat-source">
+            <a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">AISD — desglose de cada dólar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-warm" style="margin-top:1.5rem">
+        <h3 style="margin-top:0;color:var(--warm)">Una perspectiva desde Austin</h3>
+        <p>
+          Soy <strong>tejano de aquí</strong> — nacido y criado en Austin, de <strong>raíces étnicas mixtas</strong>, y <strong>producto de las escuelas públicas</strong>. No hablo por el Estado de Texas. Pero sí puedo describir cómo se siente la recaptura por riqueza inmobiliaria en el terreno.
+        </p>
+        <p>
+          Ves subir los valores de las propiedades y las facturas de impuestos en tu ciudad. El estado llama a tu distrito <strong>"rico en propiedades".</strong> Mientras tanto, casi la mitad de los estudiantes están en <strong>situación de desventaja económica</strong>, la inscripción baja, y los bibliotecarios — pilar de la educación de un niño — terminan en listas de recortes. La etiqueta dice <em>rico</em>. Las aulas dicen <em>sin recursos</em>.
+        </p>
+        <p class="fact-bomb accent">La etiqueta dice rico. Las aulas dicen sin recursos.</p>
+        <p class="fact-bomb">Una persona no puede con todo. Cada quien puede aprender los hechos y alzar la voz.</p>
+        <p style="margin:0">La meta es el equilibrio: un sistema que mida la <em>necesidad estudiantil</em>, no solo los <em>precios del suelo</em>.</p>
+      </div>
+
+      <div class="two-col" style="margin-top:1.25rem">
+        <div class="panel panel-accent">
+          <h3 style="margin-top:0;color:var(--accent)">Para qué se creó la recaptura (1993)</h3>
+          <ul class="checklist">
+            <li>Corregir brechas de financiamiento inconstitucionales entre distritos (fallos de <strong>Edgewood</strong>)</li>
+            <li>Compartir ingresos de zonas con propiedades caras con distritos de menor riqueza</li>
+            <li>Actuar como puente <strong>temporal</strong> tras el Senate Bill 7 — no como etiqueta permanente</li>
+            <li>Igualar la <em>oportunidad</em> entre los niños de Texas</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0">Qué hace hoy la recaptura por riqueza (documentado)</h3>
+          <ul class="checklist">
+            <li>AISD sigue siendo el <strong>mayor pagador individual de recaptura</strong> en Texas</li>
+            <li>Aproximadamente <strong>la mitad de los ingresos de impuestos a la propiedad</strong> puede quedar sujeta a recaptura</li>
+            <li>Los pagos de recaptura crecieron mucho más rápido que el financiamiento por estudiante de la fórmula</li>
+            <li>Los recortes locales (personal, bibliotecas, programas) caen en el distrito mientras el estado reporta superávits grandes</li>
+            <li>La etiqueta de "rico" sigue el <strong>valor gravable del suelo</strong>, no los cheques de las familias</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:1.25rem">
+        <h3 style="margin-top:0">Suelo caro ≠ familia rica — el desbalance de fondo</h3>
+        <p>
+          La economía y el mercado de vivienda de Austin empujan al alza los <strong>valores catastrales de las propiedades</strong>. El sistema de financiamiento escolar trata eso como riqueza del distrito aun cuando:
+        </p>
+        <ul class="checklist">
+          <li>Las familias rentan y no son dueñas del terreno que se aprecia</li>
+          <li>Hogares de ingreso fijo enfrentan más carga fiscal sin más financiamiento escolar</li>
+          <li>Escuelas del este y sur de Austin atienden comunidades de alta pobreza dentro de un límite distrital "rico"</li>
+          <li>Baja la inscripción — reduciendo dólares por asistencia — mientras las obligaciones de recaptura siguen enormes</li>
+        </ul>
+        <div class="fact-bomb-row warm">
+          <span class="fact-bomb warm">Dato: Suelo caro ≠ familia rica. Suben los valores de las propiedades; la necesidad estudiantil sigue alta.</span>
+        </div>
+        <p>
+          La recaptura se vendió como equidad entre distritos. Desde adentro de Austin, puede sentirse como si los impuestos locales salieran de la comunidad que los pagó — y regresaran como <strong>recortes al presupuesto</strong> en lugar de <strong>inversión equilibrada</strong>.
+        </p>
+        <p class="muted" style="margin:0">
+          Más lectura: <a href="datos.html">datos.html</a> (gráficas) · <a href="https://everytexan.org/wp-content/uploads/2022/07/Recapture_July2022_final.pdf" target="_blank" rel="noopener">Every Texan — análisis de recaptura (PDF)</a> · <a href="https://www.texasstandard.org/stories/texas-schools-education-funding-recapture-recapture-robin-hood/" target="_blank" rel="noopener">Texas Standard — explicación Robin Hood</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <p class="section-label">Financiamiento escolar 101</p>
+    <h2>Cómo funciona el financiamiento escolar en Texas</h2>
+    <p>AISD no opera en el vacío. Cada decisión presupuestal vive dentro de una fórmula estatal construida durante décadas.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <strong>Paso 1</strong>
+        Los impuestos a la propiedad locales financian las escuelas — Texas no tiene impuesto estatal sobre la renta, así que los distritos dependen mucho del valor de las propiedades.
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <strong>Paso 2</strong>
+        El estado fija una "asignación básica" — un monto base en dólares por estudiante. Cuando esa cifra se estanca, los costos (salarios, servicios, materiales) pueden superar los ingresos.
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <strong>Paso 3</strong>
+        La "recaptura" (Capítulo 49) exige que los distritos más ricos en propiedades envíen el excedente de ingresos locales al estado para redistribución — originalmente pensada como medida temporal de equidad.
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <strong>Paso 4</strong>
+        Los distritos deben cuadrar el presupuesto de todos modos. Cuando las fórmulas de ingreso van detrás de los costos, los recortes caen en personal, programas y servicios — incluidas las bibliotecas.
+      </div>
+    </div>
+
+    <h3>Términos clave</h3>
+    <dl class="glossary">
+      <dt>Asignación básica (basic allotment)</dt>
+      <dd>El monto base de financiamiento estatal por estudiante. Cambiar este número afecta a todos los distritos de Texas.</dd>
+      <dt>Recaptura (Robin Hood)</dt>
+      <dd>Pagos de distritos con mucha riqueza inmobiliaria al estado. Creada por el Senate Bill 7 en 1993.</dd>
+      <dt>Foundation School Program (FSP)</dt>
+      <dd>El sistema principal de financiamiento escolar de Texas — fórmulas, asignaciones y ayuda estatal combinadas.</dd>
+      <dt>Déficit estructural</dt>
+      <dd>Una brecha recurrente entre ingresos esperados y costos integrada en el sistema de financiamiento — no un error contable de una sola vez.</dd>
+      <dt>Desventaja económica (economically disadvantaged)</dt>
+      <dd>Clasificación de la TEA para estudiantes elegibles para almuerzo gratuito o reducido u otros indicadores de pobreza — usada en reportes estatales y federales.</dd>
+      <dt>Distrito con riqueza inmobiliaria (property-wealthy)</dt>
+      <dd>Un distrito cuyos valores de propiedad gravable por estudiante superan las fórmulas estatales — activando recaptura sin importar el ingreso familiar.</dd>
+      <dt>WADA</dt>
+      <dd>Weighted Average Daily Attendance — estudiantes contados con ajustes (bilingüe, educación especial, etc.) para las fórmulas de financiamiento.</dd>
+    </dl>
+  </section>
+
+  <!-- HISTORY -->
+  <section id="history">
+    <p class="section-label">Línea de tiempo</p>
+    <h2>Cómo llegamos aquí</h2>
+    <p class="muted">Historia documentada en registros judiciales y legislación estatal. Líneas de tiempo extendidas: <a href="historia.html">historia.html</a> · <a href="history.html">history.html</a> · <a href="time.html">time.html</a></p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1984–1989</div>
+        <p><strong>Edgewood ISD v. Kirby</strong> — La Corte Suprema de Texas declaró inconstitucional el sistema de financiamiento escolar, al encontrar que el financiamiento desigual entre distritos violaba la constitución estatal.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1993</div>
+        <p><strong>Senate Bill 7</strong> — La Legislatura creó el sistema de recaptura como remedio. En su momento se describió como arreglo de transición mientras el estado buscaba una solución permanente.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1993–2019</div>
+        <p>La recaptura se expandió. Los valores de propiedad en alza en Austin aumentaron la recaudación local — y los pagos de recaptura — sin un aumento equivalente en el financiamiento estatal por estudiante.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2019–2024</div>
+        <p><strong>Asignación básica fijada en $6,160</strong> durante varias sesiones legislativas pese a la inflación en salarios, beneficios y costos operativos.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025–2026</div>
+        <p>AISD proyecta un <strong>déficit de $181 millones</strong> para 2026–27. Reducciones de personal y recortes a programas — incluidos puestos de biblioteca — están en discusión de la junta escolar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOT CAUSES -->
+  <section id="root-causes">
+    <p class="section-label">Análisis</p>
+    <h2>Causas de raíz vs. síntomas</h2>
+    <p>Recortar bibliotecas o despedir personal atiende una brecha presupuestal inmediata. No arregla la estructura de financiamiento de fondo. Entender la diferencia es cómo las comunidades empujan un cambio duradero.</p>
+
+    <div class="two-col">
+      <div class="panel panel-accent">
+        <h3 style="margin-top:0;color:var(--accent)">Causas de raíz (a nivel de sistema)</h3>
+        <ul class="checklist">
+          <li>Fórmula de financiamiento por estudiante sin ajuste por inflación durante muchos años</li>
+          <li>Pagos de recaptura que reducen ingresos locales disponibles para las aulas de Austin</li>
+          <li>Etiqueta de "riqueza inmobiliaria" basada en valores del suelo, no en ingreso estudiantil o familiar</li>
+          <li>Financiamiento por asistencia mientras baja la inscripción — caen los ingresos pero la necesidad sigue alta</li>
+          <li>Dependencia de impuestos a la propiedad sin ingresos estatales diversificados</li>
+          <li>Superávit estatal no dirigido a aumentos sostenidos de la fórmula</li>
+          <li>Marco de financiamiento de 30 años nunca reemplazado por completo tras órdenes judiciales</li>
+        </ul>
+      </div>
+      <div class="panel panel-warm">
+        <h3 style="margin-top:0;color:var(--warm)">Síntomas (lo que ve la comunidad)</h3>
+        <ul class="checklist">
+          <li>Personal de biblioteca y especialistas en medios recortados o sin cubrir</li>
+          <li>Despidos de maestros y grupos más grandes</li>
+          <li>Reducción de programas en varias escuelas</li>
+          <li>Crisis presupuestales anuales y planes de recorte de emergencia</li>
+          <li>Reuniones de la junta escolar centradas en recortes en lugar de inversión</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fact-bomb-row" style="margin-top:1.25rem">
+      <span class="fact-bomb accent">La idea: Los recortes a nivel síntoma ocurren porque el distrito debe cerrar una brecha presupuestal legal. El cambio de raíz requiere legislación estatal — una asignación básica más alta, reforma de recaptura o nuevas fuentes de ingreso. La defensa local sola no puede reescribir la fórmula.</span>
+    </div>
+  </section>
+
+  <!-- LIBRARIES -->
+  <section id="libraries">
+    <p class="section-label">Impacto en cadena</p>
+    <h2>Los bibliotecarios son pilar de la educación de un niño</h2>
+    <p>
+      Los bibliotecarios escolares certificados no son un lujo. Ayudan a los niños a aprender a leer, investigar, pensar con criterio y encontrar un lugar seguro en la escuela. Las bibliotecas escolares no se reducen por mal desempeño ni poco valor comunitario — aparecen en planes de déficit porque se <strong>financian con el mismo presupuesto operativo general</strong> bajo presión del diseño de financiamiento estatal.
+    </p>
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0">Qué ofrecen las bibliotecas escolares</h3>
+        <span class="fact-bomb accent">Los bibliotecarios son pilar de la educación de un niño.</span>
+        <ul class="checklist">
+          <li><span class="fact-bomb">Lectura e investigación</span> para cada estudiante</li>
+          <li>Espacio seguro de estudio y acceso a materiales</li>
+          <li>Navegación de recursos digitales y alfabetización mediática</li>
+          <li>Apoyo a maestros y al plan de estudios</li>
+          <li>Equidad de acceso en vecindarios con menos recursos</li>
+        </ul>
+        <p style="margin-top:1.25rem;margin-bottom:0">
+          <a href="historias-biblioteca.html" style="font-weight:700;color:var(--accent);font-size:1.05rem">Comparte tu historia de biblioteca →</a><br>
+          <span class="muted">Agrega tus recuerdos e inspiración. Construye una petición comunitaria para AISD.</span>
+        </p>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0">Lo que muestran los datos</h3>
+        <p>Cuando los distritos enfrentan déficits estructurales, los puestos discrecionales y de apoyo suelen estar entre los primeros recortes propuestos — sin importar el retorno educativo de la inversión.</p>
+        <div class="fact-bomb-row warm" style="margin:0">
+          <span class="fact-bomb warm">Restaurar bibliotecas a largo plazo requiere arreglar la fórmula de ingresos, no solo revertir la lista de recortes de un año.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community">
+    <p class="section-label">Trabajando juntos</p>
+    <h2>Busquemos equilibrio — juntos</h2>
+    <p>
+      SOLATX no habla por el Estado de Texas, AISD ni ningún partido político. Habla por la idea de que la <strong>educación pública le pertenece al público</strong> — padres, estudiantes, maestros, bibliotecarios y vecinos que se presentan.
+    </p>
+    <div class="panel" style="background:var(--navy);color:#fff;border:none">
+      <p style="font-size:1.15rem;line-height:1.7;margin:0 0 1rem;color:rgba(255,255,255,0.95)">
+        Una persona no puede arreglar sola el financiamiento escolar de Texas. Pero cada quien puede aprender los hechos, ir a una junta escolar, compartir este informe y pedir soluciones de largo plazo — no solo recortes cada año.
+      </p>
+      <p style="margin:0;color:#9dd9d9;font-weight:600">
+        Juntémonos. Protejamos a los bibliotecarios. Arreglemos la fórmula. Equilibremos el sistema.
+      </p>
+    </div>
+    <ul class="checklist" style="margin-top:1.25rem">
+      <li><strong>Aprender</strong> — lee los datos, sigue los enlaces de fuentes, entiende las causas de raíz</li>
+      <li><strong>Presentarse</strong> — las juntas escolares de AISD y el comentario público importan</li>
+      <li><strong>Alzar la voz</strong> — platícale a los vecinos por qué las bibliotecas están en la lista de recortes</li>
+      <li><strong>Quedarse</strong> — una reunión es el inicio; la presión sostenida cambia la política</li>
+    </ul>
+  </section>
+
+  <!-- LONG TERM FIXES -->
+  <section id="fixes">
+    <p class="section-label">Caminos de política pública</p>
+    <h2>Arreglos de largo plazo que defienden las comunidades</h2>
+    <p>Estas son opciones estructurales que discuten defensores de la educación, economistas y legisladores — no un respaldo de SOLATX a un partido o proyecto de ley. Representan el tipo de cambio de <em>causa de raíz</em> que dura más allá de un solo ciclo presupuestal.</p>
+
+    <div class="panel">
+      <h3 style="margin-top:0">1. Aumentar e indexar la asignación básica</h3>
+      <p>Subir el monto base por estudiante y ligar aumentos futuros a la inflación o índices del costo de la educación para que los distritos no peleen la misma batalla cada dos años.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0">2. Reforma de la recaptura</h3>
+      <p>Revisar si los pagos de recaptura de Austin aún cumplen su propósito original de equidad — o si principalmente compensan obligaciones estatales. Varios grupos de defensa han pedido transparencia en la fórmula y topes al crecimiento de la recaptura.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0">3. Fuentes de financiamiento dedicadas</h3>
+      <p>Algunas propuestas separan el financiamiento de bibliotecas, consejeros y personal de apoyo de las operaciones generales para que no sean lo primero en años de déficit.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0">4. Modernización de ingresos estatales</h3>
+      <p>Texas financia el gobierno principalmente con impuestos sobre ventas y a la propiedad. Los debates de largo plazo incluyen si bases de ingreso más amplias estabilizarían el financiamiento escolar a través de ciclos económicos.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0">5. Presión cívica sostenida entre ciclos electorales</h3>
+      <p>El financiamiento escolar no se arregla en una sola junta escolar. Los distritos operan dentro de la ley estatal. Un cambio duradero suele requerir testimonio local coordinado, contacto legislativo y organización de varios años.</p>
+    </div>
+  </section>
+
+  <!-- ACTION -->
+  <section id="action">
+    <div class="action-banner">
+      <h2>Tu voz importa — así puedes usarla</h2>
+      <p>Los hechos solos no cambian la política. La participación pública informada y constante sí. Estos son canales oficiales y documentados.</p>
+      <div class="action-links">
+        <a href="mailto:board@austinisd.org?subject=Comentarios%20de%20la%20Comunidad%20-%20Presupuesto%20AISD%20y%20Bibliotecas">Escribir a la Junta AISD — board@austinisd.org</a>
+        <a href="https://www.austinisd.org/board">Inscribirse para comentario público</a>
+        <a href="https://www.austinisd.org/budget">Documentos presupuestales AISD</a>
+      </div>
+      <p style="margin-top:1.25rem;font-size:0.9rem;color:rgba(255,255,255,0.85)">
+        Enlace directo de comentarios: <a href="mailto:board@austinisd.org?subject=Comentarios%20de%20la%20Comunidad%20-%20Presupuesto%20AISD%20y%20Bibliotecas" style="color:#fff;text-decoration:underline">board@austinisd.org</a>
+      </p>
+    </div>
+
+    <div class="panel feedback-form reveal" style="margin-top:2rem">
+      <h3 style="margin-top:0">Enviar comentarios a AISD</h3>
+      <p class="muted">Prepara tu mensaje y envíalo directamente a la Junta Directiva.</p>
+      <form id="feedback-form">
+        <label for="fb-name">Tu nombre</label>
+        <input type="text" id="fb-name" placeholder="Opcional">
+        <label for="fb-topic">Tema</label>
+        <select id="fb-topic">
+          <option value="Bibliotecas escolares">Bibliotecas escolares</option>
+          <option value="Presupuesto y déficit">Presupuesto y déficit</option>
+          <option value="Recaptura / financiamiento escolar">Recaptura / financiamiento escolar</option>
+          <option value="Recortes de personal y programas">Recortes de personal y programas</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <label for="fb-message">Tu mensaje</label>
+        <textarea id="fb-message" required placeholder="Comparte tus inquietudes, preguntas o apoyo a las bibliotecas escolares…"></textarea>
+        <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer">Enviar a board@austinisd.org</button>
+      </form>
+    </div>
+
+    <h3 style="margin-top:2rem">Una lista práctica</h3>
+    <ul class="checklist">
+      <li><strong>Asistir a una junta escolar</strong> — Inscríbete para comentario público en austinisd.org/board. Tres minutos de testimonio preparado rinden más que la frustración vaga.</li>
+      <li><strong>Citar números específicos</strong> — Menciona el déficit, el total de recaptura y la asignación básica. Los funcionarios responden a hechos documentados.</li>
+      <li><strong>Nombrar las causas de raíz</strong> — Pregunta qué hace el distrito a nivel local <em>y</em> qué está pidiendo a la Legislatura.</li>
+      <li><strong>Contactar representantes y senadores estatales</strong> — El financiamiento escolar se escribe en Austin (la capital), no solo en las oficinas de AISD.</li>
+      <li><strong>Compartir este informe</strong> — Los vecinos que entienden el sistema tienen más probabilidad de presentarse de forma constante.</li>
+      <li><strong>Organizarse, no solo reaccionar</strong> — Una reunión es el inicio. Las fórmulas presupuestales cambian cuando la presión se sostiene entre sesiones.</li>
+    </ul>
+  </section>
+
+  <!-- DATA REPOSITORY -->
+  <section id="data-repo">
+    <p class="section-label">Más del sitio</p>
+    <h2>Más recursos del sitio</h2>
+    <p>Explora otras páginas de SOLATX con datos, historia y voces de la comunidad sobre las bibliotecas escolares de Austin.</p>
+
+    <div class="repo-grid">
+      <div class="repo-card">
+        <h4>Hoja de datos financieros</h4>
+        <p>Cifras de déficit, recaptura, asignación básica y superávit estatal con gráficas.</p>
+        <a href="datos.html">datos.html →</a>
+      </div>
+      <div class="repo-card">
+        <h4>Historia y línea de tiempo</h4>
+        <p>Caso Edgewood, SB 7 y la evolución de la recaptura — versión en español.</p>
+        <a href="historia.html">historia.html →</a>
+      </div>
+      <div class="repo-card">
+        <h4>Historias de biblioteca</h4>
+        <p>Recuerdos y testimonios de la comunidad sobre las bibliotecas escolares de AISD.</p>
+        <a href="historias-biblioteca.html">historias-biblioteca.html →</a>
+      </div>
+      <div class="repo-card">
+        <h4>Versión en inglés</h4>
+        <p>El informe completo en inglés con las mismas cifras y análisis.</p>
+        <a href="index.html">index.html →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="sources" id="sources">
+    <p class="section-label">Verificación</p>
+    <h2>Fuentes primarias oficiales</h2>
+    <p class="muted">Verifica cada cifra de forma independiente. SOLATX reúne documentos públicos para educación comunitaria.</p>
+
+    <div class="source-group">
+      <h3>Austin ISD</h3>
+      <ul>
+        <li><a href="https://www.austinisd.org/budget" target="_blank" rel="noopener">Oficina de Presupuesto AISD — austinisd.org/budget</a></li>
+        <li><a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">AISD Recaptura / pagos Capítulo 49</a></li>
+        <li><a href="https://www.austinisd.org/board" target="_blank" rel="noopener">Junta de AISD — reuniones y comentario público</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h3>Estado de Texas</h3>
+      <ul>
+        <li><a href="https://tea.texas.gov/finance-and-grants/state-funding" target="_blank" rel="noopener">TEA — Financiamiento estatal y Programa Escolar Fundacional</a></li>
+        <li><a href="https://tea.texas.gov/finance-and-grants/state-funding/additional-finance-resources/charter-schools-and-school-districts-charter-schools-and-school-districts" target="_blank" rel="noopener">TEA — Informes financieros de distritos</a></li>
+        <li><a href="https://comptroller.texas.gov/economy/fiscal-notes/" target="_blank" rel="noopener">Contralor de Texas — Notas fiscales y estimaciones</a></li>
+        <li><a href="https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB7" target="_blank" rel="noopener">Legislatura de Texas — Ley del Senado 7 (1993 Robin Hood)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h3>Análisis independiente</h3>
+      <ul>
+        <li><a href="https://www.raiseyourhandtexas.org/" target="_blank" rel="noopener">Raise Your Hand Texas — school finance research</a></li>
+        <li><a href="https://www.kut.org/education/2026-06-02/austin-tx-aisd-school-funding-texas-legislature-teacher-layoffs" target="_blank" rel="noopener">KUT News — AISD funding &amp; legislature coverage</a></li>
+        <li><a href="https://www.kvue.com/article/news/education/schools/austin-isd-delays-budget-proposal-leaders-weigh-cuts-for-2026-2027-school-year/269-9c006213-1d62-4b68-8071-c316c8ed384d" target="_blank" rel="noopener">KVUE — AISD 2026–27 budget reporting</a></li>
+        <li><a href="https://schools.texastribune.org/districts/austin-isd/" target="_blank" rel="noopener">Texas Tribune — AISD demographics &amp; enrollment</a></li>
+        <li><a href="https://www.austinisd.org/planning-asset-management/district-demographics" target="_blank" rel="noopener">AISD district demographics</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h3>Archivos de SOLATX</h3>
+      <ul>
+        <li><a href="datos.html">Hoja de datos financieros compilada</a></li>
+        <li><a href="financeial.txt">Datos financieros (archivo de texto)</a></li>
+        <li><a href="images/">Carpeta de imágenes y gráficas</a></li>
+        <li><a href="historia.html">historia.html</a> · <a href="history.html">history.html</a> · <a href="time.html">time.html</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>SOLATX</strong> — Hecho con información pública para que el público entienda.</p>
+  <p style="margin-top:0.5rem">Fuentes de datos: Texas Education Agency (TEA), informes financieros de AISD, Texas Comptroller.</p>
+  <p style="margin-top:0.5rem">Sin afiliación con AISD ni el Estado de Texas</p>
+</footer>
+
+<script>
+  document.getElementById('feedback-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('fb-name').value.trim();
+    var topic = document.getElementById('fb-topic').value;
+    var msg = document.getElementById('fb-message').value.trim();
+    if (!msg) return;
+    var body = 'Tema: ' + topic + '\n\n' + msg;
+    if (name) body += '\n\n— ' + name;
+    body += '\n\nEnviado vía SOLATX — solatx.org/inicio.html';
+    window.location.href = 'mailto:board@austinisd.org?cc=feebo.atx.tees@gmail.com&subject=' +
+      encodeURIComponent('Comentarios de la Comunidad - ' + topic) + '&body=' + encodeURIComponent(body);
+  });
+
+  (function () {
+    var els = document.querySelectorAll('.stat-card, .panel, .fact-bomb-row, section > h2, .action-banner');
+    if (!window.IntersectionObserver || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      els.forEach(function (el) { el.classList.add('visible'); });
+      return;
+    }
+    els.forEach(function (el) { el.classList.add('reveal'); });
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { obs.observe(el); });
+  })();
+</script>
+<script data-goatcounter="https://solatx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>

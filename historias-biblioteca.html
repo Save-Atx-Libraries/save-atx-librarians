@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Share your school library story. Build a community petition for Austin ISD.">
-  <title>Library Stories — SOLATX Community Petition</title>
+  <meta name="description" content="Comparte tu historia sobre las bibliotecas escolares. Construye una petición comunitaria para Austin ISD.">
+  <title>Historias de biblioteca — Petición comunitaria SOLATX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
@@ -65,94 +65,95 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo" href="index.html">SOLA<span>TX</span></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="index.html#libraries">Libraries</a>
-      <a href="financeial.html">Data</a>
-      <a href="inicio.html">Español</a>
-      <a class="nav-cta" href="mailto:board@austinisd.org?subject=Library%20Stories%20Petition%20-%20SOLATX">Email AISD</a>
+    <a class="logo" href="inicio.html">SOLA<span>TX</span></a>
+    <nav aria-label="Páginas del sitio">
+      <a href="inicio.html">Inicio</a>
+      <a href="inicio.html#libraries">Bibliotecas</a>
+      <a href="datos.html">Datos</a>
+      <a href="historias-biblioteca.html">Historias</a>
+      <a href="index.html" style="opacity:0.75">English</a>
+      <a class="nav-cta" href="mailto:board@austinisd.org?subject=Petici%C3%B3n%20de%20historias%20de%20biblioteca%20-%20SOLATX">Escribir a AISD</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <p class="eyebrow">Community petition</p>
-  <h1>Share your library story</h1>
-  <span class="fact-bomb">Librarians are the cornerstone of a child's education.</span>
+  <p class="eyebrow">Petición comunitaria</p>
+  <h1>Comparte tu historia de biblioteca</h1>
+  <span class="fact-bomb">Los bibliotecarios son la piedra angular de la educación de un niño.</span>
   <div class="fact-bomb-row">
-    <span class="fact-bomb" style="margin:0">Restoring libraries long-term requires fixing the revenue formula, not only reversing one year's cut list.</span>
+    <span class="fact-bomb" style="margin:0">Restaurar las bibliotecas a largo plazo requiere arreglar la fórmula de ingresos, no solo revertir la lista de recortes de un año.</span>
   </div>
   <p>
-    Tell AISD what school libraries — or any library — meant to you. Your memory, inspiration, and fond experiences become part of a <strong>community record</strong> you can take to board meetings and public comment.
+    Cuéntale a AISD lo que las bibliotecas escolares — o cualquier biblioteca — significaron para ti. Tus recuerdos, inspiración y experiencias queridas se convierten en parte de un <strong>registro comunitario</strong> que puedes llevar a las juntas directivas y al comentario público.
   </p>
-  <p class="hint">SOLATX does not speak for the State of Texas or AISD. This is community testimony — facts plus real lives.</p>
+  <p class="hint">SOLATX no habla en nombre del Estado de Texas ni de AISD. Esto es testimonio comunitario — hechos más vidas reales.</p>
 
   <div class="panel">
-    <p style="margin:0"><strong>How it works:</strong> Fill out the form → submit to save your story → email a copy to the AISD Board → print or download the full petition packet to bring to a meeting.</p>
+    <p style="margin:0"><strong>Cómo funciona:</strong> Llena el formulario → envía para guardar tu historia → manda una copia por correo a la Junta de AISD → imprime o descarga el paquete completo de la petición para llevarlo a una junta.</p>
   </div>
 
   <form id="story-form">
     <div class="field">
-      <label for="name">Your name</label>
-      <input type="text" id="name" name="name" placeholder="Optional — or 'Austin parent', 'Former student', etc.">
+      <label for="name">Tu nombre</label>
+      <input type="text" id="name" name="name" placeholder="Opcional — o «Padre/madre de Austin», «Exalumno/a», etc.">
     </div>
     <div class="field">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Optional — if you want AISD to reply">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="Opcional — si quieres que AISD te responda">
     </div>
     <div class="field">
-      <label for="school">School, campus, or neighborhood</label>
-      <input type="text" id="school" name="school" placeholder="e.g. LBJ High, Brentwood, East Austin">
+      <label for="school">Escuela, plantel o colonia</label>
+      <input type="text" id="school" name="school" placeholder="p. ej. LBJ High, Brentwood, Este de Austin">
     </div>
     <div class="field">
-      <label for="library-type">Which library?</label>
+      <label for="library-type">¿Qué biblioteca?</label>
       <select id="library-type" name="library-type">
-        <option value="AISD school library">AISD school library</option>
-        <option value="Austin Public Library">Austin Public Library</option>
-        <option value="Other school library">Other school library</option>
-        <option value="College / university library">College / university library</option>
-        <option value="Other">Other library</option>
+        <option value="Biblioteca escolar de AISD">Biblioteca escolar de AISD</option>
+        <option value="Biblioteca Pública de Austin">Biblioteca Pública de Austin</option>
+        <option value="Otra biblioteca escolar">Otra biblioteca escolar</option>
+        <option value="Biblioteca universitaria">Biblioteca universitaria</option>
+        <option value="Otra biblioteca">Otra biblioteca</option>
       </select>
     </div>
     <div class="field">
-      <label for="story">Your story, memories &amp; inspiration <span class="hint">(required)</span></label>
-      <textarea id="story" name="story" required placeholder="What do you remember? What did the library give you — a love of reading, a safe place, a librarian who cared, research skills, hope?"></textarea>
+      <label for="story">Tu historia, recuerdos e inspiración <span class="hint">(obligatorio)</span></label>
+      <textarea id="story" name="story" required placeholder="¿Qué recuerdas? ¿Qué te dio la biblioteca — amor por la lectura, un lugar seguro, un bibliotecario que se preocupó, habilidades de investigación, esperanza?"></textarea>
     </div>
     <div class="field">
-      <label for="message-aisd">One sentence for the AISD Board <span class="hint">(optional)</span></label>
-      <input type="text" id="message-aisd" name="message-aisd" placeholder="e.g. Please keep certified librarians in every AISD school.">
+      <label for="message-aisd">Una oración para la Junta de AISD <span class="hint">(opcional)</span></label>
+      <input type="text" id="message-aisd" name="message-aisd" placeholder="p. ej. Por favor mantengan bibliotecarios certificados en cada escuela de AISD.">
     </div>
 
     <div class="btn-row no-print">
-      <button type="submit" class="btn-primary">Save story &amp; add to petition</button>
-      <button type="button" class="btn-warm" id="btn-email">Email story to AISD Board</button>
-      <button type="button" class="btn-secondary" id="btn-copy">Copy my story</button>
+      <button type="submit" class="btn-primary">Guardar historia y agregar a la petición</button>
+      <button type="button" class="btn-warm" id="btn-email">Enviar historia por correo a la Junta de AISD</button>
+      <button type="button" class="btn-secondary" id="btn-copy">Copiar mi historia</button>
     </div>
   </form>
 
   <div id="success-msg" class="success">
-    <strong>Story saved.</strong> It is added to the petition list below. Use "Email to AISD" or "Print petition" when you are ready to send it to the board.
+    <strong>Historia guardada.</strong> Se agregó a la lista de peticiones abajo. Usa «Enviar a AISD» o «Imprimir petición» cuando estés listo/a para enviarla a la junta.
   </div>
 
   <div class="btn-row no-print" style="margin-top:2rem">
-    <button type="button" class="btn-secondary" id="btn-download">Download full petition (.txt)</button>
-    <button type="button" class="btn-secondary" onclick="window.print()">Print petition packet</button>
-    <a class="btn btn-secondary" href="https://www.austinisd.org/board" target="_blank" rel="noopener">Sign up for public comment</a>
+    <button type="button" class="btn-secondary" id="btn-download">Descargar petición completa (.txt)</button>
+    <button type="button" class="btn-secondary" onclick="window.print()">Imprimir paquete de petición</button>
+    <a class="btn btn-secondary" href="https://www.austinisd.org/board" target="_blank" rel="noopener">Registrarse para comentario público</a>
   </div>
 
   <section id="story-list">
     <h2 style="font-family:'Source Serif 4',Georgia,serif;color:var(--navy)">
-      Community stories <span class="count-badge" id="story-count">0</span>
+      Historias de la comunidad <span class="count-badge" id="story-count">0</span>
     </h2>
-    <p class="hint">Stories saved in this browser. Download or print to share with AISD. Share this page link so others can add theirs: <strong>solatx.org/library-stories.html</strong></p>
+    <p class="hint">Historias guardadas en este navegador. Descarga o imprime para compartir con AISD. Comparte el enlace de esta página para que otras personas agreguen la suya: <strong>solatx.org/historias-biblioteca.html</strong></p>
     <div id="stories-container"></div>
-    <p id="empty-msg" class="hint">No stories yet on this device. Be the first.</p>
+    <p id="empty-msg" class="hint">Aún no hay historias en este dispositivo. Sé la primera persona.</p>
   </section>
 
   <div class="panel" style="margin-top:2rem">
-    <span class="fact-bomb" style="font-size:1.2rem;color:var(--accent)">One person cannot do everything. Every person can do something.</span>
-    <p style="margin:0">Take this petition to AISD. Cite the data on <a href="index.html">solatx.org</a> and the voices on this page. Ask for balance — not cuts to the cornerstone of a child's education.</p>
+    <span class="fact-bomb" style="font-size:1.2rem;color:var(--accent)">Una persona no puede hacerlo todo. Cada persona puede hacer algo.</span>
+    <p style="margin:0">Lleva esta petición a AISD. Cita los datos en <a href="inicio.html">solatx.org</a> y las voces en esta página. Pide equilibrio — no recortes a la piedra angular de la educación de un niño.</p>
   </div>
 </main>
 
@@ -172,38 +173,38 @@
 
   function getFormData() {
     return {
-      name: document.getElementById('name').value.trim() || 'Community member',
+      name: document.getElementById('name').value.trim() || 'Miembro de la comunidad',
       email: document.getElementById('email').value.trim(),
-      school: document.getElementById('school').value.trim() || 'Not specified',
+      school: document.getElementById('school').value.trim() || 'No especificado',
       libraryType: document.getElementById('library-type').value,
       story: document.getElementById('story').value.trim(),
       messageAisd: document.getElementById('message-aisd').value.trim(),
-      date: new Date().toLocaleString()
+      date: new Date().toLocaleString('es-MX')
     };
   }
 
   function formatStory(d, num) {
     let t = '';
-    if (num) t += '--- Story #' + num + ' ---\n';
-    t += 'Name: ' + d.name + '\n';
-    if (d.email) t += 'Email: ' + d.email + '\n';
-    t += 'School/Area: ' + d.school + '\n';
-    t += 'Library: ' + d.libraryType + '\n';
-    t += 'Date: ' + d.date + '\n\n';
-    t += 'Story:\n' + d.story + '\n';
-    if (d.messageAisd) t += '\nMessage to AISD Board: ' + d.messageAisd + '\n';
+    if (num) t += '--- Historia #' + num + ' ---\n';
+    t += 'Nombre: ' + d.name + '\n';
+    if (d.email) t += 'Correo electrónico: ' + d.email + '\n';
+    t += 'Escuela/Área: ' + d.school + '\n';
+    t += 'Biblioteca: ' + d.libraryType + '\n';
+    t += 'Fecha: ' + d.date + '\n\n';
+    t += 'Historia:\n' + d.story + '\n';
+    if (d.messageAisd) t += '\nMensaje para la Junta de AISD: ' + d.messageAisd + '\n';
     return t;
   }
 
   function formatPetitionPacket(stories) {
-    let header = 'SOLATX — LIBRARY STORIES COMMUNITY PETITION\n';
+    let header = 'SOLATX — PETICIÓN COMUNITARIA DE HISTORIAS DE BIBLIOTECA\n';
     header += 'Save Our Librarians ATX | solatx.org\n';
-    header += 'Submitted for Austin ISD Board of Trustees\n';
-    header += 'Generated: ' + new Date().toLocaleString() + '\n';
-    header += 'Total stories in this packet: ' + stories.length + '\n';
+    header += 'Presentada a la Junta Directiva de Austin ISD\n';
+    header += 'Generada: ' + new Date().toLocaleString('es-MX') + '\n';
+    header += 'Total de historias en este paquete: ' + stories.length + '\n';
     header += '='.repeat(50) + '\n\n';
-    header += 'We ask AISD to preserve certified school librarians and library programs.\n';
-    header += 'These are real community voices — not statistics alone.\n\n';
+    header += 'Pedimos a AISD que preserve los bibliotecarios escolares certificados y los programas de biblioteca.\n';
+    header += 'Estas son voces reales de la comunidad — no solo estadísticas.\n\n';
     header += '='.repeat(50) + '\n\n';
     return header + stories.map((s, i) => formatStory(s, i + 1)).join('\n');
   }
@@ -225,7 +226,7 @@
       card.className = 'story-card';
       card.innerHTML = '<div class="story-meta">' + escapeHtml(s.libraryType) + ' · ' + escapeHtml(s.school) + ' · ' + escapeHtml(s.date) + '</div>' +
         '<strong>' + escapeHtml(s.name) + '</strong><p style="margin:0.5rem 0 0">' + escapeHtml(s.story) + '</p>' +
-        (s.messageAisd ? '<p style="margin:0.75rem 0 0;font-style:italic;color:var(--accent)">To AISD: ' + escapeHtml(s.messageAisd) + '</p>' : '');
+        (s.messageAisd ? '<p style="margin:0.75rem 0 0;font-style:italic;color:var(--accent)">Para AISD: ' + escapeHtml(s.messageAisd) + '</p>' : '');
       container.appendChild(card);
     });
   }
@@ -239,7 +240,7 @@
   document.getElementById('story-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const d = getFormData();
-    if (!d.story) { alert('Please write your library story.'); return; }
+    if (!d.story) { alert('Por favor escribe tu historia de biblioteca.'); return; }
     const stories = getStories();
     stories.push(d);
     saveStories(stories);
@@ -252,33 +253,33 @@
 
   document.getElementById('btn-email').addEventListener('click', function() {
     const d = getFormData();
-    if (!d.story) { alert('Please write your story first.'); return; }
-    const subject = encodeURIComponent('Library Stories Petition — SOLATX Community Testimony');
+    if (!d.story) { alert('Por favor escribe tu historia primero.'); return; }
+    const subject = encodeURIComponent('Petición de historias de biblioteca — Testimonio comunitario SOLATX');
     const body = encodeURIComponent(
-      'Dear AISD Board of Trustees,\n\n' +
-      'I am submitting my library story as part of the SOLATX community petition to preserve school librarians and library programs.\n\n' +
+      'Estimada Junta Directiva de AISD,\n\n' +
+      'Envío mi historia de biblioteca como parte de la petición comunitaria SOLATX para preservar los bibliotecarios escolares y los programas de biblioteca.\n\n' +
       formatStory(d) + '\n\n' +
-      'Please consider this testimony alongside the public data at solatx.org.\n\n' +
-      'Thank you.'
+      'Por favor consideren este testimonio junto con los datos públicos en solatx.org.\n\n' +
+      'Gracias.'
     );
     window.location.href = 'mailto:' + AISD_EMAIL + '?cc=' + PROJECT_CC + '&subject=' + subject + '&body=' + body;
   });
 
   document.getElementById('btn-copy').addEventListener('click', function() {
     const d = getFormData();
-    if (!d.story) { alert('Please write your story first.'); return; }
+    if (!d.story) { alert('Por favor escribe tu historia primero.'); return; }
     navigator.clipboard.writeText(formatStory(d)).then(function() {
-      alert('Story copied to clipboard.');
+      alert('Historia copiada al portapapeles.');
     });
   });
 
   document.getElementById('btn-download').addEventListener('click', function() {
     const stories = getStories();
-    if (stories.length === 0) { alert('Save at least one story first.'); return; }
+    if (stories.length === 0) { alert('Guarda al menos una historia primero.'); return; }
     const blob = new Blob([formatPetitionPacket(stories)], { type: 'text/plain' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'SOLATX-Library-Stories-Petition-' + new Date().toISOString().slice(0, 10) + '.txt';
+    a.download = 'SOLATX-Peticion-Historias-Biblioteca-' + new Date().toISOString().slice(0, 10) + '.txt';
     a.click();
   });
 
