@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://solatx.org/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/inicio.html"/>
+  </url>
+  <url>
+    <loc>https://solatx.org/inicio.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/inicio.html"/>
+  </url>
+  <url>
+    <loc>https://solatx.org/financeial.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/financeial.html"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/datos.html"/>
+  </url>
+  <url>
+    <loc>https://solatx.org/datos.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/financeial.html"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/datos.html"/>
+  </url>
+  <url>
+    <loc>https://solatx.org/library-stories.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/library-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/historias-biblioteca.html"/>
+  </url>
+  <url>
+    <loc>https://solatx.org/historias-biblioteca.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/library-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/historias-biblioteca.html"/>
+  </url>
+  <url>
+    <loc>https://solatx.org/history.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/history.html"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/historia.html"/>
+  </url>
+  <url>
+    <loc>https://solatx.org/historia.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/history.html"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/historia.html"/>
+  </url>
+</urlset>

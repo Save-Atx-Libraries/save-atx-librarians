@@ -3,8 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hoja de datos financieros SOLATX — déficit de AISD, recaptura estatal, asignación básica y análisis de recaptura de riqueza, con registros públicos.">
+  <meta name="description" content="Hoja de datos financieros SOLATX — déficit de $181M de AISD, recaptura de $715M, asignación básica de Texas e impacto en financiamiento de bibliotecas escolares. Gráficas con registros públicos.">
+  <meta name="keywords" content="déficit presupuesto AISD, recaptura Austin ISD, asignación básica Texas, financiamiento bibliotecas escolares, Robin Hood Texas">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://solatx.org/datos.html">
+  <link rel="alternate" hreflang="en" href="https://solatx.org/financeial.html">
+  <link rel="alternate" hreflang="es-MX" href="https://solatx.org/datos.html">
+  <link rel="alternate" hreflang="x-default" href="https://solatx.org/financeial.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://solatx.org/datos.html">
+  <meta property="og:title" content="Hoja de Datos Financieros AISD — SOLATX">
+  <meta property="og:description" content="Déficit, recaptura y financiamiento escolar de Austin ISD con datos de la TEA y documentos presupuestales.">
+  <meta property="og:site_name" content="SOLATX">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:image" content="https://solatx.org/images/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hoja de Datos Financieros AISD — SOLATX">
+  <meta name="twitter:description" content="Datos públicos sobre financiamiento escolar de Austin ISD y bibliotecas.">
   <title>Hoja de Datos Financieros — SOLATX</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Hoja de datos financieros Austin ISD",
+    "description": "Cifras públicas sobre déficit presupuestal, recaptura estatal y financiamiento de bibliotecas en Austin ISD.",
+    "url": "https://solatx.org/datos.html",
+    "inLanguage": "es-MX",
+    "creator": { "@type": "Organization", "name": "SOLATX", "url": "https://solatx.org/" },
+    "keywords": ["Austin ISD", "financiamiento escolar", "bibliotecas escolares", "recaptura Texas"],
+    "isAccessibleForFree": true
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -101,8 +130,25 @@
     .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 14px rgba(45,106,106,0.25); }
     .btn-secondary { background: var(--surface); color: var(--accent); border: 2px solid var(--accent); }
 
-    .lang-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .lang-tabs a { padding: 0.45rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--border); color: var(--muted); transition: all 0.2s ease; }
+    .lang-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      align-items: stretch;
+    }
+    .lang-tabs a {
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: all 0.2s ease;
+      text-align: center;
+      line-height: 1.3;
+    }
     .lang-tabs a:hover, .lang-tabs a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
@@ -121,6 +167,16 @@
     @media (max-width: 720px) {
       nav { display: none; }
       .two-col { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .lang-tabs { gap: 0.4rem; }
+      .lang-tabs a {
+        flex: 1 1 calc(50% - 0.2rem);
+        min-width: 7.5rem;
+        font-size: 0.8rem;
+        padding: 0.55rem 0.7rem;
+      }
     }
   </style>
 </head>
@@ -152,11 +208,11 @@
 
 <main>
 
-  <div class="lang-tabs reveal">
-    <a href="financeial.html">English</a>
-    <a href="datos.html" class="active">Español (México)</a>
+  <nav class="lang-tabs reveal" aria-label="Idioma">
+    <a href="financeial.html" hreflang="en">English</a>
+    <a href="datos.html" class="active" hreflang="es-MX" aria-current="page">Español</a>
     <a href="historia.html">Historia</a>
-  </div>
+  </nav>
 
   <section id="cifras">
     <p class="section-label reveal">Cifras clave</p>
