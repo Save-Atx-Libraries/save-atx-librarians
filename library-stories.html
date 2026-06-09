@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Share your school library story. Build a community petition for Austin ISD.">
+  <title>Library Stories — SOLATX Community Petition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f6f3; --surface: #fff; --text: #1a2332; --muted: #5c6778;
+      --border: #e2e0da; --accent: #2d6a6a; --accent-light: #e8f4f4;
+      --warm: #c45c3e; --warm-light: #fdf0ec; --navy: #1a2332;
+      --radius: 12px; --max: 720px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "DM Sans", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .site-header { background: var(--navy); color: #fff; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .header-inner { max-width: 1080px; margin: 0 auto; padding: 0.85rem 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; }
+    .logo { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; font-size: 1.35rem; color: #fff; text-decoration: none; }
+    .logo span { color: #7ec8c8; }
+    nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.82rem; font-weight: 500; padding: 0.35rem 0.6rem; border-radius: 6px; margin: 0 0.1rem; }
+    nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    nav a.nav-cta { background: #7ec8c8; color: var(--navy); font-weight: 700; }
+    main { max-width: var(--max); margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    h1 { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.35rem); color: var(--navy); margin: 0 0 1rem; }
+    .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .fact-bomb { display: block; font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.4rem, 3vw, 1.85rem); font-weight: 800; color: var(--warm); margin: 1rem 0; line-height: 1.3; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin: 1.25rem 0; }
+    label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--navy); }
+    .hint { font-size: 0.8rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+    input, textarea, select {
+      width: 100%; padding: 0.7rem 0.85rem; border: 1px solid var(--border);
+      border-radius: 8px; font-family: inherit; font-size: 1rem; margin-bottom: 1.1rem;
+    }
+    textarea { min-height: 140px; resize: vertical; }
+    .field { margin-bottom: 0.25rem; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    button, .btn {
+      display: inline-block; padding: 0.75rem 1.35rem; border-radius: 8px;
+      font-weight: 700; font-size: 0.95rem; cursor: pointer; border: none;
+      font-family: inherit; text-decoration: none; text-align: center;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #1f5050; }
+    .btn-secondary { background: var(--surface); color: var(--accent); border: 2px solid var(--accent); }
+    .btn-warm { background: var(--warm); color: #fff; }
+    .success { background: #e8f4f4; border: 1px solid #9dd9d9; color: var(--navy); padding: 1rem; border-radius: 8px; display: none; margin-top: 1rem; }
+    .success.show { display: block; }
+    #story-list { margin-top: 2rem; }
+    .story-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+    .story-card strong { color: var(--accent); }
+    .story-meta { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .count-badge { display: inline-block; background: var(--accent); color: #fff; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 1.1rem; margin-left: 0.5rem; }
+    @media print {
+      .site-header, .btn-row, form, .no-print { display: none !important; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">SOLA<span>TX</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#libraries">Libraries</a>
+      <a href="financeial.html">Data</a>
+      <a class="nav-cta" href="mailto:board@austinisd.org?subject=Library%20Stories%20Petition%20-%20SOLATX">Email AISD</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <p class="eyebrow">Community petition</p>
+  <h1>Share your library story</h1>
+  <span class="fact-bomb">Librarians are the cornerstone of a child's education.</span>
+  <p>
+    Tell AISD what school libraries — or any library — meant to you. Your memory, inspiration, and fond experiences become part of a <strong>community record</strong> you can take to board meetings and public comment.
+  </p>
+  <p class="hint">SOLATX does not speak for the State of Texas or AISD. This is community testimony — facts plus real lives.</p>
+
+  <div class="panel">
+    <p style="margin:0"><strong>How it works:</strong> Fill out the form → submit to save your story → email a copy to the AISD Board → print or download the full petition packet to bring to a meeting.</p>
+  </div>
+
+  <form id="story-form">
+    <div class="field">
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name" placeholder="Optional — or 'Austin parent', 'Former student', etc.">
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Optional — if you want AISD to reply">
+    </div>
+    <div class="field">
+      <label for="school">School, campus, or neighborhood</label>
+      <input type="text" id="school" name="school" placeholder="e.g. LBJ High, Brentwood, East Austin">
+    </div>
+    <div class="field">
+      <label for="library-type">Which library?</label>
+      <select id="library-type" name="library-type">
+        <option value="AISD school library">AISD school library</option>
+        <option value="Austin Public Library">Austin Public Library</option>
+        <option value="Other school library">Other school library</option>
+        <option value="College / university library">College / university library</option>
+        <option value="Other">Other library</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="story">Your story, memories &amp; inspiration <span class="hint">(required)</span></label>
+      <textarea id="story" name="story" required placeholder="What do you remember? What did the library give you — a love of reading, a safe place, a librarian who cared, research skills, hope?"></textarea>
+    </div>
+    <div class="field">
+      <label for="message-aisd">One sentence for the AISD Board <span class="hint">(optional)</span></label>
+      <input type="text" id="message-aisd" name="message-aisd" placeholder="e.g. Please keep certified librarians in every AISD school.">
+    </div>
+
+    <div class="btn-row no-print">
+      <button type="submit" class="btn-primary">Save story &amp; add to petition</button>
+      <button type="button" class="btn-warm" id="btn-email">Email story to AISD Board</button>
+      <button type="button" class="btn-secondary" id="btn-copy">Copy my story</button>
+    </div>
+  </form>
+
+  <div id="success-msg" class="success">
+    <strong>Story saved.</strong> It is added to the petition list below. Use "Email to AISD" or "Print petition" when you are ready to send it to the board.
+  </div>
+
+  <div class="btn-row no-print" style="margin-top:2rem">
+    <button type="button" class="btn-secondary" id="btn-download">Download full petition (.txt)</button>
+    <button type="button" class="btn-secondary" onclick="window.print()">Print petition packet</button>
+    <a class="btn btn-secondary" href="https://www.austinisd.org/board" target="_blank" rel="noopener">Sign up for public comment</a>
+  </div>
+
+  <section id="story-list">
+    <h2 style="font-family:'Source Serif 4',Georgia,serif;color:var(--navy)">
+      Community stories <span class="count-badge" id="story-count">0</span>
+    </h2>
+    <p class="hint">Stories saved in this browser. Download or print to share with AISD. Share this page link so others can add theirs: <strong>solatx.org/library-stories.html</strong></p>
+    <div id="stories-container"></div>
+    <p id="empty-msg" class="hint">No stories yet on this device. Be the first.</p>
+  </section>
+
+  <div class="panel" style="margin-top:2rem">
+    <span class="fact-bomb" style="font-size:1.2rem;color:var(--accent)">One person cannot do everything. Every person can do something.</span>
+    <p style="margin:0">Take this petition to AISD. Cite the data on <a href="index.html">solatx.org</a> and the voices on this page. Ask for balance — not cuts to the cornerstone of a child's education.</p>
+  </div>
+</main>
+
+<script>
+  const STORAGE_KEY = 'solatx_library_stories';
+  const AISD_EMAIL = 'board@austinisd.org';
+  const PROJECT_CC = 'feebo.atx.tees@gmail.com';
+
+  function getStories() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+    catch { return []; }
+  }
+
+  function saveStories(stories) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(stories));
+  }
+
+  function getFormData() {
+    return {
+      name: document.getElementById('name').value.trim() || 'Community member',
+      email: document.getElementById('email').value.trim(),
+      school: document.getElementById('school').value.trim() || 'Not specified',
+      libraryType: document.getElementById('library-type').value,
+      story: document.getElementById('story').value.trim(),
+      messageAisd: document.getElementById('message-aisd').value.trim(),
+      date: new Date().toLocaleString()
+    };
+  }
+
+  function formatStory(d, num) {
+    let t = '';
+    if (num) t += '--- Story #' + num + ' ---\n';
+    t += 'Name: ' + d.name + '\n';
+    if (d.email) t += 'Email: ' + d.email + '\n';
+    t += 'School/Area: ' + d.school + '\n';
+    t += 'Library: ' + d.libraryType + '\n';
+    t += 'Date: ' + d.date + '\n\n';
+    t += 'Story:\n' + d.story + '\n';
+    if (d.messageAisd) t += '\nMessage to AISD Board: ' + d.messageAisd + '\n';
+    return t;
+  }
+
+  function formatPetitionPacket(stories) {
+    let header = 'SOLATX — LIBRARY STORIES COMMUNITY PETITION\n';
+    header += 'Save Our Librarians ATX | solatx.org\n';
+    header += 'Submitted for Austin ISD Board of Trustees\n';
+    header += 'Generated: ' + new Date().toLocaleString() + '\n';
+    header += 'Total stories in this packet: ' + stories.length + '\n';
+    header += '='.repeat(50) + '\n\n';
+    header += 'We ask AISD to preserve certified school librarians and library programs.\n';
+    header += 'These are real community voices — not statistics alone.\n\n';
+    header += '='.repeat(50) + '\n\n';
+    return header + stories.map((s, i) => formatStory(s, i + 1)).join('\n');
+  }
+
+  function renderStories() {
+    const stories = getStories();
+    const container = document.getElementById('stories-container');
+    const empty = document.getElementById('empty-msg');
+    const count = document.getElementById('story-count');
+    count.textContent = stories.length;
+    container.innerHTML = '';
+    if (stories.length === 0) {
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+    stories.slice().reverse().forEach((s, i) => {
+      const card = document.createElement('div');
+      card.className = 'story-card';
+      card.innerHTML = '<div class="story-meta">' + escapeHtml(s.libraryType) + ' · ' + escapeHtml(s.school) + ' · ' + escapeHtml(s.date) + '</div>' +
+        '<strong>' + escapeHtml(s.name) + '</strong><p style="margin:0.5rem 0 0">' + escapeHtml(s.story) + '</p>' +
+        (s.messageAisd ? '<p style="margin:0.75rem 0 0;font-style:italic;color:var(--accent)">To AISD: ' + escapeHtml(s.messageAisd) + '</p>' : '');
+      container.appendChild(card);
+    });
+  }
+
+  function escapeHtml(str) {
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  document.getElementById('story-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const d = getFormData();
+    if (!d.story) { alert('Please write your library story.'); return; }
+    const stories = getStories();
+    stories.push(d);
+    saveStories(stories);
+    renderStories();
+    document.getElementById('success-msg').classList.add('show');
+    document.getElementById('story').value = '';
+    document.getElementById('message-aisd').value = '';
+    window.scrollTo({ top: document.getElementById('story-list').offsetTop - 80, behavior: 'smooth' });
+  });
+
+  document.getElementById('btn-email').addEventListener('click', function() {
+    const d = getFormData();
+    if (!d.story) { alert('Please write your story first.'); return; }
+    const subject = encodeURIComponent('Library Stories Petition — SOLATX Community Testimony');
+    const body = encodeURIComponent(
+      'Dear AISD Board of Trustees,\n\n' +
+      'I am submitting my library story as part of the SOLATX community petition to preserve school librarians and library programs.\n\n' +
+      formatStory(d) + '\n\n' +
+      'Please consider this testimony alongside the public data at solatx.org.\n\n' +
+      'Thank you.'
+    );
+    window.location.href = 'mailto:' + AISD_EMAIL + '?cc=' + PROJECT_CC + '&subject=' + subject + '&body=' + body;
+  });
+
+  document.getElementById('btn-copy').addEventListener('click', function() {
+    const d = getFormData();
+    if (!d.story) { alert('Please write your story first.'); return; }
+    navigator.clipboard.writeText(formatStory(d)).then(function() {
+      alert('Story copied to clipboard.');
+    });
+  });
+
+  document.getElementById('btn-download').addEventListener('click', function() {
+    const stories = getStories();
+    if (stories.length === 0) { alert('Save at least one story first.'); return; }
+    const blob = new Blob([formatPetitionPacket(stories)], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'SOLATX-Library-Stories-Petition-' + new Date().toISOString().slice(0, 10) + '.txt';
+    a.click();
+  });
+
+  renderStories();
+</script>
+
+</body>
+</html>

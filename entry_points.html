@@ -88,6 +88,36 @@
             margin-top:60px;
             padding-bottom:40px;
         }
+
+        .fact-bomb {
+            display: block;
+            font-size: clamp(1.35rem, 3vw, 1.75rem);
+            font-weight: 800;
+            color: #ff4d00;
+            line-height: 1.35;
+            margin: 0.5rem 0;
+        }
+
+        .fact-bomb-row {
+            background: #1a1a1a;
+            border-left: 4px solid #ff4d00;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+        }
+
+        .top-nav {
+            text-align: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 20px;
+        }
+
+        .top-nav a {
+            color: #ff4d00;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
     </style>
 </head>
 
@@ -99,6 +129,14 @@
     </div>
 
     <div class="container">
+
+        <div class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="financeial.html">Data Sheet</a>
+            <a href="history.html">Timeline</a>
+            <a href="library-stories.html">Library Stories</a>
+            <a href="mailto:board@austinisd.org?subject=Community%20Feedback%20-%20AISD%20Budget%20%26%20Libraries">Feedback to AISD</a>
+        </div>
 
         <!-- TITLE -->
         <h1>SOLATX</h1>
@@ -127,12 +165,13 @@
         <div class="section">
             <h2>The Current Situation (2026)</h2>
             <div class="box">
-                • AISD Deficit: $181,000,000<br>
-                • Annual Recapture: $715,500,000<br>
-                • Basic Allotment: $6,160 (unchanged since 2019)<br>
-                • State Surplus: $30,000,000,000<br><br>
-                These figures come directly from TEA and AISD financial reports. They describe a 
-                structural imbalance — not a local failure.
+                <span class="fact-bomb">AISD Deficit: $181,000,000</span>
+                <span class="fact-bomb">Annual Recapture: $715,500,000</span>
+                <span class="fact-bomb">Basic Allotment: $6,160 (unchanged since 2019)</span>
+                <span class="fact-bomb">State Surplus: $30,000,000,000</span>
+                <div class="fact-bomb-row" style="margin-top:1rem">
+                    <span class="fact-bomb">These figures describe a structural imbalance — not a local failure.</span>
+                </div>
             </div>
         </div>
 
@@ -152,9 +191,11 @@
         <div class="section">
             <h2>Impact on Libraries</h2>
             <div class="box">
+                <span class="fact-bomb">Librarians are the cornerstone of a child's education.</span>
                 Librarians and libraries are being cut because the district is forced to absorb 
                 structural deficits created at the state level. These cuts are not about performance, 
                 value, or community need — they are downstream effects of policy design.
+                <p style="margin-top:1rem;margin-bottom:0"><a href="library-stories.html" style="color:#ff4d00;font-weight:800;font-size:1.1rem">Share your library story →</a></p>
             </div>
         </div>
 

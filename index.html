@@ -229,13 +229,46 @@
 
     .stat-value {
       font-family: "Source Serif 4", Georgia, serif;
-      font-size: 1.75rem;
-      font-weight: 700;
+      font-size: 2.4rem;
+      font-weight: 800;
       color: var(--accent);
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
     .stat-value.warm { color: var(--warm); }
+
+    /* Fact bombs — key stats & statements */
+    .fact-bomb {
+      display: block;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(1.4rem, 3vw, 1.85rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.35;
+      margin: 0.75rem 0;
+    }
+
+    .fact-bomb.accent { color: var(--accent); }
+    .fact-bomb.warm { color: var(--warm); }
+
+    p .fact-bomb,
+    li .fact-bomb {
+      display: inline;
+      font-size: 1.35rem;
+    }
+
+    .fact-bomb-row {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 1rem 0;
+    }
+
+    .fact-bomb-row.warm {
+      background: var(--warm-light);
+      border-left-color: var(--warm);
+    }
 
     .stat-label {
       font-size: 0.88rem;
@@ -533,6 +566,7 @@
       <a href="time.html">Timeline</a>
       <a href="historia.html">Español</a>
       <a href="entry_points.html">Briefing</a>
+      <a href="library-stories.html">Library Stories</a>
       <a class="nav-cta" href="mailto:board@austinisd.org?subject=Community%20Feedback%20-%20AISD%20Budget%20%26%20Libraries">Feedback to AISD</a>
     </nav>
   </div>
@@ -571,9 +605,8 @@
       <p>
         SOLATX was started by a <strong>native Texan</strong> — born and raised in Austin, from <strong>mixed ethnic backgrounds</strong>, and a <strong>graduate of public schools</strong>. This project is not a government voice. It is one neighbor trying to explain a broken formula before more corners get cut from the classrooms that built us.
       </p>
-      <p style="margin:0">
-        <strong>One person cannot do everything. Every person can do something.</strong> The goal is not outrage — it is <strong>balance</strong>: fair funding, informed families, and schools where every child still has a librarian.
-      </p>
+        <p class="fact-bomb warm">One person cannot do everything. Every person can do something.</p>
+        <p style="margin:0">The goal is not outrage — it is <strong>balance</strong>: fair funding, informed families, and schools where every child still has a librarian.</p>
     </div>
   </section>
 
@@ -632,9 +665,9 @@
       <p>
         Austin ISD collects substantial local property tax revenue, but under Texas "recapture" (often called Robin Hood), a large share is sent back to the state. At the same time, the per-student funding formula did not keep pace with inflation for several years. The district projects a significant deficit while the state reports a large surplus.
       </p>
-      <p class="muted" style="margin:0">
-        This pattern reflects <strong>state-level funding design</strong>, not a single year's local spending decision.
-      </p>
+      <div class="fact-bomb-row">
+        <span class="fact-bomb accent">Fact: This pattern reflects state-level funding design — not a single year's local spending decision.</span>
+      </div>
     </div>
   </section>
 
@@ -761,9 +794,9 @@
         <p>
           You watch property values and tax bills climb in your city. The state calls your district <strong>"property rich."</strong> Meanwhile, nearly half of the students are <strong>economically disadvantaged</strong>, enrollment is falling, and librarians — the cornerstone of a child's education — end up on cut lists. The label says <em>wealthy</em>. The classrooms say <em>under-resourced</em>.
         </p>
-        <p style="margin:0">
-          <strong>One person cannot fix this alone. Every person can learn the facts and speak up.</strong> The goal is balance: a system that measures <em>student need</em>, not just <em>land prices</em>.
-        </p>
+        <p class="fact-bomb accent">The label says wealthy. The classrooms say under-resourced.</p>
+        <p class="fact-bomb">One person cannot fix this alone. Every person can learn the facts and speak up.</p>
+        <p style="margin:0">The goal is balance: a system that measures <em>student need</em>, not just <em>land prices</em>.</p>
       </div>
 
       <div class="two-col" style="margin-top:1.25rem">
@@ -799,6 +832,9 @@
           <li>East and South Austin campuses serve high-poverty communities inside a "wealthy" district boundary</li>
           <li>Student enrollment drops — reducing attendance-based dollars — while recapture obligations remain enormous</li>
         </ul>
+        <div class="fact-bomb-row warm">
+          <span class="fact-bomb warm">Fact: Land rich ≠ family rich. Property values rise; student need stays high.</span>
+        </div>
         <p>
           Recapture was sold as fairness between districts. From inside Austin, it can feel like local taxes leave the community that paid them — and return as <strong>budget cuts</strong> instead of <strong>balanced investment</strong>.
         </p>
@@ -917,10 +953,8 @@
       </div>
     </div>
 
-    <div class="panel" style="margin-top:1.25rem">
-      <p style="margin:0">
-        <strong>The point:</strong> Symptom-level cuts happen because the district must close a legal budget gap. Root-cause change requires state legislation — a higher basic allotment, recapture reform, or new revenue sources. Local advocacy alone cannot rewrite the formula.
-      </p>
+    <div class="fact-bomb-row" style="margin-top:1.25rem">
+      <span class="fact-bomb accent">The point: Symptom-level cuts happen because the district must close a legal budget gap. Root-cause change requires state legislation — a higher basic allotment, recapture reform, or new revenue sources. Local advocacy alone cannot rewrite the formula.</span>
     </div>
   </section>
 
@@ -934,13 +968,18 @@
     <div class="two-col">
       <div class="panel">
         <h3 style="margin-top:0">What school libraries provide</h3>
+        <span class="fact-bomb accent">Librarians are the cornerstone of a child's education.</span>
         <ul class="checklist">
-          <li>Literacy and research skills for every student</li>
+          <li><span class="fact-bomb">Literacy and research skills</span> for every student</li>
           <li>Safe study space and access to materials</li>
           <li>Digital resource navigation and media literacy</li>
           <li>Support for teachers and curriculum</li>
           <li>Equity of access in underserved neighborhoods</li>
         </ul>
+        <p style="margin-top:1.25rem;margin-bottom:0">
+          <a href="library-stories.html" style="font-weight:700;color:var(--accent);font-size:1.05rem">Share your library story →</a><br>
+          <span class="muted">Add your memories and inspiration. Build a community petition for AISD.</span>
+        </p>
       </div>
       <div class="panel">
         <h3 style="margin-top:0">What the data shows</h3>

@@ -31,6 +31,22 @@
         li { margin-bottom: 0.5rem; }
         .muted { font-size: 0.85rem; opacity: 0.85; }
         a { color: var(--accent); }
+        .fact-bomb {
+            display: block;
+            font-size: clamp(1.35rem, 3vw, 1.75rem);
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1.35;
+            margin: 0.75rem 0;
+        }
+        td .fact-bomb { display: inline; font-size: 1.3rem; }
+        .fact-bomb-row {
+            background: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
     </style>
 </head>
 <body>
@@ -40,6 +56,7 @@
     <a href="financeial.html">Datos</a>
     <a href="history.html">History (EN)</a>
     <a href="index.html#wealthy-recapture">Recapture (EN)</a>
+    <a href="library-stories.html">Library Stories</a>
     <a class="nav-cta" href="mailto:board@austinisd.org?subject=Comentarios%20de%20la%20Comunidad%20-%20Presupuesto%20AISD">Comentarios a AISD</a>
 </nav>
 
@@ -48,30 +65,32 @@
     <p>SOLATX — Informe comunitario basado en datos públicos. No hablamos por el Estado de Texas ni por AISD.</p>
 
     <div class="panel">
+        <span class="fact-bomb">Recaptura de riqueza no significa que las familias de Austin sean ricas.</span>
         <p>
-            <strong>Recaptura de riqueza</strong> no significa que las familias de Austin sean ricas. El estado llama a AISD un distrito <strong>rico en propiedad</strong> porque divide el valor de la tierra entre los estudiantes — no porque mida los ingresos de las familias.
+            El estado llama a AISD un distrito <strong>rico en propiedad</strong> porque divide el valor de la tierra entre los estudiantes — no porque mida los ingresos de las familias.
         </p>
         <p style="margin:0">
-            Resultado: Austin paga más recaptura que casi cualquier distrito de Texas, mientras casi la mitad de los estudiantes son <strong>económicamente desfavorecidos</strong> y los bibliotecarios escolares — piedra angular de la educación — aparecen en listas de recortes.
+            Resultado: Austin paga más recaptura que casi cualquier distrito de Texas, mientras casi la mitad de los estudiantes son <strong>económicamente desfavorecidos</strong> y los bibliotecarios escolares — <span class="fact-bomb">piedra angular de la educación</span> — aparecen en listas de recortes.
         </p>
     </div>
 
     <h2>Datos clave</h2>
     <table>
         <tr><th>Medida</th><th>Cifra</th><th>Fuente</th></tr>
-        <tr><td>Estudiantes económicamente desfavorecidos</td><td>48.4%</td><td>TEA / Texas Tribune</td></tr>
-        <tr><td>Recaptura anual</td><td>$715,500,000</td><td>Informes AISD</td></tr>
-        <tr><td>Recaptura total (desde 2000)</td><td>$8.3 mil millones+</td><td>AISD recapture</td></tr>
-        <tr><td>Crecimiento de recaptura desde 2014–15</td><td>~400%</td><td>Tabla AISD</td></tr>
-        <tr><td>Impuesto local sujeto a recaptura</td><td>~52%</td><td>AISD FY2024–25</td></tr>
-        <tr><td>Mayor pagador de recaptura en Texas</td><td>AISD (#1)</td><td>Informes AISD</td></tr>
+        <tr><td>Estudiantes económicamente desfavorecidos</td><td><span class="fact-bomb">48.4%</span></td><td>TEA / Texas Tribune</td></tr>
+        <tr><td>Recaptura anual</td><td><span class="fact-bomb">$715,500,000</span></td><td>Informes AISD</td></tr>
+        <tr><td>Recaptura total (desde 2000)</td><td><span class="fact-bomb">$8.3 mil millones+</span></td><td>AISD recapture</td></tr>
+        <tr><td>Crecimiento de recaptura desde 2014–15</td><td><span class="fact-bomb">~400%</span></td><td>Tabla AISD</td></tr>
+        <tr><td>Impuesto local sujeto a recaptura</td><td><span class="fact-bomb">~52%</span></td><td>AISD FY2024–25</td></tr>
+        <tr><td>Mayor pagador de recaptura en Texas</td><td><span class="fact-bomb">AISD (#1)</span></td><td>Informes AISD</td></tr>
     </table>
 
     <h2>Perspectiva de Austin</h2>
     <div class="panel">
         <p>Soy <strong>texano nativo</strong> — nacido y criado en Austin, de <strong>orígenes étnicos mixtos</strong>, y <strong>producto de las escuelas públicas</strong>. No hablo por el gobierno del estado.</p>
         <p>Ves subir los valores de la propiedad. El estado dice que el distrito es "rico." Casi la mitad de los niños califican como económicamente desfavorecidos. La inscripción baja. Los bibliotecarios — fundamentales para que un niño aprenda a leer e investigar — quedan en listas de recortes.</p>
-        <p style="margin:0"><strong>Una persona no puede arreglar la fórmula sola. Cada persona puede aprender los hechos y hablar.</strong> La meta es equilibrio: un sistema que mida la <em>necesidad estudiantil</em>, no solo el precio de la tierra.</p>
+        <p class="fact-bomb" style="margin:0">Una persona no puede arreglar la fórmula sola. Cada persona puede aprender los hechos y hablar.</p>
+        <p style="margin-top:0.75rem;margin-bottom:0">La meta es equilibrio: un sistema que mida la <em>necesidad estudiantil</em>, no solo el precio de la tierra.</p>
     </div>
 
     <h2>Qué se suponía (1993) vs. qué pasa hoy</h2>
@@ -92,6 +111,9 @@
     </div>
 
     <h2>Tierra rica ≠ familias ricas</h2>
+    <div class="fact-bomb-row">
+        <span class="fact-bomb">Tierra rica ≠ familias ricas. Los impuestos locales salen de la comunidad; los recortes regresan como menos bibliotecas.</span>
+    </div>
     <div class="panel">
         <ul>
             <li>Muchas familias rentan — no son dueñas de la tierra que sube de valor</li>
@@ -113,6 +135,7 @@
             <li><strong>Aprender</strong> — lea los datos y siga los enlaces de fuentes</li>
             <li><strong>Participar</strong> — reuniones de la junta de AISD y comentario público</li>
             <li><strong>Escribir</strong> — <a href="mailto:board@austinisd.org?subject=Comentarios%20de%20la%20Comunidad%20-%20Presupuesto%20AISD">board@austinisd.org</a></li>
+            <li><strong>Compartir historias</strong> — <a href="library-stories.html" style="font-weight:800">library-stories.html</a> — memorias e inspiración para llevar a AISD</li>
             <li><strong>Organizar</strong> — un cambio duradero requiere presión sostenida, no una sola reunión</li>
         </ul>
     </div>

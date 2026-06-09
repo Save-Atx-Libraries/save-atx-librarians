@@ -97,6 +97,32 @@
 
         .fact-list li::before { content: ">>"; color: var(--accent); margin-right: 15px; font-weight: bold; }
 
+        .fact-bomb {
+            display: block;
+            font-size: clamp(1.35rem, 3vw, 1.75rem);
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1.35;
+            margin: 0.75rem 0;
+        }
+
+        .fact-bomb.green { color: var(--green); }
+        .fact-bomb.white { color: var(--white); }
+
+        td .fact-bomb, p .fact-bomb, li .fact-bomb {
+            display: inline;
+            font-size: 1.3rem;
+        }
+
+        .fact-bomb-row {
+            background: #1a1a1a;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+        }
+
+        .fact-bomb-row.green { border-left-color: var(--green); }
+
         .hidden-agenda {
             background: #fff;
             color: #000;
@@ -118,9 +144,11 @@
 <nav>
     <a href="index.html">Home</a> |
     <a href="index.html#wealthy-recapture">Recapture</a> |
+    <a href="history.html">Timeline</a> |
     <a href="#en">English</a> |
     <a href="#es">Español</a> |
     <a href="historia.html">Historia (ES)</a> |
+    <a href="library-stories.html">Library Stories</a> |
     <a href="mailto:board@austinisd.org?subject=Community%20Feedback%20-%20AISD%20Budget%20%26%20Libraries">Feedback to AISD</a>
 </nav>
 
@@ -140,17 +168,17 @@
             </tr>
             <tr>
                 <td>AISD Deficit</td>
-                <td>$181,000,000</td>
+                <td><span class="fact-bomb">$181,000,000</span></td>
                 <td>Current projected shortfall.</td>
             </tr>
             <tr>
                 <td>Annual Recapture</td>
-                <td>$715,500,000</td>
+                <td><span class="fact-bomb">$715,500,000</span></td>
                 <td>Local taxes extracted by the State.</td>
             </tr>
             <tr>
                 <td>Basic Allotment</td>
-                <td>$6,160</td>
+                <td><span class="fact-bomb">$6,160</span></td>
                 <td>Stagnant per-student value since 2019.</td>
             </tr>
         </table>
@@ -193,20 +221,23 @@
 
     <section>
         <h2>IV. Wealthy Recapture — What It Means for Austin</h2>
-        <p><strong>Wealthy recapture</strong> does not mean Austin families are rich. The state labels AISD <strong>property-wealthy</strong> based on land values per student — not family income. Nearly <strong>48.4%</strong> of students are economically disadvantaged (TEA), while AISD pays more recapture than almost any district in Texas.</p>
+        <p><span class="fact-bomb">Wealthy recapture does not mean Austin families are rich.</span> The state labels AISD <strong>property-wealthy</strong> based on land values per student — not family income. Nearly <span class="fact-bomb">48.4%</span> of students are economically disadvantaged (TEA), while AISD pays more recapture than almost any district in Texas.</p>
         <table>
             <tr><th>Measure</th><th>Value</th><th>Source</th></tr>
-            <tr><td>Total recapture paid (FY2000–FY2024–25)</td><td>$8.3 billion+</td><td>AISD recapture reports</td></tr>
-            <tr><td>Recapture growth since FY2014–15</td><td>~400% ($181M → $821M)</td><td>AISD recapture table</td></tr>
-            <tr><td>Share of general fund per dollar</td><td>~46¢ to recapture</td><td>AISD FY2024–25 budget</td></tr>
-            <tr><td>Local revenue subject to recapture</td><td>~52%</td><td>AISD recapture page</td></tr>
+            <tr><td>Total recapture paid (FY2000–FY2024–25)</td><td><span class="fact-bomb">$8.3 billion+</span></td><td>AISD recapture reports</td></tr>
+            <tr><td>Recapture growth since FY2014–15</td><td><span class="fact-bomb">~400%</span> ($181M → $821M)</td><td>AISD recapture table</td></tr>
+            <tr><td>Share of general fund per dollar</td><td><span class="fact-bomb">~46¢</span> to recapture</td><td>AISD FY2024–25 budget</td></tr>
+            <tr><td>Local revenue subject to recapture</td><td><span class="fact-bomb">~52%</span></td><td>AISD recapture page</td></tr>
         </table>
+        <div class="fact-bomb-row green">
+            <span class="fact-bomb green">Fact: Land rich ≠ family rich. Property values rise; student need stays high.</span>
+        </div>
         <ul class="fact-list">
-            <li><strong>1993 intent:</strong> SB 7 / Robin Hood — temporary equity fix after Edgewood court rulings.</li>
-            <li><strong>Today:</strong> Austin is the #1 recapture payer; cuts hit libraries and staff locally.</li>
-            <li><strong>Core mismatch:</strong> Land rich ≠ family rich. Property values rise; student need stays high.</li>
-            <li><strong>Community view:</strong> One person cannot fix the formula. Every person can learn facts and speak to the board.</li>
+            <li><span class="fact-bomb">1993 intent:</span> SB 7 / Robin Hood — temporary equity fix after Edgewood court rulings.</li>
+            <li><span class="fact-bomb">Today:</span> Austin is the #1 recapture payer; cuts hit libraries and staff locally.</li>
+            <li><span class="fact-bomb">Community view:</span> One person cannot fix the formula. Every person can learn facts and speak to the board.</li>
         </ul>
+        <p style="margin-top:1.25rem"><a href="library-stories.html" style="color:var(--accent);font-weight:800;font-size:1.1rem">Share your library story →</a> <span style="color:var(--dim);font-size:0.85rem">Build a community petition for AISD.</span></p>
         <p style="font-size:0.85rem;color:var(--dim)">Sources: <a href="https://www.austinisd.org/budget/recapture" style="color:var(--accent)">austinisd.org/budget/recapture</a> · <a href="https://schools.texastribune.org/districts/austin-isd/" style="color:var(--accent)">Texas Tribune / TEA</a> · <a href="index.html#wealthy-recapture" style="color:var(--accent)">Full briefing on solatx.org</a></p>
     </section>
 
@@ -226,17 +257,17 @@
             </tr>
             <tr>
                 <td>Déficit de AISD</td>
-                <td>$181,000,000</td>
+                <td><span class="fact-bomb">$181,000,000</span></td>
                 <td>Faltante proyectado actual.</td>
             </tr>
             <tr>
                 <td>Recaudación Anual</td>
-                <td>$715,500,000</td>
+                <td><span class="fact-bomb">$715,500,000</span></td>
                 <td>Impuestos locales extraídos por el Estado.</td>
             </tr>
             <tr>
                 <td>Asignación Básica</td>
-                <td>$6,160</td>
+                <td><span class="fact-bomb">$6,160</span></td>
                 <td>Valor estancado por estudiante desde 2019.</td>
             </tr>
         </table>
@@ -248,25 +279,27 @@
             </div>
             <div>
                 <h2>La Realidad Social</h2>
-                <p>Casi la mitad de los estudiantes de AISD son <strong>económicamente desfavorecidos</strong> (48.4%, TEA). El estado etiqueta al distrito como "rico" por el valor de la propiedad, no por los ingresos de las familias.</p>
+                <p>Casi la mitad de los estudiantes de AISD son <span class="fact-bomb">económicamente desfavorecidos (48.4%)</span>. El estado etiqueta al distrito como "rico" por el valor de la propiedad, no por los ingresos de las familias.</p>
             </div>
         </div>
 
         <h2>Recaptura de riqueza — en palabras simples</h2>
-        <p><strong>Recaptura de riqueza</strong> no significa que las familias de Austin sean ricas. Significa que la fórmula estatal decidió que AISD recauda más impuestos locales por estudiante de lo que puede quedarse. Bajo el Capítulo 49, el "exceso" se envía al estado.</p>
+        <p><span class="fact-bomb white">Recaptura de riqueza no significa que las familias de Austin sean ricas.</span> Significa que la fórmula estatal decidió que AISD recauda más impuestos locales por estudiante de lo que puede quedarse. Bajo el Capítulo 49, el "exceso" se envía al estado.</p>
         <table>
             <tr><th>Dato</th><th>Valor</th><th>Fuente</th></tr>
-            <tr><td>Recaptura total pagada por AISD</td><td>$8.3 mil millones+</td><td>Informes AISD</td></tr>
-            <tr><td>Crecimiento desde 2014–15</td><td>~400%</td><td>Tabla de recaptura AISD</td></tr>
-            <tr><td>Pagador #1 de recaptura en Texas</td><td>AISD</td><td>Informes AISD</td></tr>
-            <tr><td>Recaudación anual (2026)</td><td>$715,500,000</td><td>Datos SOLATX / AISD</td></tr>
+            <tr><td>Recaptura total pagada por AISD</td><td><span class="fact-bomb">$8.3 mil millones+</span></td><td>Informes AISD</td></tr>
+            <tr><td>Crecimiento desde 2014–15</td><td><span class="fact-bomb">~400%</span></td><td>Tabla de recaptura AISD</td></tr>
+            <tr><td>Pagador #1 de recaptura en Texas</td><td><span class="fact-bomb">AISD</span></td><td>Informes AISD</td></tr>
+            <tr><td>Recaudación anual (2026)</td><td><span class="fact-bomb">$715,500,000</span></td><td>Datos SOLATX / AISD</td></tr>
         </table>
+        <div class="fact-bomb-row green">
+            <span class="fact-bomb green">Tierra rica ≠ familias ricas. Los valores suben; la necesidad sigue alta.</span>
+        </div>
         <ul class="fact-list">
-            <li><strong>Tierra rica ≠ familias ricas:</strong> Los valores de propiedad suben; la necesidad estudiantil sigue alta.</li>
-            <li><strong>Bibliotecas:</strong> Los bibliotecarios son la piedra angular de la educación de un niño — y aparecen en listas de recortes.</li>
-            <li><strong>Perspectiva:</strong> Soy texano nativo, criado en Austin, producto de escuelas públicas. No hablo por el Estado de Texas.</li>
-            <li><strong>Comunidad:</strong> Una persona no puede hacerlo todo. Cada persona puede hacer algo. Busquemos equilibrio.</li>
+            <li><span class="fact-bomb">Bibliotecas:</span> Los bibliotecarios son la piedra angular de la educación de un niño — y aparecen en listas de recortes.</li>
+            <li><span class="fact-bomb">Comunidad:</span> Una persona no puede hacerlo todo. Cada persona puede hacer algo. Busquemos equilibrio.</li>
         </ul>
+        <p style="margin-top:1.25rem"><a href="library-stories.html" style="color:var(--accent);font-weight:800;font-size:1.1rem">Comparte tu historia de biblioteca →</a></p>
         <p style="font-size:0.85rem;color:var(--dim)">Fuentes: <a href="https://www.austinisd.org/budget/recapture" style="color:var(--accent)">austinisd.org/budget/recapture</a> · <a href="historia.html" style="color:var(--accent)">historia.html</a> · <a href="index.html#wealthy-recapture" style="color:var(--accent)">Informe completo (inglés)</a></p>
     </div>
 </div>

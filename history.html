@@ -72,7 +72,23 @@
         .box { padding: 15px; border: 1px solid var(--border); background: var(--box-bg); font-size: 0.85rem; }
         .box strong { color: var(--accent); display: block; text-transform: uppercase; }
 
-        .hidden-agenda { 
+        .fact-bomb {
+            display: block;
+            font-size: clamp(1.35rem, 3vw, 1.75rem);
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1.35;
+            margin: 0.5rem 0;
+        }
+
+        .fact-bomb-row {
+            background: var(--panel);
+            border-left: 5px solid var(--accent);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+        }
+
+        .hidden-agenda {
             background: #ff4d00; 
             color: #000; 
             padding: 20px; 
@@ -98,8 +114,12 @@
 </head>
 <body>
 
-<div class="nav-top">
-    <a href="historia.html">VERSIÓN EN ESPAÑOL >></a>
+<div class="nav-top" style="text-align:center">
+    <a href="index.html">Home</a> ·
+    <a href="financeial.html">Data Sheet</a> ·
+    <a href="historia.html">Español</a> ·
+    <a href="library-stories.html">Library Stories</a> ·
+    <a href="mailto:board@austinisd.org?subject=Community%20Feedback%20-%20AISD%20Budget%20%26%20Libraries">Feedback to AISD</a>
 </div>
 
 <div class="container">
@@ -118,14 +138,14 @@
     </table>
 
     <div class="info-grid">
-        <div class="box"><strong>Fact:</strong> Recapture was a temporary fix to a constitutional crisis.</div>
-        <div class="box"><strong>Reason:</strong> No income tax meant taking from "property-rich" areas.</div>
+        <div class="box fact-bomb-row"><span class="fact-bomb">Fact: Recapture was a temporary fix to a constitutional crisis.</span></div>
+        <div class="box fact-bomb-row"><span class="fact-bomb">Reason: No income tax meant taking from "property-rich" areas.</span></div>
     </div>
 
     <img src="image_4.png" alt="Texas Finance Flowchart" class="image-placeholder">
 
-    <div class="hidden-agenda">
-        HIDDEN AGENDA: This tool is now used for "Budget Offsetting." By taking local property taxes, the state spends less of its own money on education.
+    <div class="fact-bomb-row">
+        <span class="fact-bomb">Fact: Recapture now offsets state spending instead of equalizing opportunity.</span>
     </div>
 
     <h2>II. The Math: Understanding WADA</h2>
@@ -142,14 +162,15 @@
     </table>
 
     <div class="info-grid">
-        <div class="box"><strong>Fact:</strong> The state counts "Weights" (WADA), not just heads.</div>
-        <div class="box"><strong>What we should know:</strong> Weights are useless if the base ($6,160) hasn't changed since 2019.</div>
+        <div class="box fact-bomb-row"><span class="fact-bomb">Fact: The state counts "Weights" (WADA), not just heads.</span></div>
+        <div class="box fact-bomb-row"><span class="fact-bomb">Weights are useless if the base ($6,160) hasn't changed since 2019.</span></div>
     </div>
 
     <h2>III. Manufactured Scarcity</h2>
-    <div class="box">
-        <strong>The Numbers:</strong> The state has a $23.8 Billion surplus while Austin faces a $181 Million deficit. The shortfall is a choice, not an accident.
+    <div class="fact-bomb-row">
+        <span class="fact-bomb">The state has a $23.8 Billion surplus while Austin faces a $181 Million deficit. The shortfall is a choice, not an accident.</span>
     </div>
+    <p style="margin-top:1.5rem"><a href="library-stories.html" style="color:var(--accent);font-weight:800;font-size:1.1rem">Share your library story →</a></p>
 </div>
 
 </body>
