@@ -1,180 +1,911 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLATX // Community Briefing</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SOLATX — A fact-based community briefing on Austin ISD school finance, state recapture policy, and library funding. Built from public data.">
+  <title>SOLATX — Austin School Finance &amp; Libraries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --surface: #ffffff;
+      --text: #1a2332;
+      --muted: #5c6778;
+      --border: #e2e0da;
+      --accent: #2d6a6a;
+      --accent-light: #e8f4f4;
+      --warm: #c45c3e;
+      --warm-light: #fdf0ec;
+      --navy: #1a2332;
+      --shadow: 0 4px 24px rgba(26, 35, 50, 0.06);
+      --radius: 12px;
+      --max: 1080px;
+    }
 
-    <style>
-        body {
-            background:#000;
-            color:#fff;
-            font-family:"Courier New", monospace;
-            margin:0;
-            padding:0;
-            line-height:1.6;
-        }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-        .marquee {
-            background:#ff4d00;
-            color:#000;
-            padding:12px 0;
-            text-align:center;
-            font-weight:bold;
-            text-transform:uppercase;
-            border-bottom:4px solid #fff;
-            letter-spacing:1px;
-        }
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
 
-        .container {
-            width:90%;
-            max-width:900px;
-            margin:0 auto;
-            padding:40px 0;
-        }
+    /* Header */
+    .site-header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
 
-        h1, h2 {
-            text-transform:uppercase;
-            letter-spacing:2px;
-        }
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-        h1 {
-            color:#ff4d00;
-            font-size:2.8rem;
-            margin-bottom:10px;
-            text-align:center;
-        }
+    .logo {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-decoration: none;
+    }
 
-        h2 {
-            color:#ff4d00;
-            font-size:2rem;
-            margin-top:60px;
-            margin-bottom:20px;
-            border-left:5px solid #ff4d00;
-            padding-left:15px;
-        }
+    .logo span { color: #7ec8c8; }
 
-        .section {
-            margin-bottom:50px;
-        }
+    nav {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+    }
 
-        .box {
-            background:#111;
-            border:1px solid #333;
-            padding:20px;
-            margin-top:20px;
-        }
+    nav a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
 
-        .cta-box {
-            background:#ff4d00;
-            color:#000;
-            padding:25px;
-            text-align:center;
-            font-weight:bold;
-            margin-top:40px;
-            border:3px solid #fff;
-        }
+    nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
 
-        a.cta-link {
-            color:#000;
-            font-weight:bold;
-            text-decoration:underline;
-        }
+    /* Hero */
+    .hero {
+      background: linear-gradient(165deg, var(--navy) 0%, #243044 55%, #2d4a4a 100%);
+      color: #fff;
+      padding: 4rem 1.5rem 5rem;
+    }
 
-        footer {
-            text-align:center;
-            color:#777;
-            font-size:0.8rem;
-            margin-top:60px;
-            padding-bottom:40px;
-        }
-    </style>
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(126, 200, 200, 0.15);
+      color: #9dd9d9;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0 0 1.25rem;
+      max-width: 18ch;
+    }
+
+    .hero-lead {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.88);
+      max-width: 58ch;
+      margin: 0 0 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.35rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: #7ec8c8;
+      color: var(--navy);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.35);
+    }
+
+    /* Main layout */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    section {
+      margin-top: 3.5rem;
+      scroll-margin-top: 5rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 700;
+      margin: 0 0 1rem;
+      color: var(--navy);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 1.5rem 0 0.6rem;
+      color: var(--navy);
+    }
+
+    p { margin: 0 0 1rem; color: var(--text); }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+
+    /* Stat cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-value {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .stat-value.warm { color: var(--warm); }
+
+    .stat-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-top: 0.35rem;
+    }
+
+    .stat-source {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .stat-source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .stat-source a:hover { text-decoration: underline; }
+
+    .source-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .source-group {
+      margin-top: 2rem;
+    }
+
+    .source-group h3 {
+      font-size: 1rem;
+      margin: 0 0 0.75rem;
+      color: var(--navy);
+    }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .repo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+
+    .repo-card h4 {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+
+    .repo-card p {
+      margin: 0 0 0.75rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .repo-card a {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+    }
+
+    .repo-card a:hover { text-decoration: underline; }
+
+    /* Cards & panels */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      margin-top: 1.25rem;
+    }
+
+    .panel-accent {
+      border-left: 4px solid var(--accent);
+    }
+
+    .panel-warm {
+      background: var(--warm-light);
+      border-color: #e8cfc6;
+      border-left: 4px solid var(--warm);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      margin-top: 1.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 1.75rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.85rem;
+      top: 0.35rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+    }
+
+    .timeline-year {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-item p { margin: 0.25rem 0 0; font-size: 0.98rem; }
+
+    /* Flow diagram */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 1.5rem;
+    }
+
+    .flow-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      position: relative;
+    }
+
+    .flow-step strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .flow-arrow {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.2rem;
+      padding: 0.25rem 0;
+    }
+
+    /* Lists */
+    ul.checklist {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+
+    ul.checklist li {
+      padding: 0.65rem 0 0.65rem 1.75rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.98rem;
+    }
+
+    ul.checklist li:last-child { border-bottom: none; }
+
+    ul.checklist li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Glossary */
+    dl.glossary dt {
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 1rem;
+    }
+
+    dl.glossary dd {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Action CTA */
+    .action-banner {
+      background: linear-gradient(135deg, var(--accent) 0%, #1f5050 100%);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+
+    .action-banner h2 { color: #fff; margin-bottom: 0.75rem; }
+
+    .action-banner p {
+      color: rgba(255,255,255,0.9);
+      max-width: 52ch;
+      margin: 0 auto 1.5rem;
+    }
+
+    .action-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .action-links a {
+      background: #fff;
+      color: var(--accent);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .action-links a:hover { background: var(--accent-light); }
+
+    /* Sources */
+    .sources {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .sources ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .sources a {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    .sources a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      margin-top: 4rem;
+    }
+
+    footer strong { color: rgba(255,255,255,0.9); }
+
+    @media (max-width: 640px) {
+      nav { display: none; }
+      .hero { padding: 2.5rem 1.25rem 3.5rem; }
+      main { padding: 0 1.25rem 3rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- TOP ALERT -->
-    <div class="marquee">
-        A COMMUNITY BRIEFING ON AUSTIN’S LIBRARY CRISIS — BUILT FROM PUBLIC DATA
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#">SOLA<span>TX</span></a>
+    <nav aria-label="Page sections">
+      <a href="#numbers">Data</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#root-causes">Root Causes</a>
+      <a href="#libraries">Libraries</a>
+      <a href="#fixes">Long-Term Fixes</a>
+      <a href="#data-repo">Data Archive</a>
+      <a href="#action">Take Action</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Community briefing · Public data</span>
+    <h1>Understanding Austin's school finance crisis</h1>
+    <p class="hero-lead">
+      SOLATX explains how Texas school funding policy affects Austin ISD, its libraries, and neighborhood schools — using verified public records, not opinion.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#numbers">See the numbers</a>
+      <a class="btn btn-secondary" href="#data-repo">View data archive</a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-label">About this project</p>
+    <h2>What SOLATX is</h2>
+    <p>
+      SOLATX is a community education project. It translates Texas school finance law, court history, and budget documents into plain language so residents can understand <em>why</em> Austin ISD faces recurring deficits — and <em>what</em> can be changed at the policy level.
+    </p>
+    <div class="panel panel-accent">
+      <p style="margin:0"><strong>Our approach:</strong> Present documented facts, name the structural causes, distinguish symptoms from root problems, and point to civic pathways for long-term change. We do not speak for AISD or the State of Texas.</p>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section id="numbers">
+    <p class="section-label">Public records · FY 2025–2026</p>
+    <h2>By the numbers</h2>
+    <p class="muted">Figures below are drawn from AISD budget documents, TEA reports, and Texas Legislative Budget Board data. Each stat links to official records and the SOLATX data archive on GitHub. Numbers are rounded for readability.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value warm">$181M</div>
+        <div class="stat-label">Projected AISD budget shortfall (2026–27)</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://www.austinisd.org/budget" target="_blank" rel="noopener">AISD Budget Office</a>
+            <a href="financeial.html">SOLATX data sheet</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">$715.5M</div>
+        <div class="stat-label">Annual recapture paid to the state</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">AISD Recapture page</a>
+            <a href="financeial.html">SOLATX data sheet</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">$6,160</div>
+        <div class="stat-label">Basic allotment per student (2019–2024)</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://tea.texas.gov/finance-and-grants/state-funding" target="_blank" rel="noopener">TEA State Funding</a>
+            <a href="https://www.raiseyourhandtexas.org/research/basic-allotment/" target="_blank" rel="noopener">Raise Your Hand Texas analysis</a>
+            <a href="financeial.html">SOLATX data sheet</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">$30B+</div>
+        <div class="stat-label">Reported state budget surplus (recent cycle)</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://comptroller.texas.gov/economy/fiscal-notes/" target="_blank" rel="noopener">Texas Comptroller — Fiscal Notes</a>
+            <a href="financeial.html">SOLATX data sheet</a>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="container">
-
-        <!-- TITLE -->
-        <h1>SOLATX</h1>
-
-        <!-- MISSION STATEMENT -->
-        <div class="section">
-            <h2>Mission</h2>
-            <div class="box">
-                SOLATX is a community project that explains how Texas school finance and state policy 
-                are starving Austin’s public schools and libraries — using clear, evidence‑based 
-                information the public can actually understand.
-            </div>
-        </div>
-
-        <!-- OBJECTIVE -->
-        <div class="section">
-            <h2>Objective</h2>
-            <div class="box">
-                To translate complex history, legal decisions, and budget mechanics into accessible 
-                explanations that show why AISD faces a manufactured crisis — and how these forces 
-                directly impact librarians, libraries, and neighborhood learning spaces.
-            </div>
-        </div>
-
-        <!-- CURRENT SITUATION -->
-        <div class="section">
-            <h2>The Current Situation (2026)</h2>
-            <div class="box">
-                • AISD Deficit: $181,000,000<br>
-                • Annual Recapture: $715,500,000<br>
-                • Basic Allotment: $6,160 (unchanged since 2019)<br>
-                • State Surplus: $30,000,000,000<br><br>
-                These figures come directly from TEA and AISD financial reports. They describe a 
-                structural imbalance — not a local failure.
-            </div>
-        </div>
-
-        <!-- HISTORY -->
-        <div class="section">
-            <h2>How We Got Here</h2>
-            <div class="box">
-                • Edgewood ISD v. Kirby (1989–1993): Texas Supreme Court ruled the system unconstitutional four times.<br>
-                • Senate Bill 7 (1993): “Robin Hood” recapture created as a temporary fix.<br>
-                • No state income tax → long‑term dependence on local property taxes.<br>
-                • Recapture now offsets state spending instead of equalizing opportunity.<br><br>
-                These are historical facts, not interpretations.
-            </div>
-        </div>
-
-        <!-- LIBRARY IMPACT -->
-        <div class="section">
-            <h2>Impact on Libraries</h2>
-            <div class="box">
-                Librarians and libraries are being cut because the district is forced to absorb 
-                structural deficits created at the state level. These cuts are not about performance, 
-                value, or community need — they are downstream effects of policy design.
-            </div>
-        </div>
-
-        <!-- CALL TO ACTION -->
-        <div class="section">
-            <h2>Support & Public Comment</h2>
-            <div class="cta-box">
-                Send your questions, concerns, and support to the AISD Board of Trustees:<br><br>
-                <a class="cta-link" href="mailto:board@austinisd.org">board@austinisd.org</a><br><br>
-                Public comment signup and meeting info:<br>
-                <a class="cta-link" href="https://www.austinisd.org/board">austinisd.org/board</a>
-            </div>
-        </div>
-
-        <footer>
-            Data sources: Texas Education Agency (TEA), AISD Financial Reports FY2026<br>
-            SOLATX — Built from public information for public understanding.
-        </footer>
-
+    <div class="panel" style="margin-top:1.5rem">
+      <h3 style="margin-top:0">What these numbers mean together</h3>
+      <p>
+        Austin ISD collects substantial local property tax revenue, but under Texas "recapture" (often called Robin Hood), a large share is sent back to the state. At the same time, the per-student funding formula did not keep pace with inflation for several years. The district projects a significant deficit while the state reports a large surplus.
+      </p>
+      <p class="muted" style="margin:0">
+        This pattern reflects <strong>state-level funding design</strong>, not a single year's local spending decision.
+      </p>
     </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <p class="section-label">School finance 101</p>
+    <h2>How Texas school funding works</h2>
+    <p>AISD does not operate in a vacuum. Every budget decision sits inside a state formula built over decades.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <strong>Step 1</strong>
+        Local property taxes fund schools — Texas has no state income tax, so districts rely heavily on property values.
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <strong>Step 2</strong>
+        The state sets a "basic allotment" — a base dollar amount per student. When this figure stagnates, costs (salaries, utilities, materials) can outpace revenue.
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <strong>Step 3</strong>
+        "Recapture" (Chapter 49) requires wealthier districts to send excess local revenue to the state for redistribution — originally intended as a temporary equity measure.
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <strong>Step 4</strong>
+        Districts must balance their budget regardless. When revenue formulas lag behind costs, cuts fall on staff, programs, and services — including libraries.
+      </div>
+    </div>
+
+    <h3>Key terms</h3>
+    <dl class="glossary">
+      <dt>Basic allotment</dt>
+      <dd>The state's base funding amount per student. Changes to this number affect every district in Texas.</dd>
+      <dt>Recapture (Robin Hood)</dt>
+      <dd>Payments from property-wealthy districts to the state. Created by Senate Bill 7 in 1993.</dd>
+      <dt>Foundation School Program (FSP)</dt>
+      <dd>Texas's main school finance system — formulas, allotments, and state aid combined.</dd>
+      <dt>Structural deficit</dt>
+      <dd>A recurring gap between expected revenue and costs built into the funding system — not a one-time accounting error.</dd>
+    </dl>
+  </section>
+
+  <!-- HISTORY -->
+  <section id="history">
+    <p class="section-label">Timeline</p>
+    <h2>How we got here</h2>
+    <p class="muted">Documented history from court records and state legislation. Extended timelines: <a href="history.html">history.html</a> · <a href="time.html">time.html</a> · <a href="historia.html">historia.html</a> (Spanish).</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1984–1989</div>
+        <p><strong>Edgewood ISD v. Kirby</strong> — The Texas Supreme Court ruled the school finance system unconstitutional, finding unequal funding across districts violated the state constitution.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1993</div>
+        <p><strong>Senate Bill 7</strong> — Legislature created the recapture system as a remedy. It was described at the time as a transitional fix while the state sought a permanent solution.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1993–2019</div>
+        <p>Recapture expanded. Austin's rising property values increased local tax collections — and increased recapture payments — without a matching rise in per-student state funding.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2019–2024</div>
+        <p><strong>Basic allotment held at $6,160</strong> for multiple legislative sessions despite inflation in wages, benefits, and operating costs.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025–2026</div>
+        <p>AISD projects a <strong>$181 million deficit</strong> for 2026–27. Staff reductions and program cuts — including library positions — are under board discussion.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOT CAUSES -->
+  <section id="root-causes">
+    <p class="section-label">Analysis</p>
+    <h2>Root causes vs. symptoms</h2>
+    <p>Cutting libraries or laying off staff addresses an immediate budget gap. It does not fix the underlying funding structure. Understanding the difference is how communities push for durable change.</p>
+
+    <div class="two-col">
+      <div class="panel panel-accent">
+        <h3 style="margin-top:0;color:var(--accent)">Root causes (system-level)</h3>
+        <ul class="checklist">
+          <li>Per-student funding formula not adjusted for inflation over many years</li>
+          <li>Recapture payments that reduce local revenue available for Austin classrooms</li>
+          <li>Dependence on property taxes without diversified state revenue</li>
+          <li>State surplus not directed toward sustained formula increases</li>
+          <li>30-year-old finance framework never fully replaced after court orders</li>
+        </ul>
+      </div>
+      <div class="panel panel-warm">
+        <h3 style="margin-top:0;color:var(--warm)">Symptoms (what communities see)</h3>
+        <ul class="checklist">
+          <li>Library staff and media specialist positions cut or unfilled</li>
+          <li>Teacher layoffs and larger class sizes</li>
+          <li>Program reductions across campuses</li>
+          <li>Annual budget crises and emergency cut plans</li>
+          <li>Board meetings focused on cuts instead of investment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:1.25rem">
+      <p style="margin:0">
+        <strong>The point:</strong> Symptom-level cuts happen because the district must close a legal budget gap. Root-cause change requires state legislation — a higher basic allotment, recapture reform, or new revenue sources. Local advocacy alone cannot rewrite the formula.
+      </p>
+    </div>
+  </section>
+
+  <!-- LIBRARIES -->
+  <section id="libraries">
+    <p class="section-label">Downstream impact</p>
+    <h2>Why libraries are on the cut list</h2>
+    <p>
+      School libraries are not being reduced because of poor performance or low community value. They appear in deficit plans because they are <strong>funded through the same general operating budget</strong> that is under pressure from the factors above.
+    </p>
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0">What school libraries provide</h3>
+        <ul class="checklist">
+          <li>Literacy and research skills for every student</li>
+          <li>Safe study space and access to materials</li>
+          <li>Digital resource navigation and media literacy</li>
+          <li>Support for teachers and curriculum</li>
+          <li>Equity of access in underserved neighborhoods</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0">What the data shows</h3>
+        <p>When districts face structural deficits, discretionary and support positions are often among the first proposed reductions — regardless of educational return on investment.</p>
+        <p class="muted" style="margin:0">Restoring libraries long-term requires fixing the revenue formula, not only reversing one year's cut list.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LONG TERM FIXES -->
+  <section id="fixes">
+    <p class="section-label">Policy pathways</p>
+    <h2>Long-term fixes communities advocate for</h2>
+    <p>These are structural options discussed by education advocates, economists, and legislators — not a SOLATX endorsement of one party or bill. They represent the kind of <em>root-cause</em> change that lasts beyond a single budget cycle.</p>
+
+    <div class="panel">
+      <h3 style="margin-top:0">1. Increase and index the basic allotment</h3>
+      <p>Raise the per-student base amount and tie future increases to inflation or cost-of-education indices so districts are not refighting the same battle every two years.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0">2. Recapture reform</h3>
+      <p>Review whether recapture payments from Austin still serve their original equalization purpose — or primarily offset state obligations. Several advocacy groups have called for formula transparency and caps on recapture growth.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0">3. Dedicated funding streams</h3>
+      <p>Some proposals separate library, counselor, and support-staff funding from general operations so they are not first in line during deficit years.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0">4. State revenue modernization</h3>
+      <p>Texas funds government primarily through sales and property taxes. Long-term debates include whether broader revenue bases would stabilize school funding across economic cycles.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0">5. Sustained civic pressure across election cycles</h3>
+      <p>School finance is not fixed in one board meeting. Districts operate inside state law. Lasting change typically requires coordinated local testimony, legislative contact, and multi-year organizing.</p>
+    </div>
+  </section>
+
+  <!-- ACTION -->
+  <section id="action">
+    <div class="action-banner">
+      <h2>Your voice matters — here is how to use it</h2>
+      <p>Facts alone do not change policy. Informed, consistent public participation does. These are official, documented channels.</p>
+      <div class="action-links">
+        <a href="mailto:board@austinisd.org">Email AISD Board</a>
+        <a href="https://www.austinisd.org/board">Board meetings &amp; public comment</a>
+        <a href="https://www.austinisd.org/budget">AISD budget documents</a>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem">A practical checklist</h3>
+    <ul class="checklist">
+      <li><strong>Attend a board meeting</strong> — Sign up for public comment at austinisd.org/board. Three minutes of prepared testimony is more effective than vague frustration.</li>
+      <li><strong>Cite specific numbers</strong> — Reference the deficit, recapture total, and basic allotment. Officials respond to documented facts.</li>
+      <li><strong>Name root causes</strong> — Ask what the district is doing locally <em>and</em> what they are requesting from the Legislature.</li>
+      <li><strong>Contact state representatives and senators</strong> — School finance is written in Austin (the Capitol), not only at AISD headquarters.</li>
+      <li><strong>Share this briefing</strong> — Neighbors who understand the system are more likely to show up consistently.</li>
+      <li><strong>Organize, don't just react</strong> — One meeting is a start. Budget formulas change when pressure is sustained across sessions.</li>
+    </ul>
+  </section>
+
+  <!-- DATA REPOSITORY -->
+  <section id="data-repo">
+    <p class="section-label">Open data · Source files</p>
+    <h2>Data archive &amp; repositories</h2>
+    <p>All SOLATX website files, stats, and briefing pages are published in an open GitHub repository. The live site is hosted via <a href="https://porkbun.com/products/porkbun-static-hosting" target="_blank" rel="noopener">Porkbun static hosting</a> at <a href="https://solatx.org" target="_blank" rel="noopener">solatx.org</a>.</p>
+
+    <div class="repo-grid">
+      <div class="repo-card">
+        <h4>GitHub — main repository</h4>
+        <p>Source code, data sheets, history pages, and advocacy materials for the SOLATX initiative.</p>
+        <a href="https://github.com/Save-Atx-Libraries/save-atx-librarians" target="_blank" rel="noopener">Save-Atx-Libraries/save-atx-librarians →</a>
+      </div>
+      <div class="repo-card">
+        <h4>Financial data sheet</h4>
+        <p>Deficit, recapture, basic allotment, and state surplus figures with charts.</p>
+        <a href="financeial.html">financeial.html →</a>
+        · <a href="https://github.com/Save-Atx-Libraries/save-atx-librarians/blob/main/financeial.html" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="repo-card">
+        <h4>History &amp; timeline pages</h4>
+        <p>Edgewood case, SB 7, recapture evolution — English and Spanish versions.</p>
+        <a href="history.html">history.html →</a>
+        · <a href="historia.html">historia.html</a>
+        · <a href="time.html">time.html</a>
+      </div>
+      <div class="repo-card">
+        <h4>Sister site</h4>
+        <p>Companion advocacy hub for Save ATX Librarians outreach and organizing.</p>
+        <a href="https://saveatxlibrarians.org" target="_blank" rel="noopener">saveatxlibrarians.org →</a>
+      </div>
+      <div class="repo-card">
+        <h4>Additional briefing pages</h4>
+        <p>Entry points, timeline, and extended analysis from the repository.</p>
+        <a href="entry_points.html">entry_points.html →</a>
+        · <a href="abrelosojos.html">abrelosojos.html</a>
+        · <a href="captureyoursould.html">captureyoursould.html</a>
+      </div>
+      <div class="repo-card">
+        <h4>Repository README</h4>
+        <p>Project overview, mission, key dates, and file index.</p>
+        <a href="https://github.com/Save-Atx-Libraries/save-atx-librarians/blob/main/README.md" target="_blank" rel="noopener">README.md →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="sources" id="sources">
+    <p class="section-label">Verification</p>
+    <h2>Official primary sources</h2>
+    <p class="muted">Verify every figure independently. SOLATX aggregates public documents for community education.</p>
+
+    <div class="source-group">
+      <h3>Austin ISD</h3>
+      <ul>
+        <li><a href="https://www.austinisd.org/budget" target="_blank" rel="noopener">AISD Budget Office — austinisd.org/budget</a></li>
+        <li><a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">AISD Recapture / Chapter 49 payments</a></li>
+        <li><a href="https://www.austinisd.org/board" target="_blank" rel="noopener">AISD Board of Trustees — meetings &amp; public comment</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h3>State of Texas</h3>
+      <ul>
+        <li><a href="https://tea.texas.gov/finance-and-grants/state-funding" target="_blank" rel="noopener">Texas Education Agency — State Funding &amp; Foundation School Program</a></li>
+        <li><a href="https://tea.texas.gov/finance-and-grants/state-funding/additional-finance-resources/charter-schools-and-school-districts-charter-schools-and-school-districts" target="_blank" rel="noopener">TEA — School district finance reports</a></li>
+        <li><a href="https://comptroller.texas.gov/economy/fiscal-notes/" target="_blank" rel="noopener">Texas Comptroller — Fiscal Notes &amp; revenue estimates</a></li>
+        <li><a href="https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB7" target="_blank" rel="noopener">Texas Legislature — Senate Bill 7 (1993 Robin Hood)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h3>Independent analysis</h3>
+      <ul>
+        <li><a href="https://www.raiseyourhandtexas.org/" target="_blank" rel="noopener">Raise Your Hand Texas — school finance research</a></li>
+        <li><a href="https://www.kut.org/education/2026-06-02/austin-tx-aisd-school-funding-texas-legislature-teacher-layoffs" target="_blank" rel="noopener">KUT News — AISD funding &amp; legislature coverage</a></li>
+        <li><a href="https://www.kvue.com/article/news/education/schools/austin-isd-delays-budget-proposal-leaders-weigh-cuts-for-2026-2027-school-year/269-9c006213-1d62-4b68-8071-c316c8ed384d" target="_blank" rel="noopener">KVUE — AISD 2026–27 budget reporting</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h3>SOLATX open files (GitHub)</h3>
+      <ul>
+        <li><a href="https://github.com/Save-Atx-Libraries/save-atx-librarians" target="_blank" rel="noopener">Repository home — Save-Atx-Libraries/save-atx-librarians</a></li>
+        <li><a href="financeial.html">Compiled financial data sheet</a> · <a href="https://github.com/Save-Atx-Libraries/save-atx-librarians/blob/main/financeial.html" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="financeial.txt">Financial data (raw file)</a> · <a href="https://github.com/Save-Atx-Libraries/save-atx-librarians/blob/main/financeial.txt" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="images/">Images &amp; graphics folder</a> · <a href="https://github.com/Save-Atx-Libraries/save-atx-librarians/tree/main/images" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="history.html">history.html</a> · <a href="historia.html">historia.html</a> · <a href="time.html">time.html</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>SOLATX</strong> — Built from public information for public understanding.</p>
+  <p style="margin-top:0.5rem">Data sources: Texas Education Agency (TEA), AISD financial reports, Texas Comptroller.</p>
+  <p style="margin-top:0.5rem">
+    <a href="https://github.com/Save-Atx-Libraries/save-atx-librarians" target="_blank" rel="noopener" style="color:#7ec8c8">GitHub repository</a>
+    · Hosted via <a href="https://porkbun.com" target="_blank" rel="noopener" style="color:#7ec8c8">Porkbun</a>
+    · Not affiliated with AISD or the State of Texas
+  </p>
+</footer>
+
+<script data-goatcounter="https://solatx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </body>
 </html>
