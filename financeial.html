@@ -1,312 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE EXTRACTION // DATA SHEET</title>
-    <style>
-        :root {
-            --bg: #0a0a0a;
-            --surface: #161616;
-            --accent: #ff4d00;
-            --text: #e0e0e0;
-            --dim: #666;
-            --white: #ffffff;
-            --green: #00ff41;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SOLATX financial data sheet — AISD deficit, recapture, basic allotment, and wealthy recapture analysis from public records.">
+  <title>Financial Data Sheet — SOLATX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f6f3; --surface: #fff; --text: #1a2332; --muted: #5c6778;
+      --border: #e2e0da; --accent: #2d6a6a; --accent-light: #e8f4f4;
+      --warm: #c45c3e; --warm-light: #fdf0ec; --navy: #1a2332;
+      --shadow: 0 4px 24px rgba(26, 35, 50, 0.06);
+      --radius: 12px; --max: 1080px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "DM Sans", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; font-size: 1.05rem; }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            line-height: 1.6;
-        }
+    .site-header { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .header-inner { max-width: var(--max); margin: 0 auto; padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .logo { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; font-size: 1.35rem; color: #fff; text-decoration: none; }
+    .logo span { color: #7ec8c8; }
+    nav { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+    nav a { color: rgba(255,255,255,0.82); text-decoration: none; font-size: 0.88rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; transition: background 0.2s, color 0.2s; }
+    nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    nav a.nav-cta { background: #7ec8c8; color: var(--navy); font-weight: 700; }
+    nav a.nav-cta:hover { background: #9dd9d9; }
 
-        nav {
-            background: #000;
-            padding: 15px;
-            text-align: center;
-            border-bottom: 2px solid var(--accent);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    .page-hero { background: linear-gradient(165deg, var(--navy) 0%, #243044 55%, #2d4a4a 100%); color: #fff; padding: 3rem 1.5rem 3.5rem; }
+    .page-hero-inner { max-width: var(--max); margin: 0 auto; }
+    .eyebrow { display: inline-block; background: rgba(126,200,200,0.15); color: #9dd9d9; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.85rem; border-radius: 100px; margin-bottom: 1rem; }
+    .page-hero h1 { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.9rem, 4vw, 2.75rem); font-weight: 700; margin: 0 0 0.75rem; line-height: 1.15; }
+    .page-hero p { color: rgba(255,255,255,0.88); max-width: 60ch; margin: 0; }
 
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; }
+    section { margin-top: 3rem; scroll-margin-top: 5rem; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    h2 { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 700; margin: 0 0 1rem; color: var(--navy); }
+    h3 { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.6rem; color: var(--navy); }
+    p { margin: 0 0 1rem; }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    a { color: var(--accent); }
 
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+    .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.35rem; box-shadow: var(--shadow); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(26,35,50,0.1); }
+    .stat-value { font-family: "Source Serif 4", Georgia, serif; font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1.15; }
+    .stat-value.warm { color: var(--warm); }
+    .stat-label { font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-top: 0.35rem; }
+    .stat-source { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; }
+    .stat-source a { text-decoration: none; font-weight: 500; }
+    .stat-source a:hover { text-decoration: underline; }
 
-        .header-block {
-            border-left: 10px solid var(--accent);
-            padding-left: 20px;
-            margin-bottom: 50px;
-        }
+    .fact-bomb { display: block; font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.3rem, 2.5vw, 1.65rem); font-weight: 800; color: var(--navy); line-height: 1.35; margin: 0.75rem 0; }
+    .fact-bomb.accent { color: var(--accent); }
+    .fact-bomb.warm { color: var(--warm); }
+    td .fact-bomb, p .fact-bomb, li .fact-bomb { display: inline; font-size: 1.25rem; }
+    .fact-bomb-row { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1rem 1.25rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1rem 0; }
+    .fact-bomb-row.warm { background: var(--warm-light); border-left-color: var(--warm); }
 
-        h1 { font-size: 3rem; margin: 0; color: var(--accent); text-transform: uppercase; }
-        h2 { font-size: 1.5rem; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 40px; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); transition: box-shadow 0.25s ease; }
+    .panel:hover { box-shadow: 0 6px 28px rgba(26,35,50,0.08); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.25rem; }
 
-        /* Data Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: var(--surface);
-        }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+    th, td { border: 1px solid var(--border); padding: 0.85rem 1rem; text-align: left; }
+    th { background: var(--accent-light); color: var(--accent); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    tr { transition: background 0.2s ease; }
+    tbody tr:hover { background: rgba(232,244,244,0.5); }
 
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border: 1px solid #333;
-        }
+    .chart-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); margin-top: 1.25rem; }
+    .bar-row { margin-bottom: 1.35rem; }
+    .bar-row:last-child { margin-bottom: 0; }
+    .bar-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.4rem; font-size: 0.88rem; font-weight: 600; color: var(--navy); }
+    .bar-meta span:last-child { color: var(--accent); font-family: "Source Serif 4", Georgia, serif; font-size: 1rem; }
+    .bar-track { background: #eceae4; border-radius: 8px; height: 36px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 8px; display: flex; align-items: center; padding: 0 12px; font-size: 0.78rem; font-weight: 700; color: #fff; width: 0; transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1); }
+    .bar-fill.teal { background: linear-gradient(90deg, #2d6a6a, #3d8a8a); }
+    .bar-fill.warm { background: linear-gradient(90deg, #c45c3e, #d97a5c); }
+    .bar-fill.navy { background: linear-gradient(90deg, #1a2332, #3a4a5a); }
+    .bar-fill.mint { background: linear-gradient(90deg, #5aada0, #7ec8c8); color: var(--navy); }
+    .chart-note { font-size: 0.8rem; color: var(--muted); margin-top: 1rem; }
 
-        th { background: #222; color: var(--accent); font-size: 0.8rem; text-transform: uppercase; }
+    .checklist { list-style: none; padding: 0; margin: 0; }
+    .checklist li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; }
+    .checklist li::before { content: ""; position: absolute; left: 0; top: 0.85rem; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
 
-        /* CSS Chart Styles */
-        .chart-container {
-            margin: 40px 0;
-            padding: 20px;
-            background: #000;
-            border: 1px solid #333;
-        }
+    .feedback-form label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--navy); }
+    .feedback-form input, .feedback-form textarea, .feedback-form select {
+      width: 100%; padding: 0.7rem 0.85rem; border: 1px solid var(--border);
+      border-radius: 8px; font-family: inherit; font-size: 1rem; margin-bottom: 1rem;
+    }
+    .feedback-form textarea { min-height: 130px; resize: vertical; }
+    .btn { display: inline-flex; align-items: center; padding: 0.7rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; font-family: inherit; transition: transform 0.15s, box-shadow 0.15s; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 14px rgba(45,106,106,0.25); }
+    .btn-secondary { background: var(--surface); color: var(--accent); border: 2px solid var(--accent); }
 
-        .bar-wrapper { margin-bottom: 20px; }
-        .bar-label { font-size: 0.8rem; margin-bottom: 5px; display: block; }
-        .bar-bg { background: #222; width: 100%; height: 30px; position: relative; }
-        .bar-fill { height: 100%; background: var(--accent); display: flex; align-items: center; padding-left: 10px; font-weight: bold; font-size: 0.8rem; color: #000; }
-        .bar-fill.green { background: var(--green); }
+    .lang-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .lang-tabs a { padding: 0.45rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--border); color: var(--muted); transition: all 0.2s ease; }
+    .lang-tabs a:hover, .lang-tabs a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-        .fact-list { list-style: none; padding: 0; }
-        .fact-list li {
-            padding: 15px;
-            border-bottom: 1px solid #222;
-            display: flex;
-            align-items: flex-start;
-        }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        .fact-list li::before { content: ">>"; color: var(--accent); margin-right: 15px; font-weight: bold; }
+    footer { background: var(--navy); color: rgba(255,255,255,0.65); text-align: center; padding: 2rem 1.5rem; font-size: 0.85rem; margin-top: 4rem; }
+    footer strong { color: rgba(255,255,255,0.9); }
 
-        .fact-bomb {
-            display: block;
-            font-size: clamp(1.35rem, 3vw, 1.75rem);
-            font-weight: 800;
-            color: var(--accent);
-            line-height: 1.35;
-            margin: 0.75rem 0;
-        }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .bar-fill { transition: none; width: var(--target-w) !important; }
+      .stat-card, .panel { transition: none; }
+      .stat-card:hover { transform: none; }
+    }
 
-        .fact-bomb.green { color: var(--green); }
-        .fact-bomb.white { color: var(--white); }
-
-        td .fact-bomb, p .fact-bomb, li .fact-bomb {
-            display: inline;
-            font-size: 1.3rem;
-        }
-
-        .fact-bomb-row {
-            background: #1a1a1a;
-            border-left: 4px solid var(--accent);
-            padding: 1rem 1.25rem;
-            margin: 1rem 0;
-        }
-
-        .fact-bomb-row.green { border-left-color: var(--green); }
-
-        .hidden-agenda {
-            background: #fff;
-            color: #000;
-            padding: 20px;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-
-        .split-view { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-
-        @media (max-width: 800px) {
-            .split-view { grid-template-columns: 1fr; }
-            h1 { font-size: 2rem; }
-        }
-    </style>
+    @media (max-width: 720px) {
+      nav { display: none; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-    <a href="index.html">Home</a> |
-    <a href="index.html#wealthy-recapture">Recapture</a> |
-    <a href="history.html">Timeline</a> |
-    <a href="#en">English</a> |
-    <a href="#es">Español</a> |
-    <a href="historia.html">Historia (ES)</a> |
-    <a href="library-stories.html">Library Stories</a> |
-    <a href="mailto:board@austinisd.org?subject=Community%20Feedback%20-%20AISD%20Budget%20%26%20Libraries">Feedback to AISD</a>
-</nav>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">SOLA<span>TX</span></a>
+    <nav aria-label="Site pages">
+      <a href="index.html">Home</a>
+      <a href="index.html#wealthy-recapture">Recapture</a>
+      <a href="financeial.html">Data Sheet</a>
+      <a href="history.html">History</a>
+      <a href="library-stories.html">Library Stories</a>
+      <a href="#feedback">Feedback</a>
+      <a class="nav-cta" href="mailto:board@austinisd.org?subject=Community%20Feedback%20-%20AISD%20Budget%20%26%20Libraries">Email AISD</a>
+    </nav>
+  </div>
+</header>
 
-<div class="container" id="en">
-    <div class="header-block">
-        <h1>The Extraction</h1>
-        <p>A Technical Analysis of the Austin ISD Budget Crisis & State Recapture</p>
+<section class="page-hero">
+  <div class="page-hero-inner reveal">
+    <span class="eyebrow">Public records · FY 2025–2026</span>
+    <h1>Financial data sheet</h1>
+    <p>AISD deficit, state recapture, basic allotment, and wealthy-recapture figures — compiled from TEA and AISD budget documents for community reference.</p>
+  </div>
+</section>
+
+<main>
+
+  <div class="lang-tabs reveal">
+    <a href="#en" class="active">English</a>
+    <a href="#es">Español</a>
+    <a href="historia.html">Historia completa (ES)</a>
+  </div>
+
+  <section id="en">
+    <p class="section-label reveal">Core figures</p>
+    <h2 class="reveal">The funding gap</h2>
+
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-value warm">$181M</div>
+        <div class="stat-label">AISD projected deficit (2026–27)</div>
+        <div class="stat-source"><a href="https://www.austinisd.org/budget" target="_blank" rel="noopener">AISD Budget Office</a></div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-value">$715.5M</div>
+        <div class="stat-label">Annual recapture to the state</div>
+        <div class="stat-source"><a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">AISD Recapture page</a></div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-value">$6,160</div>
+        <div class="stat-label">Basic allotment per student (2019–2024)</div>
+        <div class="stat-source"><a href="https://tea.texas.gov/finance-and-grants/state-funding" target="_blank" rel="noopener">TEA State Funding</a></div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-value warm">$30B+</div>
+        <div class="stat-label">Reported state budget surplus</div>
+        <div class="stat-source"><a href="https://comptroller.texas.gov/economy/fiscal-notes/" target="_blank" rel="noopener">Texas Comptroller</a></div>
+      </div>
     </div>
 
-    <section>
-        <h2>I. The Funding Gap</h2>
-        <table>
-            <tr>
-                <th>Category</th>
-                <th>Value (2026)</th>
-                <th>Context</th>
-            </tr>
-            <tr>
-                <td>AISD Deficit</td>
-                <td><span class="fact-bomb">$181,000,000</span></td>
-                <td>Current projected shortfall.</td>
-            </tr>
-            <tr>
-                <td>Annual Recapture</td>
-                <td><span class="fact-bomb">$715,500,000</span></td>
-                <td>Local taxes extracted by the State.</td>
-            </tr>
-            <tr>
-                <td>Basic Allotment</td>
-                <td><span class="fact-bomb">$6,160</span></td>
-                <td>Stagnant per-student value since 2019.</td>
-            </tr>
-        </table>
-    </section>
-
-    <div class="chart-container">
-        <span class="bar-label">STATE SURPLUS (THE HOARD) - $30,000,000,000</span>
-        <div class="bar-bg"><div class="bar-fill green" style="width: 100%;">SURPLUS</div></div>
-        
-        <br>
-        
-        <span class="bar-label">AISD RECAPTURE EXTRACTION - $715,500,000</span>
-        <div class="bar-bg"><div class="bar-fill" style="width: 2.3%;">RECAPTURE</div></div>
-
-        <br>
-
-        <span class="bar-label">AISD DEFICIT (Librarian/Staff Cuts) - $181,000,000</span>
-        <div class="bar-bg"><div class="bar-fill" style="width: 0.6%;">DEFICIT</div></div>
-        <p style="font-size: 0.7rem; color: var(--dim);">*Chart scaled relative to total State Surplus.</p>
+    <div class="chart-panel reveal" id="scale-chart">
+      <h3 style="margin-top:0">Scale comparison — relative to state surplus</h3>
+      <p class="muted">Visualizing how AISD recapture and deficit compare to the reported state surplus.</p>
+      <div class="bar-row">
+        <div class="bar-meta"><span>State surplus</span><span>$30B</span></div>
+        <div class="bar-track"><div class="bar-fill mint" data-width="100">$30B+</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-meta"><span>AISD annual recapture</span><span>$715.5M</span></div>
+        <div class="bar-track"><div class="bar-fill teal" data-width="2.4">$715.5M</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-meta"><span>AISD projected deficit</span><span>$181M</span></div>
+        <div class="bar-track"><div class="bar-fill warm" data-width="0.6">$181M</div></div>
+      </div>
+      <p class="chart-note">Bars scaled relative to state surplus. Source: AISD budget reports, Texas Comptroller.</p>
     </div>
 
-    <div class="split-view">
-        <div>
-            <h2>II. History: SB 7 (1993)</h2>
-            <ul class="fact-list">
-                <li><strong>Origin:</strong> Created in 1993 to satisfy court orders regarding school equity.</li>
-                <li><strong>Design:</strong> Intended as a temporary "fix" for a lack of state income tax.</li>
-                <li><strong>Outcome:</strong> Has evolved into a tool the state uses to reduce its own financial responsibility.</li>
-            </ul>
-        </div>
-        <div>
-            <h2>III. The Math: WADA</h2>
-            <ul class="fact-list">
-                <li><strong>Definition:</strong> Weighted Average Daily Attendance.</li>
-                <li><strong>De-humanization:</strong> Students are converted into decimals (1.0 for general ed, 1.2+ for low income).</li>
-                <li><strong>The Flaw:</strong> Multipliers are useless if the "Basic Allotment" doesn't reflect the cost of 2026 survival.</li>
-            </ul>
-        </div>
+    <div class="chart-panel reveal" id="growth-chart" style="margin-top:1.25rem">
+      <h3 style="margin-top:0">Recapture growth — AISD</h3>
+      <p class="muted">Recapture payments grew roughly 400% from FY2014–15 to recent years.</p>
+      <div class="bar-row">
+        <div class="bar-meta"><span>FY2014–15 recapture</span><span>~$181M</span></div>
+        <div class="bar-track"><div class="bar-fill navy" data-width="22">$181M</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-meta"><span>Recent peak (FY2024–25)</span><span>~$821M</span></div>
+        <div class="bar-track"><div class="bar-fill warm" data-width="100">$821M</div></div>
+      </div>
+      <p class="chart-note">Source: <a href="https://www.austinisd.org/budget/recapture">AISD recapture reports</a></p>
     </div>
 
-    <section>
-        <h2>IV. Wealthy Recapture — What It Means for Austin</h2>
-        <p><span class="fact-bomb">Wealthy recapture does not mean Austin families are rich.</span> The state labels AISD <strong>property-wealthy</strong> based on land values per student — not family income. Nearly <span class="fact-bomb">48.4%</span> of students are economically disadvantaged (TEA), while AISD pays more recapture than almost any district in Texas.</p>
-        <table>
-            <tr><th>Measure</th><th>Value</th><th>Source</th></tr>
-            <tr><td>Total recapture paid (FY2000–FY2024–25)</td><td><span class="fact-bomb">$8.3 billion+</span></td><td>AISD recapture reports</td></tr>
-            <tr><td>Recapture growth since FY2014–15</td><td><span class="fact-bomb">~400%</span> ($181M → $821M)</td><td>AISD recapture table</td></tr>
-            <tr><td>Share of general fund per dollar</td><td><span class="fact-bomb">~46¢</span> to recapture</td><td>AISD FY2024–25 budget</td></tr>
-            <tr><td>Local revenue subject to recapture</td><td><span class="fact-bomb">~52%</span></td><td>AISD recapture page</td></tr>
-        </table>
-        <div class="fact-bomb-row green">
-            <span class="fact-bomb green">Fact: Land rich ≠ family rich. Property values rise; student need stays high.</span>
-        </div>
-        <ul class="fact-list">
-            <li><span class="fact-bomb">1993 intent:</span> SB 7 / Robin Hood — temporary equity fix after Edgewood court rulings.</li>
-            <li><span class="fact-bomb">Today:</span> Austin is the #1 recapture payer; cuts hit libraries and staff locally.</li>
-            <li><span class="fact-bomb">Community view:</span> One person cannot fix the formula. Every person can learn facts and speak to the board.</li>
+    <div class="fact-bomb-row warm reveal" style="margin-top:1.5rem">
+      <span class="fact-bomb warm">Fact: This pattern reflects state-level funding design — not a single year's local spending decision.</span>
+    </div>
+
+    <div class="two-col">
+      <div class="panel reveal">
+        <h3 style="margin-top:0">History: SB 7 (1993)</h3>
+        <ul class="checklist">
+          <li>Created after <em>Edgewood ISD v. Kirby</em> court rulings on equity</li>
+          <li>Described as a temporary fix — no state income tax</li>
+          <li>Evolved into a tool that reduces state financial responsibility</li>
         </ul>
-        <p style="margin-top:1.25rem"><a href="library-stories.html" style="color:var(--accent);font-weight:800;font-size:1.1rem">Share your library story →</a> <span style="color:var(--dim);font-size:0.85rem">Build a community petition for AISD.</span></p>
-        <p style="font-size:0.85rem;color:var(--dim)">Sources: <a href="https://www.austinisd.org/budget/recapture" style="color:var(--accent)">austinisd.org/budget/recapture</a> · <a href="https://schools.texastribune.org/districts/austin-isd/" style="color:var(--accent)">Texas Tribune / TEA</a> · <a href="index.html#wealthy-recapture" style="color:var(--accent)">Full briefing on solatx.org</a></p>
-    </section>
-
-    <hr style="border: 0; border-top: 1px solid #333; margin: 80px 0;">
-
-    <div id="es">
-        <div class="header-block" style="border-color: var(--white);">
-            <h1 style="color: var(--white);">La Extracción</h1>
-            <p>Análisis Técnico de la Crisis Presupuestaria de Austin ISD y la Recaudación Estatal</p>
-        </div>
-
-        <table>
-            <tr>
-                <th>Categoría</th>
-                <th>Valor (2026)</th>
-                <th>Contexto</th>
-            </tr>
-            <tr>
-                <td>Déficit de AISD</td>
-                <td><span class="fact-bomb">$181,000,000</span></td>
-                <td>Faltante proyectado actual.</td>
-            </tr>
-            <tr>
-                <td>Recaudación Anual</td>
-                <td><span class="fact-bomb">$715,500,000</span></td>
-                <td>Impuestos locales extraídos por el Estado.</td>
-            </tr>
-            <tr>
-                <td>Asignación Básica</td>
-                <td><span class="fact-bomb">$6,160</span></td>
-                <td>Valor estancado por estudiante desde 2019.</td>
-            </tr>
-        </table>
-
-        <div class="split-view">
-            <div>
-                <h2>Historia: SB 7 (1993)</h2>
-                <p>El sistema "Robin Hood" comenzó como una solución temporal en 1993 tras las sentencias Edgewood. La meta era equidad entre distritos — no un impuesto permanente sobre el valor de la tierra en Austin.</p>
-            </div>
-            <div>
-                <h2>La Realidad Social</h2>
-                <p>Casi la mitad de los estudiantes de AISD son <span class="fact-bomb">económicamente desfavorecidos (48.4%)</span>. El estado etiqueta al distrito como "rico" por el valor de la propiedad, no por los ingresos de las familias.</p>
-            </div>
-        </div>
-
-        <h2>Recaptura de riqueza — en palabras simples</h2>
-        <p><span class="fact-bomb white">Recaptura de riqueza no significa que las familias de Austin sean ricas.</span> Significa que la fórmula estatal decidió que AISD recauda más impuestos locales por estudiante de lo que puede quedarse. Bajo el Capítulo 49, el "exceso" se envía al estado.</p>
-        <table>
-            <tr><th>Dato</th><th>Valor</th><th>Fuente</th></tr>
-            <tr><td>Recaptura total pagada por AISD</td><td><span class="fact-bomb">$8.3 mil millones+</span></td><td>Informes AISD</td></tr>
-            <tr><td>Crecimiento desde 2014–15</td><td><span class="fact-bomb">~400%</span></td><td>Tabla de recaptura AISD</td></tr>
-            <tr><td>Pagador #1 de recaptura en Texas</td><td><span class="fact-bomb">AISD</span></td><td>Informes AISD</td></tr>
-            <tr><td>Recaudación anual (2026)</td><td><span class="fact-bomb">$715,500,000</span></td><td>Datos SOLATX / AISD</td></tr>
-        </table>
-        <div class="fact-bomb-row green">
-            <span class="fact-bomb green">Tierra rica ≠ familias ricas. Los valores suben; la necesidad sigue alta.</span>
-        </div>
-        <ul class="fact-list">
-            <li><span class="fact-bomb">Bibliotecas:</span> Los bibliotecarios son la piedra angular de la educación de un niño — y aparecen en listas de recortes.</li>
-            <li><span class="fact-bomb">Comunidad:</span> Una persona no puede hacerlo todo. Cada persona puede hacer algo. Busquemos equilibrio.</li>
+      </div>
+      <div class="panel reveal">
+        <h3 style="margin-top:0">The math: WADA</h3>
+        <ul class="checklist">
+          <li>Weighted Average Daily Attendance — students as decimal weights</li>
+          <li>Low-income, bilingual, and special ed carry higher multipliers</li>
+          <li>Multipliers fail if the basic allotment ($6,160) doesn't keep pace with costs</li>
         </ul>
-        <p style="margin-top:1.25rem"><a href="library-stories.html" style="color:var(--accent);font-weight:800;font-size:1.1rem">Comparte tu historia de biblioteca →</a></p>
-        <p style="font-size:0.85rem;color:var(--dim)">Fuentes: <a href="https://www.austinisd.org/budget/recapture" style="color:var(--accent)">austinisd.org/budget/recapture</a> · <a href="historia.html" style="color:var(--accent)">historia.html</a> · <a href="index.html#wealthy-recapture" style="color:var(--accent)">Informe completo (inglés)</a></p>
+      </div>
     </div>
-</div>
+  </section>
 
-<footer style="text-align: center; padding: 40px; color: var(--dim); font-size: 0.7rem;">
-    DATA SOURCE: TEXAS EDUCATION AGENCY (TEA) & AISD FINANCIAL REPORTS FY2026
+  <section id="recapture">
+    <p class="section-label reveal">A formula mismatch</p>
+    <h2 class="reveal">Wealthy recapture — Austin</h2>
+    <p class="reveal"><span class="fact-bomb accent">Wealthy recapture does not mean Austin families are rich.</span> The state labels AISD <strong>property-wealthy</strong> based on land values per student — not family income. Nearly <span class="fact-bomb warm">48.4%</span> of students are economically disadvantaged (TEA).</p>
+
+    <table class="reveal">
+      <thead><tr><th>Measure</th><th>Value</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Total recapture paid (FY2000–FY2024–25)</td><td><span class="fact-bomb accent">$8.3 billion+</span></td><td>AISD recapture reports</td></tr>
+        <tr><td>Recapture growth since FY2014–15</td><td><span class="fact-bomb">~400%</span></td><td>AISD recapture table</td></tr>
+        <tr><td>Share of general fund per dollar</td><td><span class="fact-bomb">~46¢</span> to recapture</td><td>AISD FY2024–25 budget</td></tr>
+        <tr><td>Local revenue subject to recapture</td><td><span class="fact-bomb">~52%</span></td><td>AISD recapture page</td></tr>
+        <tr><td>Largest recapture payer in Texas</td><td><span class="fact-bomb warm">AISD (#1)</span></td><td>AISD recapture reports</td></tr>
+      </tbody>
+    </table>
+
+    <div class="fact-bomb-row reveal">
+      <span class="fact-bomb accent">Land rich ≠ family rich. Property values rise; student need stays high.</span>
+    </div>
+
+    <p class="reveal" style="margin-top:1.25rem">
+      <a href="library-stories.html" style="font-weight:700;font-size:1.05rem">Share your library story →</a>
+      <span class="muted"> · </span>
+      <a href="index.html#wealthy-recapture" style="font-weight:600">Full briefing on solatx.org</a>
+    </p>
+  </section>
+
+  <section id="es">
+    <p class="section-label reveal">Datos en español</p>
+    <h2 class="reveal">La extracción — resumen</h2>
+
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-value warm">$181M</div>
+        <div class="stat-label">Déficit proyectado de AISD</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-value">$715.5M</div>
+        <div class="stat-label">Recaudación anual al estado</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-value">48.4%</div>
+        <div class="stat-label">Estudiantes económicamente desfavorecidos</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-value warm">#1</div>
+        <div class="stat-label">Mayor pagador de recaptura en Texas</div>
+      </div>
+    </div>
+
+    <div class="panel reveal" style="margin-top:1.25rem">
+      <span class="fact-bomb accent">Recaptura de riqueza no significa que las familias de Austin sean ricas.</span>
+      <p>El estado etiqueta al distrito como "rico" por el valor de la propiedad, no por los ingresos familiares. Los bibliotecarios — piedra angular de la educación — aparecen en listas de recortes.</p>
+      <p style="margin:0"><a href="historia.html" style="font-weight:700">Leer historia completa en español →</a></p>
+    </div>
+  </section>
+
+  <section id="feedback">
+    <p class="section-label reveal">Public comment</p>
+    <h2 class="reveal">Send feedback to AISD</h2>
+    <div class="panel feedback-form reveal">
+      <p class="muted">Use this form to prepare a message to the Board of Trustees. Your email app will open with the message ready to send.</p>
+      <form id="feedback-form">
+        <label for="name">Your name</label>
+        <input type="text" id="name" placeholder="Optional — or 'Austin parent', 'Teacher', etc.">
+        <label for="email">Your email</label>
+        <input type="email" id="email" placeholder="Optional — if you want a reply">
+        <label for="topic">Topic</label>
+        <select id="topic">
+          <option value="School libraries">School libraries</option>
+          <option value="Budget and deficit">Budget and deficit</option>
+          <option value="Recapture / school finance">Recapture / school finance</option>
+          <option value="Staff and program cuts">Staff and program cuts</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="message">Your message</label>
+        <textarea id="message" required placeholder="Share your concerns, questions, or support. Cite numbers from this data sheet if helpful…"></textarea>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+          <button type="submit" class="btn btn-primary">Send to board@austinisd.org</button>
+          <a href="https://www.austinisd.org/board" class="btn btn-secondary" target="_blank" rel="noopener">Board meetings</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>SOLATX</strong> — Built from public information for public understanding.</p>
+  <p style="margin-top:0.5rem">Data sources: Texas Education Agency (TEA), AISD financial reports FY2026, Texas Comptroller.</p>
+  <p style="margin-top:0.5rem">Not affiliated with AISD or the State of Texas</p>
 </footer>
 
+<script>
+  document.getElementById('feedback-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var topic = document.getElementById('topic').value;
+    var msg = document.getElementById('message').value.trim();
+    if (!msg) return;
+    var body = 'Topic: ' + topic + '\n\n' + msg;
+    if (name) body += '\n\n— ' + name;
+    if (email) body += '\n(' + email + ')';
+    body += '\n\n(Sent via SOLATX data sheet — solatx.org/financeial.html)';
+    var cc = 'cc=feebo.atx.tees@gmail.com&';
+    window.location.href = 'mailto:board@austinisd.org?' + cc + 'subject=' +
+      encodeURIComponent('Community Feedback - ' + topic) + '&body=' + encodeURIComponent(body);
+  });
+
+  function animateBars(container) {
+    container.querySelectorAll('.bar-fill').forEach(function (bar, i) {
+      var w = bar.getAttribute('data-width') + '%';
+      bar.style.setProperty('--target-w', w);
+      setTimeout(function () { bar.style.width = w; }, 120 + i * 180);
+    });
+  }
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var chartObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { animateBars(e.target); chartObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.chart-panel').forEach(function (el) { chartObs.observe(el); });
+  } else {
+    document.querySelectorAll('.bar-fill').forEach(function (bar) {
+      bar.style.width = bar.getAttribute('data-width') + '%';
+    });
+  }
+
+  if (window.IntersectionObserver && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+      obs.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+  }
+</script>
+<script data-goatcounter="https://solatx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

@@ -546,6 +546,67 @@
 
     footer strong { color: rgba(255,255,255,0.9); }
 
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stat-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(26, 35, 50, 0.1);
+    }
+
+    .panel {
+      transition: box-shadow 0.25s ease;
+    }
+
+    .panel:hover {
+      box-shadow: 0 6px 28px rgba(26, 35, 50, 0.08);
+    }
+
+    .feedback-form label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+      color: var(--navy);
+    }
+
+    .feedback-form input,
+    .feedback-form textarea,
+    .feedback-form select {
+      width: 100%;
+      padding: 0.7rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .feedback-form textarea { min-height: 120px; resize: vertical; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .stat-card, .panel { transition: none; }
+      .stat-card:hover { transform: none; }
+    }
+
     @media (max-width: 640px) {
       nav { display: none; }
       .hero { padding: 2.5rem 1.25rem 3.5rem; }
@@ -1061,6 +1122,26 @@
       </p>
     </div>
 
+    <div class="panel feedback-form reveal" style="margin-top:2rem">
+      <h3 style="margin-top:0">Send feedback to AISD</h3>
+      <p class="muted">Prepare your message, then send it directly to the Board of Trustees.</p>
+      <form id="feedback-form">
+        <label for="fb-name">Your name</label>
+        <input type="text" id="fb-name" placeholder="Optional">
+        <label for="fb-topic">Topic</label>
+        <select id="fb-topic">
+          <option value="School libraries">School libraries</option>
+          <option value="Budget and deficit">Budget and deficit</option>
+          <option value="Recapture / school finance">Recapture / school finance</option>
+          <option value="Staff and program cuts">Staff and program cuts</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="fb-message">Your message</label>
+        <textarea id="fb-message" required placeholder="Share your concerns, questions, or support for school libraries…"></textarea>
+        <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer">Send to board@austinisd.org</button>
+      </form>
+    </div>
+
     <h3 style="margin-top:2rem">A practical checklist</h3>
     <ul class="checklist">
       <li><strong>Attend a board meeting</strong> — Sign up for public comment at austinisd.org/board. Three minutes of prepared testimony is more effective than vague frustration.</li>
@@ -1170,13 +1251,38 @@
 <footer>
   <p><strong>SOLATX</strong> — Built from public information for public understanding.</p>
   <p style="margin-top:0.5rem">Data sources: Texas Education Agency (TEA), AISD financial reports, Texas Comptroller.</p>
-  <p style="margin-top:0.5rem">
-    <a href="https://github.com/Save-Atx-Libraries/save-atx-librarians" target="_blank" rel="noopener" style="color:#7ec8c8">GitHub repository</a>
-    · Hosted via <a href="https://porkbun.com" target="_blank" rel="noopener" style="color:#7ec8c8">Porkbun</a>
-    · Not affiliated with AISD or the State of Texas
-  </p>
+  <p style="margin-top:0.5rem">Not affiliated with AISD or the State of Texas</p>
 </footer>
 
+<script>
+  document.getElementById('feedback-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('fb-name').value.trim();
+    var topic = document.getElementById('fb-topic').value;
+    var msg = document.getElementById('fb-message').value.trim();
+    if (!msg) return;
+    var body = 'Topic: ' + topic + '\n\n' + msg;
+    if (name) body += '\n\n— ' + name;
+    body += '\n\n(Sent via SOLATX community briefing — solatx.org)';
+    window.location.href = 'mailto:board@austinisd.org?cc=feebo.atx.tees@gmail.com&subject=' +
+      encodeURIComponent('Community Feedback - ' + topic) + '&body=' + encodeURIComponent(body);
+  });
+
+  (function () {
+    var els = document.querySelectorAll('.stat-card, .panel, .fact-bomb-row, section > h2, .action-banner');
+    if (!window.IntersectionObserver || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      els.forEach(function (el) { el.classList.add('visible'); });
+      return;
+    }
+    els.forEach(function (el) { el.classList.add('reveal'); });
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { obs.observe(el); });
+  })();
+</script>
 <script data-goatcounter="https://solatx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </body>
