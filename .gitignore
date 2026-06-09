@@ -1,0 +1,13 @@
+# Windows junk
+*.lnk
+desktop.ini
+Thumbs.db
+ehthumbs.db
+
+# macOS
+.DS_Store
+
+# Editor / local
+*.swp
+*~
+.vscode/
