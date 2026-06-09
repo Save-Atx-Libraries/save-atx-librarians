@@ -372,6 +372,66 @@
       margin-top: 1.25rem;
     }
 
+    .comp-table-wrap {
+      overflow-x: auto;
+      margin-top: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    .comp-table th,
+    .comp-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .comp-table th {
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .comp-table tr:last-child td { border-bottom: none; }
+
+    .comp-table td:first-child { font-weight: 600; color: var(--navy); }
+
+    .comp-table .num {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .comp-table .num.warm { color: var(--warm); }
+
+    .comp-table .src {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      font-weight: 400;
+    }
+
+    .comp-table .src a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .comp-table .src a:hover { text-decoration: underline; }
+
     /* Timeline */
     .timeline {
       margin-top: 1.5rem;
@@ -622,6 +682,7 @@
     <nav aria-label="Páginas del sitio">
       <a href="inicio.html">Inicio</a>
       <a href="inicio.html#recaptura-riqueza">Recaptura</a>
+      <a href="inicio.html#contraste-compensacion">Sueldos</a>
       <a href="datos.html">Datos</a>
       <a href="historia.html">Historia</a>
       <a href="historias-biblioteca.html">Historias</a>
@@ -1017,6 +1078,157 @@
     </div>
   </section>
 
+  <!-- CONTRASTE DE COMPENSACIÓN -->
+  <section id="contraste-compensacion">
+    <p class="section-label">Registros públicos · Liderazgo vs. planta escolar</p>
+    <h2>Quién gana qué — mientras los bibliotecarios salen en la lista de recortes</h2>
+    <p>
+      El plan de déficit 2026–27 de Austin ISD recorta <strong>558 puestos</strong>, reduce horas de bibliotecarios en escuelas pequeñas (~<strong>$897,000</strong> de ahorro) y elimina <strong>estipendios de celular y viaje</strong> del personal de oficina central. Son decisiones presupuestales documentadas. También lo es la compensación del superintendente — aprobada por escrito por la misma junta directiva.
+    </p>
+    <p class="muted">
+      SOLATX no ataca personas. Estas cifras vienen del contrato aprobado por la junta, los anuncios presupuestales de AISD y datos salariales de la TEA. El contraste habla solo.
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value warm">$362,250</div>
+        <div class="stat-label">Sueldo base del superintendente (contrato)</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Contrato PDF (§3.1)</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">$63,367</div>
+        <div class="stat-label">Salario base promedio de maestro en AISD (2025)</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://schools.texastribune.org/districts/austin-isd/teacher-salary/" target="_blank" rel="noopener">Texas Tribune — datos TEA</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value warm">~5.7×</div>
+        <div class="stat-label">Base del superintendente vs. base promedio del maestro</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <span>Contrato ÷ promedio Tribune</span>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">$60M</div>
+        <div class="stat-label">Ingreso único por vender/monetizar 4 propiedades del distrito</div>
+        <div class="stat-source">
+          <div class="source-links">
+            <a href="https://www.austinisd.org/announcements/2026/06/02/update-our-budget-process-recommended-budget" target="_blank" rel="noopener">Anuncio presupuestal AISD</a>
+            <a href="https://www.kut.org/education/2026-06-03/austins-isd-budget-cuts-teachers-librarians-police" target="_blank" rel="noopener">KUT News</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Puesto / partida</th>
+            <th>Monto documentado</th>
+            <th>Qué dice el registro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Superintendente — sueldo base</td>
+            <td><span class="num warm">$362,250/año</span></td>
+            <td>Contrato aprobado por la junta, feb. 2024–ago. 2028; aumentos automáticos siguen la escala administrativa más alta.
+              <span class="src"><a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Contrato §3.1</a> · <a href="https://www.statesman.com/story/news/education/2024/01/25/austin-school-board-hires-matias-segura-as-superintendent/72357485007/" target="_blank" rel="noopener">Austin American-Statesman</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Superintendente — retiro suplementario</td>
+            <td><span class="num">$36,750/año</span></td>
+            <td>Aportación patronal a un plan 403(b)/401(a) suplementario — además del sueldo base.
+              <span class="src"><a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Contrato §3.6</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Superintendente — viajes de trabajo</td>
+            <td><span class="num">Reembolsados</span></td>
+            <td>El distrito paga gastos razonables de viaje: avión, hotel, comidas y <strong>auto de renta</strong> por negocios del distrito.
+              <span class="src"><a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Contrato §3.3</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Superintendente — estipendios interinos (antes del contrato)</td>
+            <td><span class="num">$720/mes celular + $9,000 viaje</span></td>
+            <td>Como superintendente interino, registros del distrito listaban estipendio de celular y de viaje — aparte del contrato permanente.
+              <span class="src"><a href="https://www.statesman.com/story/news/education/2024/01/25/austin-school-board-hires-matias-segura-as-superintendent/72357485007/" target="_blank" rel="noopener">Statesman — pago interino</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Maestro de aula (promedio)</td>
+            <td><span class="num warm">$63,367/año</span></td>
+            <td>Promedio base en todos los niveles de experiencia. Recién ingresados: $54,565; 6+ años: $67,722.
+              <span class="src"><a href="https://schools.texastribune.org/districts/austin-isd/teacher-salary/" target="_blank" rel="noopener">Texas Tribune Schools Explorer</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Recorte a bibliotecarios (plan 2026–27)</td>
+            <td><span class="num warm">~$897,000 ahorrados</span></td>
+            <td>Bibliotecarios de medio tiempo en escuelas con menos de 400 estudiantes. Menos de <strong>un cuarto</strong> del sueldo base del superintendente.
+              <span class="src"><a href="https://www.kut.org/education/2026-06-03/austins-isd-budget-cuts-teachers-librarians-police" target="_blank" rel="noopener">KUT News — desglose presupuestal</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Estipendios de oficina central (recortes 2026–27)</td>
+            <td><span class="num">Eliminados</span></td>
+            <td>El presupuesto recomendado elimina <strong>estipendios de celular</strong> y reduce <strong>estipendios de viaje</strong> del personal central — mientras el viaje del superintendente sigue en contrato.
+              <span class="src"><a href="https://www.kut.org/education/2026-06-03/austins-isd-budget-cuts-teachers-librarians-police" target="_blank" rel="noopener">KUT News</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Junta directiva (trustees)</td>
+            <td><span class="num">$0 sueldo</span></td>
+            <td>Los trustees de AISD son voluntarios sin pago que aprueban el contrato del superintendente y el presupuesto anual. La ley de Texas permite estipendios por reunión en distritos grandes; trustees entrevistados por KUT describieron el cargo como no remunerado.
+              <span class="src"><a href="https://www.kut.org/education/2024-05-20/what-does-a-school-board-do-austin-texas" target="_blank" rel="noopener">KUT — rol de la junta</a></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="two-col" style="margin-top:1.5rem">
+      <div class="panel panel-accent">
+        <h3 style="margin-top:0;color:var(--accent)">Venta de propiedades mientras las escuelas pierden personal</h3>
+        <p>
+          Matias Segura antes dirigió <strong>operaciones, instalaciones y construcción</strong> de AISD. El plan presupuestal 2026–27 cuenta con <strong>~$60 millones</strong> por vender o monetizar <strong>cuatro propiedades del distrito</strong> — efectivo de una sola vez para cerrar el déficit.
+        </p>
+        <p style="margin:0">
+          En papel es estrategia inmobiliaria. El mismo plan recorta bibliotecarios, consejeros y cientos de puestos de apoyo en escuelas. <a href="https://www.austinisd.org/repurposing" target="_blank" rel="noopener">Página de reutilización AISD</a> · <a href="https://www.austinisd.org/announcements/2026/06/02/update-our-budget-process-recommended-budget" target="_blank" rel="noopener">Carta presupuestal junio 2026</a>
+        </p>
+      </div>
+      <div class="panel panel-warm">
+        <h3 style="margin-top:0;color:var(--warm)">Las cuentas que la comunidad nota</h3>
+        <ul class="checklist">
+          <li>Solo sueldo base + retiro suplementario: <strong>~$399,000/año</strong> antes de seguro médico y viajes reembolsados</li>
+          <li>La planta escolar enfrenta recortes de estipendios, menos días de trabajo y bibliotecarios de medio tiempo</li>
+          <li>El 88% del presupuesto va a personas — pero los planes de déficit siguen apuntando primero al salón de clase</li>
+          <li>El arreglo estructural sigue requiriendo reforma estatal — las decisiones locales de pago son otra conversación pública</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fact-bomb-row warm" style="margin-top:1.25rem">
+      <span class="fact-bomb warm">Hecho: El sueldo base del superintendente es más de cinco veces el salario base promedio del maestro — mientras el plan de déficit ahorra menos de $900,000 recortando horas de bibliotecarios en escuelas pequeñas.</span>
+    </div>
+    <p class="muted" style="margin-top:1rem">
+      Pregunta en comentario público: Si venta de propiedades y recortes en oficina central están en la mesa, ¿cuál es el plan para proteger bibliotecarios y apoyo en escuelas antes del próximo ciclo de déficit?
+      <a href="mailto:board@austinisd.org?subject=Comentarios%20de%20la%20Comunidad%20-%20Compensaci%C3%B3n%20AISD%20y%20Bibliotecas">Escribir a board@austinisd.org →</a>
+    </p>
+  </section>
+
   <!-- LIBRARIES -->
   <section id="libraries">
     <p class="section-label">Impacto en cadena</p>
@@ -1193,6 +1405,9 @@
         <li><a href="https://www.austinisd.org/budget" target="_blank" rel="noopener">Oficina de Presupuesto AISD — austinisd.org/budget</a></li>
         <li><a href="https://www.austinisd.org/budget/recapture" target="_blank" rel="noopener">AISD Recaptura / pagos Capítulo 49</a></li>
         <li><a href="https://www.austinisd.org/board" target="_blank" rel="noopener">Junta de AISD — reuniones y comentario público</a></li>
+        <li><a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Contrato de empleo del superintendente (PDF BoardDocs)</a></li>
+        <li><a href="https://www.austinisd.org/announcements/2026/06/02/update-our-budget-process-recommended-budget" target="_blank" rel="noopener">AISD — carta presupuestal junio 2026</a></li>
+        <li><a href="https://www.austinisd.org/repurposing" target="_blank" rel="noopener">Reutilización de propiedades AISD</a></li>
       </ul>
     </div>
 
@@ -1210,7 +1425,10 @@
       <h3>Análisis independiente</h3>
       <ul>
         <li><a href="https://www.raiseyourhandtexas.org/" target="_blank" rel="noopener">Raise Your Hand Texas — school finance research</a></li>
-        <li><a href="https://www.kut.org/education/2026-06-02/austin-tx-aisd-school-funding-texas-legislature-teacher-layoffs" target="_blank" rel="noopener">KUT News — AISD funding &amp; legislature coverage</a></li>
+        <li><a href="https://www.kut.org/education/2026-06-02/austin-tx-aisd-school-funding-texas-legislature-teacher-layoffs" target="_blank" rel="noopener">KUT News — financiamiento AISD y legislatura</a></li>
+        <li><a href="https://www.kut.org/education/2026-06-03/austins-isd-budget-cuts-teachers-librarians-police" target="_blank" rel="noopener">KUT News — recortes 2026–27 y bibliotecarios</a></li>
+        <li><a href="https://www.statesman.com/story/news/education/2024/01/25/austin-school-board-hires-matias-segura-as-superintendent/72357485007/" target="_blank" rel="noopener">Austin American-Statesman — contrato del superintendente</a></li>
+        <li><a href="https://schools.texastribune.org/districts/austin-isd/teacher-salary/" target="_blank" rel="noopener">Texas Tribune — sueldos de maestros AISD</a></li>
         <li><a href="https://www.kvue.com/article/news/education/schools/austin-isd-delays-budget-proposal-leaders-weigh-cuts-for-2026-2027-school-year/269-9c006213-1d62-4b68-8071-c316c8ed384d" target="_blank" rel="noopener">KVUE — AISD 2026–27 budget reporting</a></li>
         <li><a href="https://schools.texastribune.org/districts/austin-isd/" target="_blank" rel="noopener">Texas Tribune — AISD demographics &amp; enrollment</a></li>
         <li><a href="https://www.austinisd.org/planning-asset-management/district-demographics" target="_blank" rel="noopener">AISD district demographics</a></li>
