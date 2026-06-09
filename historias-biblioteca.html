@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Comparte tu historia sobre las bibliotecas escolares. Construye una petición comunitaria para Austin ISD.">
-  <title>Historias de biblioteca — Petición comunitaria SOLATX</title>
+  <meta name="description" content="Manda tu historia de biblioteca por correo a la Junta de AISD. Una voz importa — miles de voces son más difíciles de ignorar.">
+  <title>Manda tu historia — SOLATX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f7f6f3; --surface: #fff; --text: #1a2332; --muted: #5c6778;
-      --border: #e2e0da; --accent: #2d6a6a; --accent-light: #e8f4f4;
-      --warm: #c45c3e; --warm-light: #fdf0ec; --navy: #1a2332;
-      --radius: 12px; --max: 720px;
+      --border: #e2e0da; --accent: #2d6a6a; --warm: #c45c3e; --warm-light: #fdf0ec;
+      --navy: #1a2332; --radius: 12px; --max: 640px;
     }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: "DM Sans", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
@@ -21,44 +20,43 @@
     .header-inner { max-width: 1080px; margin: 0 auto; padding: 0.85rem 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; }
     .logo { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; font-size: 1.35rem; color: #fff; text-decoration: none; }
     .logo span { color: #7ec8c8; }
-    nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.82rem; font-weight: 500; padding: 0.35rem 0.6rem; border-radius: 6px; margin: 0 0.1rem; }
+    nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.82rem; font-weight: 500; padding: 0.35rem 0.6rem; border-radius: 6px; }
     nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
     nav a.nav-cta { background: #7ec8c8; color: var(--navy); font-weight: 700; }
     main { max-width: var(--max); margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
-    h1 { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.35rem); color: var(--navy); margin: 0 0 1rem; }
+    h1 { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.2rem); color: var(--navy); margin: 0 0 1rem; }
     .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
-    .fact-bomb { display: block; font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.4rem, 3vw, 1.85rem); font-weight: 800; color: var(--warm); margin: 1rem 0; line-height: 1.3; }
-    .fact-bomb-row { background: var(--warm-light); border-left: 4px solid var(--warm); padding: 1rem 1.25rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1rem 0; }
-    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin: 1.25rem 0; }
+    .quote-panel { background: var(--warm-light); border-left: 4px solid var(--warm); padding: 1.25rem 1.35rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1.25rem 0; }
+    .quote-panel p { margin: 0; font-family: "Source Serif 4", Georgia, serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); line-height: 1.45; }
     label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--navy); }
-    .hint { font-size: 0.8rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
-    input, textarea, select {
-      width: 100%; padding: 0.7rem 0.85rem; border: 1px solid var(--border);
-      border-radius: 8px; font-family: inherit; font-size: 1rem; margin-bottom: 1.1rem;
+    .hint { font-size: 0.82rem; color: var(--muted); font-weight: 400; }
+    input, textarea {
+      width: 100%; padding: 0.75rem 0.9rem; border: 1px solid var(--border);
+      border-radius: 8px; font-family: inherit; font-size: 1rem; margin-bottom: 1.15rem;
     }
-    textarea { min-height: 140px; resize: vertical; }
-    .field { margin-bottom: 0.25rem; }
-    .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
-    button, .btn {
-      display: inline-block; padding: 0.75rem 1.35rem; border-radius: 8px;
-      font-weight: 700; font-size: 0.95rem; cursor: pointer; border: none;
-      font-family: inherit; text-decoration: none; text-align: center;
+    textarea { min-height: 160px; resize: vertical; }
+    button {
+      width: 100%; padding: 0.9rem 1.35rem; border-radius: 8px; border: none;
+      font-weight: 700; font-size: 1.05rem; cursor: pointer; font-family: inherit;
+      background: var(--accent); color: #fff; margin-top: 0.25rem;
     }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: #1f5050; }
-    .btn-secondary { background: var(--surface); color: var(--accent); border: 2px solid var(--accent); }
-    .btn-warm { background: var(--warm); color: #fff; }
-    .success { background: #e8f4f4; border: 1px solid #9dd9d9; color: var(--navy); padding: 1rem; border-radius: 8px; display: none; margin-top: 1rem; }
-    .success.show { display: block; }
-    #story-list { margin-top: 2rem; }
-    .story-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
-    .story-card strong { color: var(--accent); }
-    .story-meta { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; }
-    .count-badge { display: inline-block; background: var(--accent); color: #fff; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 1.1rem; margin-left: 0.5rem; }
-    @media print {
-      .site-header, .btn-row, form, .no-print { display: none !important; }
-      body { background: #fff; }
+    button:hover { background: #1f5050; }
+    .btn-ghost {
+      width: auto; background: transparent; color: var(--muted); font-size: 0.88rem;
+      font-weight: 600; padding: 0.5rem 0; margin-top: 0.75rem; text-decoration: underline;
     }
+    .btn-ghost:hover { background: transparent; color: var(--accent); }
+    .drafts { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .drafts h2 { font-family: "Source Serif 4", Georgia, serif; font-size: 1.15rem; color: var(--navy); margin: 0 0 0.5rem; }
+    .draft-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.15rem; margin-bottom: 0.75rem; }
+    .draft-card p { margin: 0.4rem 0 0; font-size: 0.95rem; }
+    .draft-meta { font-size: 0.78rem; color: var(--muted); }
+    .btn-delete {
+      width: auto; background: transparent; color: var(--warm); font-size: 0.82rem;
+      padding: 0.35rem 0; margin-top: 0.5rem; font-weight: 600;
+    }
+    .btn-delete:hover { background: transparent; color: #a34a32; }
+    .footer-link { display: block; text-align: center; margin-top: 1.5rem; color: var(--accent); font-weight: 600; }
   </style>
 </head>
 <body>
@@ -66,225 +64,147 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="logo" href="inicio.html">SOLA<span>TX</span></a>
-    <nav aria-label="Páginas del sitio">
+    <nav>
       <a href="inicio.html">Inicio</a>
-      <a href="inicio.html#libraries">Bibliotecas</a>
-      <a href="datos.html">Datos</a>
-      <a href="historias-biblioteca.html">Historias</a>
-      <a href="index.html" style="opacity:0.75">English</a>
-      <a class="nav-cta" href="mailto:board@austinisd.org?subject=Petici%C3%B3n%20de%20historias%20de%20biblioteca%20-%20SOLATX">Escribir a AISD</a>
+      <a href="index.html">English</a>
+      <a class="nav-cta" href="https://www.austinisd.org/board" target="_blank" rel="noopener">Juntas AISD</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <p class="eyebrow">Petición comunitaria</p>
-  <h1>Comparte tu historia de biblioteca</h1>
-  <span class="fact-bomb">Los bibliotecarios son la piedra angular de la educación de un niño.</span>
-  <div class="fact-bomb-row">
-    <span class="fact-bomb" style="margin:0">Restaurar las bibliotecas a largo plazo requiere arreglar la fórmula de ingresos, no solo revertir la lista de recortes de un año.</span>
-  </div>
-  <p>
-    Cuéntale a AISD lo que las bibliotecas escolares — o cualquier biblioteca — significaron para ti. Tus recuerdos, inspiración y experiencias queridas se convierten en parte de un <strong>registro comunitario</strong> que puedes llevar a las juntas directivas y al comentario público.
-  </p>
-  <p class="hint">SOLATX no habla en nombre del Estado de Texas ni de AISD. Esto es testimonio comunitario — hechos más vidas reales.</p>
+  <p class="eyebrow">Tu voz · Junta de AISD</p>
+  <h1>Manda tu historia de biblioteca</h1>
 
-  <div class="panel">
-    <p style="margin:0"><strong>Cómo funciona:</strong> Llena el formulario → envía para guardar tu historia → manda una copia por correo a la Junta de AISD → imprime o descarga el paquete completo de la petición para llevarlo a una junta.</p>
+  <div class="quote-panel">
+    <p>Un clavo que sobresale se martilla fácil. Miles de clavos piden trabajo de verdad para hundirlos.</p>
   </div>
+
+  <p class="hint">Escribe tu historia y oprime el botón. Se abre tu correo con el mensaje listo para <strong>board@austinisd.org</strong>. SOLATX no habla por AISD ni por el Estado de Texas.</p>
 
   <form id="story-form">
-    <div class="field">
-      <label for="name">Tu nombre</label>
-      <input type="text" id="name" name="name" placeholder="Opcional — o «Padre/madre de Austin», «Exalumno/a», etc.">
-    </div>
-    <div class="field">
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" placeholder="Opcional — si quieres que AISD te responda">
-    </div>
-    <div class="field">
-      <label for="school">Escuela, plantel o colonia</label>
-      <input type="text" id="school" name="school" placeholder="p. ej. LBJ High, Brentwood, Este de Austin">
-    </div>
-    <div class="field">
-      <label for="library-type">¿Qué biblioteca?</label>
-      <select id="library-type" name="library-type">
-        <option value="Biblioteca escolar de AISD">Biblioteca escolar de AISD</option>
-        <option value="Biblioteca Pública de Austin">Biblioteca Pública de Austin</option>
-        <option value="Otra biblioteca escolar">Otra biblioteca escolar</option>
-        <option value="Biblioteca universitaria">Biblioteca universitaria</option>
-        <option value="Otra biblioteca">Otra biblioteca</option>
-      </select>
-    </div>
-    <div class="field">
-      <label for="story">Tu historia, recuerdos e inspiración <span class="hint">(obligatorio)</span></label>
-      <textarea id="story" name="story" required placeholder="¿Qué recuerdas? ¿Qué te dio la biblioteca — amor por la lectura, un lugar seguro, un bibliotecario que se preocupó, habilidades de investigación, esperanza?"></textarea>
-    </div>
-    <div class="field">
-      <label for="message-aisd">Una oración para la Junta de AISD <span class="hint">(opcional)</span></label>
-      <input type="text" id="message-aisd" name="message-aisd" placeholder="p. ej. Por favor mantengan bibliotecarios certificados en cada escuela de AISD.">
-    </div>
+    <label for="name">Tu nombre <span class="hint">(opcional)</span></label>
+    <input type="text" id="name" placeholder="Padre/madre de Austin, exalumno/a, maestro/a…">
 
-    <div class="btn-row no-print">
-      <button type="submit" class="btn-primary">Guardar historia y agregar a la petición</button>
-      <button type="button" class="btn-warm" id="btn-email">Enviar historia por correo a la Junta de AISD</button>
-      <button type="button" class="btn-secondary" id="btn-copy">Copiar mi historia</button>
-    </div>
+    <label for="school">Escuela o biblioteca <span class="hint">(opcional)</span></label>
+    <input type="text" id="school" placeholder="p. ej. LBJ High, Biblioteca Pública de Austin">
+
+    <label for="story">Tu historia <span class="hint">(obligatorio)</span></label>
+    <textarea id="story" required placeholder="¿Qué te dio una biblioteca escolar — o cualquier biblioteca? Un lugar seguro, un bibliotecario que se preocupó, aprender a leer, inspiración…"></textarea>
+
+    <button type="submit">Mandar mi historia a AISD por correo</button>
+    <button type="button" class="btn-ghost" id="btn-save-draft">Guardar borrador solo en este dispositivo</button>
   </form>
 
-  <div id="success-msg" class="success">
-    <strong>Historia guardada.</strong> Se agregó a la lista de peticiones abajo. Usa «Enviar a AISD» o «Imprimir petición» cuando estés listo/a para enviarla a la junta.
-  </div>
+  <a class="footer-link" href="https://www.austinisd.org/board" target="_blank" rel="noopener">Registrarse para comentario público en junta →</a>
 
-  <div class="btn-row no-print" style="margin-top:2rem">
-    <button type="button" class="btn-secondary" id="btn-download">Descargar petición completa (.txt)</button>
-    <button type="button" class="btn-secondary" onclick="window.print()">Imprimir paquete de petición</button>
-    <a class="btn btn-secondary" href="https://www.austinisd.org/board" target="_blank" rel="noopener">Registrarse para comentario público</a>
-  </div>
-
-  <section id="story-list">
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;color:var(--navy)">
-      Historias de la comunidad <span class="count-badge" id="story-count">0</span>
-    </h2>
-    <p class="hint">Historias guardadas en este navegador. Descarga o imprime para compartir con AISD. Comparte el enlace de esta página para que otras personas agreguen la suya: <strong>solatx.org/historias-biblioteca.html</strong></p>
-    <div id="stories-container"></div>
-    <p id="empty-msg" class="hint">Aún no hay historias en este dispositivo. Sé la primera persona.</p>
+  <section class="drafts" id="drafts-section" hidden>
+    <h2>Borradores guardados aquí</h2>
+    <p class="hint">Solo tú los ves. Borra cuando quieras. Lo que cuenta es mandar el correo a AISD.</p>
+    <div id="drafts-list"></div>
+    <button type="button" class="btn-ghost" id="btn-clear-all">Borrar todos los borradores</button>
   </section>
-
-  <div class="panel" style="margin-top:2rem">
-    <span class="fact-bomb" style="font-size:1.2rem;color:var(--accent)">Una persona no puede hacerlo todo. Cada persona puede hacer algo.</span>
-    <p style="margin:0">Lleva esta petición a AISD. Cita los datos en <a href="inicio.html">solatx.org</a> y las voces en esta página. Pide equilibrio — no recortes a la piedra angular de la educación de un niño.</p>
-  </div>
 </main>
 
 <script>
   const STORAGE_KEY = 'solatx_library_stories';
-  const AISD_EMAIL = 'board@austinisd.org';
-  const PROJECT_CC = 'feebo.atx.tees@gmail.com';
+  const AISD = 'board@austinisd.org';
+  const CC = 'feebo.atx.tees@gmail.com';
 
-  function getStories() {
+  function getDrafts() {
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
     catch { return []; }
   }
 
-  function saveStories(stories) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(stories));
+  function saveDrafts(list) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
   }
 
   function getFormData() {
     return {
       name: document.getElementById('name').value.trim() || 'Miembro de la comunidad',
-      email: document.getElementById('email').value.trim(),
-      school: document.getElementById('school').value.trim() || 'No especificado',
-      libraryType: document.getElementById('library-type').value,
+      school: document.getElementById('school').value.trim(),
       story: document.getElementById('story').value.trim(),
-      messageAisd: document.getElementById('message-aisd').value.trim(),
       date: new Date().toLocaleString('es-MX')
     };
   }
 
-  function formatStory(d, num) {
-    let t = '';
-    if (num) t += '--- Historia #' + num + ' ---\n';
-    t += 'Nombre: ' + d.name + '\n';
-    if (d.email) t += 'Correo electrónico: ' + d.email + '\n';
-    t += 'Escuela/Área: ' + d.school + '\n';
-    t += 'Biblioteca: ' + d.libraryType + '\n';
-    t += 'Fecha: ' + d.date + '\n\n';
-    t += 'Historia:\n' + d.story + '\n';
-    if (d.messageAisd) t += '\nMensaje para la Junta de AISD: ' + d.messageAisd + '\n';
+  function formatEmail(d) {
+    var t = 'Estimada Junta Directiva de AISD,\n\n';
+    t += 'Comparto mi historia sobre bibliotecas como miembro de la comunidad preocupado/a por las bibliotecas escolares y los bibliotecarios.\n\n';
+    if (d.school) t += 'Escuela/Biblioteca: ' + d.school + '\n';
+    t += 'Nombre: ' + d.name + '\n\n';
+    t += d.story + '\n\n';
+    t += 'Por favor consideren este testimonio junto con los datos públicos en solatx.org.\n\n';
+    t += 'Gracias.\n\n(Enviado vía SOLATX — solatx.org/historias-biblioteca.html)';
     return t;
   }
 
-  function formatPetitionPacket(stories) {
-    let header = 'SOLATX — PETICIÓN COMUNITARIA DE HISTORIAS DE BIBLIOTECA\n';
-    header += 'Save Our Librarians ATX | solatx.org\n';
-    header += 'Presentada a la Junta Directiva de Austin ISD\n';
-    header += 'Generada: ' + new Date().toLocaleString('es-MX') + '\n';
-    header += 'Total de historias en este paquete: ' + stories.length + '\n';
-    header += '='.repeat(50) + '\n\n';
-    header += 'Pedimos a AISD que preserve los bibliotecarios escolares certificados y los programas de biblioteca.\n';
-    header += 'Estas son voces reales de la comunidad — no solo estadísticas.\n\n';
-    header += '='.repeat(50) + '\n\n';
-    return header + stories.map((s, i) => formatStory(s, i + 1)).join('\n');
-  }
-
-  function renderStories() {
-    const stories = getStories();
-    const container = document.getElementById('stories-container');
-    const empty = document.getElementById('empty-msg');
-    const count = document.getElementById('story-count');
-    count.textContent = stories.length;
-    container.innerHTML = '';
-    if (stories.length === 0) {
-      empty.style.display = 'block';
-      return;
-    }
-    empty.style.display = 'none';
-    stories.slice().reverse().forEach((s, i) => {
-      const card = document.createElement('div');
-      card.className = 'story-card';
-      card.innerHTML = '<div class="story-meta">' + escapeHtml(s.libraryType) + ' · ' + escapeHtml(s.school) + ' · ' + escapeHtml(s.date) + '</div>' +
-        '<strong>' + escapeHtml(s.name) + '</strong><p style="margin:0.5rem 0 0">' + escapeHtml(s.story) + '</p>' +
-        (s.messageAisd ? '<p style="margin:0.75rem 0 0;font-style:italic;color:var(--accent)">Para AISD: ' + escapeHtml(s.messageAisd) + '</p>' : '');
-      container.appendChild(card);
-    });
-  }
-
-  function escapeHtml(str) {
-    const d = document.createElement('div');
-    d.textContent = str;
+  function escapeHtml(s) {
+    var d = document.createElement('div');
+    d.textContent = s;
     return d.innerHTML;
   }
 
-  document.getElementById('story-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const d = getFormData();
-    if (!d.story) { alert('Por favor escribe tu historia de biblioteca.'); return; }
-    const stories = getStories();
-    stories.push(d);
-    saveStories(stories);
-    renderStories();
-    document.getElementById('success-msg').classList.add('show');
-    document.getElementById('story').value = '';
-    document.getElementById('message-aisd').value = '';
-    window.scrollTo({ top: document.getElementById('story-list').offsetTop - 80, behavior: 'smooth' });
-  });
-
-  document.getElementById('btn-email').addEventListener('click', function() {
-    const d = getFormData();
-    if (!d.story) { alert('Por favor escribe tu historia primero.'); return; }
-    const subject = encodeURIComponent('Petición de historias de biblioteca — Testimonio comunitario SOLATX');
-    const body = encodeURIComponent(
-      'Estimada Junta Directiva de AISD,\n\n' +
-      'Envío mi historia de biblioteca como parte de la petición comunitaria SOLATX para preservar los bibliotecarios escolares y los programas de biblioteca.\n\n' +
-      formatStory(d) + '\n\n' +
-      'Por favor consideren este testimonio junto con los datos públicos en solatx.org.\n\n' +
-      'Gracias.'
-    );
-    window.location.href = 'mailto:' + AISD_EMAIL + '?cc=' + PROJECT_CC + '&subject=' + subject + '&body=' + body;
-  });
-
-  document.getElementById('btn-copy').addEventListener('click', function() {
-    const d = getFormData();
-    if (!d.story) { alert('Por favor escribe tu historia primero.'); return; }
-    navigator.clipboard.writeText(formatStory(d)).then(function() {
-      alert('Historia copiada al portapapeles.');
+  function renderDrafts() {
+    var drafts = getDrafts();
+    var section = document.getElementById('drafts-section');
+    var list = document.getElementById('drafts-list');
+    if (drafts.length === 0) {
+      section.hidden = true;
+      list.innerHTML = '';
+      return;
+    }
+    section.hidden = false;
+    list.innerHTML = '';
+    drafts.slice().reverse().forEach(function (d, revIdx) {
+      var realIdx = drafts.length - 1 - revIdx;
+      var card = document.createElement('div');
+      card.className = 'draft-card';
+      card.innerHTML =
+        '<div class="draft-meta">' + escapeHtml(d.date) + (d.school ? ' · ' + escapeHtml(d.school) : '') + '</div>' +
+        '<strong>' + escapeHtml(d.name) + '</strong>' +
+        '<p>' + escapeHtml(d.story) + '</p>' +
+        '<button type="button" class="btn-delete" data-idx="' + realIdx + '">Borrar este borrador</button>';
+      list.appendChild(card);
     });
+    list.querySelectorAll('.btn-delete').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = parseInt(btn.getAttribute('data-idx'), 10);
+        var all = getDrafts();
+        all.splice(idx, 1);
+        saveDrafts(all);
+        renderDrafts();
+      });
+    });
+  }
+
+  document.getElementById('story-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = getFormData();
+    if (!d.story) return;
+    var subject = encodeURIComponent('Historia de biblioteca — Testimonio comunitario');
+    var body = encodeURIComponent(formatEmail(d));
+    window.location.href = 'mailto:' + AISD + '?cc=' + CC + '&subject=' + subject + '&body=' + body;
   });
 
-  document.getElementById('btn-download').addEventListener('click', function() {
-    const stories = getStories();
-    if (stories.length === 0) { alert('Guarda al menos una historia primero.'); return; }
-    const blob = new Blob([formatPetitionPacket(stories)], { type: 'text/plain' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'SOLATX-Peticion-Historias-Biblioteca-' + new Date().toISOString().slice(0, 10) + '.txt';
-    a.click();
+  document.getElementById('btn-save-draft').addEventListener('click', function () {
+    var d = getFormData();
+    if (!d.story) { alert('Primero escribe tu historia.'); return; }
+    var drafts = getDrafts();
+    drafts.push(d);
+    saveDrafts(drafts);
+    renderDrafts();
+    document.getElementById('story').value = '';
   });
 
-  renderStories();
+  document.getElementById('btn-clear-all').addEventListener('click', function () {
+    if (!confirm('¿Borrar todos los borradores en este dispositivo?')) return;
+    localStorage.removeItem(STORAGE_KEY);
+    renderDrafts();
+  });
+
+  renderDrafts();
 </script>
-
 </body>
 </html>
