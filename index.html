@@ -103,18 +103,31 @@
       border-right: 1px solid rgba(255,255,255,0.08);
     }
 
-    .logo {
-      font-family: "Source Serif 4", Georgia, serif;
-      font-weight: 700;
-      font-size: 1.3rem;
-      letter-spacing: 0.04em;
-      color: #fff;
-      text-decoration: none;
-      padding: 0.25rem 0.65rem 0.75rem;
+    .sidebar-brand {
       display: block;
+      text-align: center;
+      padding: 0 0.35rem 0.85rem;
+      text-decoration: none;
     }
 
-    .logo span { color: #7ec8c8; }
+    .sidebar-brand img {
+      width: 100%;
+      max-width: 168px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      filter: drop-shadow(0 3px 12px rgba(0,0,0,0.35));
+    }
+
+    .sidebar-brand span {
+      display: block;
+      margin-top: 0.5rem;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.14em;
+      color: #7ec8c8;
+    }
 
     .site-sidebar nav {
       display: flex;
@@ -204,6 +217,29 @@
     .hero-inner {
       max-width: var(--max);
       margin: 0 auto;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-mark {
+      flex-shrink: 0;
+    }
+
+    .hero-mark img {
+      width: clamp(130px, 16vw, 210px);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 6px 24px rgba(0,0,0,0.35));
+    }
+
+    .hero-copy {
+      flex: 1;
+      min-width: min(100%, 280px);
     }
 
     .eyebrow {
@@ -787,7 +823,10 @@
 <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
 
 <aside class="site-sidebar" id="site-sidebar" aria-label="Site navigation">
-  <a class="logo" href="index.html">SOLA<span>TX</span></a>
+  <a class="sidebar-brand" href="index.html">
+    <img src="images/svgers_edited.png" alt="Save ATX Libraries sticker" width="168" height="168">
+    <span>SOLATX</span>
+  </a>
   <nav aria-label="Site pages">
     <span class="nav-label">Pages</span>
     <a href="index.html" class="active">Home</a>
@@ -811,15 +850,22 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <span class="eyebrow">Community briefing · Public data</span>
-    <h1>Understanding Austin's school finance crisis</h1>
-    <p class="hero-lead">
-      SOLATX explains how Texas school funding policy affects Austin ISD, its libraries, and neighborhood schools — using verified public records, not opinion.
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#numbers">See the numbers</a>
-      <a class="btn btn-secondary" href="financeial.html">Data sheet</a>
-      <a class="btn btn-secondary" href="#action">Send feedback to AISD</a>
+    <div class="hero-top">
+      <div class="hero-mark">
+        <img src="images/svgers_edited.png" alt="" width="210" height="210" aria-hidden="true">
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">Community briefing · Public data</span>
+        <h1>Understanding Austin's school finance crisis</h1>
+        <p class="hero-lead">
+          SOLATX explains how Texas school funding policy affects Austin ISD, its libraries, and neighborhood schools — using verified public records, not opinion.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#numbers">See the numbers</a>
+          <a class="btn btn-secondary" href="financeial.html">Data sheet</a>
+          <a class="btn btn-secondary" href="#action">Send feedback to AISD</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
