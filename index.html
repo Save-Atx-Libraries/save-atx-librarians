@@ -69,6 +69,7 @@
       --shadow: 0 4px 24px rgba(26, 35, 50, 0.06);
       --radius: 12px;
       --max: 1080px;
+      --sidebar-w: 220px;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -83,73 +84,121 @@
       font-size: 1.05rem;
     }
 
-    /* Header */
-    .site-header {
+    /* Left sidebar */
+    .site-sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
+      height: 100dvh;
       background: var(--navy);
       color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .header-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0.85rem 1.5rem;
+      padding: 1.35rem 0.9rem 1.25rem;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0.5rem;
+      overflow-y: auto;
+      z-index: 200;
+      border-right: 1px solid rgba(255,255,255,0.08);
     }
 
     .logo {
       font-family: "Source Serif 4", Georgia, serif;
       font-weight: 700;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       letter-spacing: 0.04em;
       color: #fff;
       text-decoration: none;
+      padding: 0.25rem 0.65rem 0.75rem;
+      display: block;
     }
 
     .logo span { color: #7ec8c8; }
 
-    nav {
+    .site-sidebar nav {
       display: flex;
-      gap: 0.25rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0.1rem;
+      flex: 1;
     }
 
-    nav a {
+    .nav-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      padding: 0.85rem 0.65rem 0.3rem;
+    }
+
+    .nav-label:first-of-type { padding-top: 0; }
+
+    .site-sidebar nav a {
       color: rgba(255,255,255,0.82);
       text-decoration: none;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 500;
-      padding: 0.4rem 0.75rem;
+      padding: 0.45rem 0.65rem;
       border-radius: 6px;
       transition: background 0.2s, color 0.2s;
+      display: block;
     }
 
-    nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .site-sidebar nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .site-sidebar nav a.active { background: rgba(126,200,200,0.18); color: #9dd9d9; }
 
-    nav a.nav-cta {
+    .site-sidebar nav a.nav-cta {
       background: #7ec8c8;
       color: var(--navy);
       font-weight: 700;
-      margin-left: 0.25rem;
+      margin-top: 0.5rem;
     }
 
-    nav a.nav-cta:hover {
+    .site-sidebar nav a.nav-cta:hover {
       background: #9dd9d9;
       color: var(--navy);
     }
+
+    .page-wrap {
+      margin-left: var(--sidebar-w);
+      min-width: 0;
+    }
+
+    .sidebar-toggle {
+      display: none;
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 210;
+      width: 2.5rem;
+      height: 2.5rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--navy);
+      color: #fff;
+      font-size: 1.25rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+
+    .sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 35, 50, 0.45);
+      z-index: 190;
+    }
+
+    body.sidebar-open .sidebar-backdrop { display: block; }
 
     /* Hero */
     .hero {
       background: linear-gradient(165deg, var(--navy) 0%, #243044 55%, #2d4a4a 100%);
       color: #fff;
-      padding: 4rem 1.5rem 5rem;
+      padding: 2.75rem 1.5rem 4.5rem;
     }
 
     .hero-inner {
@@ -227,7 +276,7 @@
 
     section {
       margin-top: 3.5rem;
-      scroll-margin-top: 5rem;
+      scroll-margin-top: 1.5rem;
     }
 
     .section-label {
@@ -713,33 +762,52 @@
       .stat-card:hover { transform: none; }
     }
 
+    @media (max-width: 900px) {
+      .site-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+      }
+
+      body.sidebar-open .site-sidebar { transform: translateX(0); }
+
+      .page-wrap { margin-left: 0; }
+      .sidebar-toggle { display: flex; }
+      .hero { padding: 3.5rem 1.25rem 3.5rem; }
+    }
+
     @media (max-width: 640px) {
-      nav { display: none; }
-      .hero { padding: 2.5rem 1.25rem 3.5rem; }
       main { padding: 0 1.25rem 3rem; }
     }
   </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="#">SOLA<span>TX</span></a>
-    <nav aria-label="Site pages">
-      <a href="index.html">Home</a>
-      <a href="index.html#wealthy-recapture">Recapture</a>
-      <a href="index.html#compensation-contrast">Pay contrast</a>
-      <a href="financeial.html">Data Sheet</a>
-      <a href="history.html">History</a>
-      <a href="time.html">Timeline</a>
-      <a href="inicio.html">Español</a>
-      <a href="entry_points.html">Start Here</a>
-      <a href="library-stories.html">Library Stories</a>
-      <a href="stickers.html">Stickers</a>
-      <a class="nav-cta" href="#action">Feedback to AISD</a>
-    </nav>
-  </div>
-</header>
+<button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+<div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+<aside class="site-sidebar" id="site-sidebar" aria-label="Site navigation">
+  <a class="logo" href="index.html">SOLA<span>TX</span></a>
+  <nav aria-label="Site pages">
+    <span class="nav-label">Pages</span>
+    <a href="index.html" class="active">Home</a>
+    <a href="entry_points.html">Start Here</a>
+    <a href="financeial.html">Data Sheet</a>
+    <a href="history.html">History</a>
+    <a href="time.html">Timeline</a>
+    <a href="library-stories.html">Library Stories</a>
+    <a href="stickers.html">Stickers</a>
+    <a href="inicio.html">Español</a>
+    <span class="nav-label">This page</span>
+    <a href="#numbers">By the numbers</a>
+    <a href="#wealthy-recapture">Recapture</a>
+    <a href="#compensation-contrast">Pay contrast</a>
+    <a href="#action">Feedback to AISD</a>
+    <a class="nav-cta" href="library-stories.html">Email your story</a>
+  </nav>
+</aside>
+
+<div class="page-wrap">
 
 <section class="hero">
   <div class="hero-inner">
@@ -1518,6 +1586,35 @@
   <p style="margin-top:0.5rem">Data sources: Texas Education Agency (TEA), AISD financial reports, Texas Comptroller.</p>
   <p style="margin-top:0.5rem">Not affiliated with AISD or the State of Texas</p>
 </footer>
+
+</div><!-- .page-wrap -->
+
+<script>
+  (function () {
+    var toggle = document.getElementById('sidebar-toggle');
+    var backdrop = document.getElementById('sidebar-backdrop');
+    var sidebar = document.getElementById('site-sidebar');
+
+    function setOpen(open) {
+      document.body.classList.toggle('sidebar-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      backdrop.hidden = !open;
+    }
+
+    toggle.addEventListener('click', function () {
+      setOpen(!document.body.classList.contains('sidebar-open'));
+    });
+
+    backdrop.addEventListener('click', function () { setOpen(false); });
+
+    sidebar.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.matchMedia('(max-width: 900px)').matches) setOpen(false);
+      });
+    });
+  })();
+</script>
 
 <script>
   document.getElementById('feedback-form').addEventListener('submit', function (e) {
