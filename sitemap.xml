@@ -65,4 +65,10 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/history.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/historia.html"/>
   </url>
+  <url>
+    <loc>https://solatx.org/stickers.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 </urlset>

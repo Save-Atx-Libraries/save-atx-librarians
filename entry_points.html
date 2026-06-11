@@ -1,221 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLATX // Community Briefing</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SOLATX start here — pick your next step: read the data, email the board, share a library story, order stickers, or prep for public comment.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://solatx.org/entry_points.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://solatx.org/entry_points.html">
+  <meta property="og:title" content="Start Here — SOLATX">
+  <meta property="og:description" content="Your entry point into Austin school finance advocacy — actions, not repeats.">
+  <meta property="og:image" content="https://solatx.org/images/logo.png">
+  <title>Start Here — SOLATX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --surface: #fff;
+      --text: #1a2332;
+      --muted: #5c6778;
+      --border: #e2e0da;
+      --accent: #2d6a6a;
+      --accent-light: #e8f4f4;
+      --warm: #c45c3e;
+      --warm-light: #fdf0ec;
+      --navy: #1a2332;
+      --shadow: 0 4px 24px rgba(26, 35, 50, 0.06);
+      --radius: 12px;
+      --max: 1080px;
+    }
 
-    <style>
-        body {
-            background:#000;
-            color:#fff;
-            font-family:"Courier New", monospace;
-            margin:0;
-            padding:0;
-            line-height:1.6;
-        }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-        .marquee {
-            background:#ff4d00;
-            color:#000;
-            padding:12px 0;
-            text-align:center;
-            font-weight:bold;
-            text-transform:uppercase;
-            border-bottom:4px solid #fff;
-            letter-spacing:1px;
-        }
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
 
-        .container {
-            width:90%;
-            max-width:900px;
-            margin:0 auto;
-            padding:40px 0;
-        }
+    .site-header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
 
-        h1, h2 {
-            text-transform:uppercase;
-            letter-spacing:2px;
-        }
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-        h1 {
-            color:#ff4d00;
-            font-size:2.8rem;
-            margin-bottom:10px;
-            text-align:center;
-        }
+    .logo {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-decoration: none;
+    }
 
-        h2 {
-            color:#ff4d00;
-            font-size:2rem;
-            margin-top:60px;
-            margin-bottom:20px;
-            border-left:5px solid #ff4d00;
-            padding-left:15px;
-        }
+    .logo span { color: #7ec8c8; }
 
-        .section {
-            margin-bottom:50px;
-        }
+    nav { display: flex; gap: 0.25rem; flex-wrap: wrap; }
 
-        .box {
-            background:#111;
-            border:1px solid #333;
-            padding:20px;
-            margin-top:20px;
-        }
+    nav a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
 
-        .cta-box {
-            background:#ff4d00;
-            color:#000;
-            padding:25px;
-            text-align:center;
-            font-weight:bold;
-            margin-top:40px;
-            border:3px solid #fff;
-        }
+    nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    nav a.active { background: rgba(126,200,200,0.2); color: #9dd9d9; }
+    nav a.nav-cta { background: #7ec8c8; color: var(--navy); font-weight: 700; margin-left: 0.25rem; }
+    nav a.nav-cta:hover { background: #9dd9d9; }
 
-        a.cta-link {
-            color:#000;
-            font-weight:bold;
-            text-decoration:underline;
-        }
+    .hero {
+      background: linear-gradient(165deg, var(--navy) 0%, #243044 55%, #2d4a4a 100%);
+      color: #fff;
+      padding: 3.5rem 1.5rem 4rem;
+    }
 
-        footer {
-            text-align:center;
-            color:#777;
-            font-size:0.8rem;
-            margin-top:60px;
-            padding-bottom:40px;
-        }
+    .hero-inner { max-width: var(--max); margin: 0 auto; }
 
-        .fact-bomb {
-            display: block;
-            font-size: clamp(1.35rem, 3vw, 1.75rem);
-            font-weight: 800;
-            color: #ff4d00;
-            line-height: 1.35;
-            margin: 0.5rem 0;
-        }
+    .eyebrow {
+      display: inline-block;
+      background: rgba(126, 200, 200, 0.15);
+      color: #9dd9d9;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
 
-        .fact-bomb-row {
-            background: #1a1a1a;
-            border-left: 4px solid #ff4d00;
-            padding: 1rem 1.25rem;
-            margin: 1rem 0;
-        }
+    .hero h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      max-width: 20ch;
+    }
 
-        .top-nav {
-            text-align: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #333;
-            margin-bottom: 20px;
-        }
+    .hero-lead {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.88);
+      max-width: 52ch;
+      margin: 0;
+    }
 
-        .top-nav a {
-            color: #ff4d00;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
-        }
-    </style>
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    section { margin-top: 3rem; scroll-margin-top: 5rem; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      color: var(--navy);
+    }
+
+    .muted { color: var(--muted); font-size: 0.95rem; margin: 0 0 1.25rem; }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .path-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.4rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .path-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 28px rgba(26, 35, 50, 0.08);
+    }
+
+    .path-card.primary {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, var(--accent-light) 0%, var(--surface) 100%);
+    }
+
+    .path-time {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .path-card h3 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.15rem;
+      margin: 0 0 0.5rem;
+      color: var(--navy);
+    }
+
+    .path-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0 0 1rem;
+      flex-grow: 1;
+    }
+
+    .path-link {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .path-link:hover { text-decoration: underline; }
+
+    .path-thumb {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.85rem;
+      border: 1px solid var(--border);
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding: 0.65rem 0 0.65rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .checklist li:last-child { border-bottom: none; }
+
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .share-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.65rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: transform 0.15s;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-secondary { background: var(--surface); color: var(--accent); border: 2px solid var(--accent); }
+
+    .quote-panel {
+      background: var(--warm-light);
+      border-left: 4px solid var(--warm);
+      padding: 1.15rem 1.3rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-top: 1.5rem;
+    }
+
+    .quote-panel p {
+      margin: 0;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    footer a { color: var(--accent); font-weight: 600; }
+  </style>
 </head>
-
 <body>
 
-    <!-- TOP ALERT -->
-    <div class="marquee">
-        A COMMUNITY BRIEFING ON AUSTIN’S LIBRARY CRISIS — BUILT FROM PUBLIC DATA
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">SOLA<span>TX</span></a>
+    <nav aria-label="Site pages">
+      <a href="index.html">Home</a>
+      <a href="entry_points.html" class="active">Start Here</a>
+      <a href="financeial.html">Data Sheet</a>
+      <a href="history.html">History</a>
+      <a href="library-stories.html">Library Stories</a>
+      <a href="stickers.html">Stickers</a>
+      <a href="inicio.html">Español</a>
+      <a class="nav-cta" href="library-stories.html">Email AISD</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Entry points · Pick your path</span>
+    <h1>What do you need right now?</h1>
+    <p class="hero-lead">
+      This page is your shortcut. The full briefing lives on the <a href="index.html" style="color:#9dd9d9;font-weight:600">home page</a> — here you choose an action and go.
+    </p>
+  </div>
+</section>
+
+<main>
+  <section>
+    <p class="section-label">Do something today</p>
+    <h2>Action paths</h2>
+    <p class="muted">Each link goes to a different tool or page. No need to read everything first.</p>
+
+    <div class="path-grid">
+      <article class="path-card primary">
+        <p class="path-time">~3 minutes</p>
+        <h3>Email the board</h3>
+        <p>Write your library story and send it to <strong>board@austinisd.org</strong>. One story is easy to ignore — hundreds are not.</p>
+        <a class="path-link" href="library-stories.html">Open library story form →</a>
+      </article>
+
+      <article class="path-card">
+        <p class="path-time">~5 minutes</p>
+        <h3>Sign up for public comment</h3>
+        <p>Board meetings are where cuts get approved. Reserve your three minutes and cite the numbers.</p>
+        <a class="path-link" href="https://www.austinisd.org/board" target="_blank" rel="noopener">AISD board meetings →</a>
+      </article>
+
+      <article class="path-card">
+        <p class="path-time">~2 minutes</p>
+        <h3>Share the briefing</h3>
+        <p>Send a neighbor the home page or data sheet. Understanding the formula is step one.</p>
+        <div class="share-row">
+          <a class="btn btn-primary" href="index.html">Full briefing</a>
+          <a class="btn btn-secondary" href="financeial.html">Data sheet</a>
+        </div>
+      </article>
+
+      <article class="path-card">
+        <p class="path-time">Shop</p>
+        <h3>Order stickers</h3>
+        <p>20 vinyl designs — wear the message on laptops, bottles, and board meeting clipboards.</p>
+        <img class="path-thumb" src="images/lifkers.jpg" alt="Sticker sheet preview" width="280" height="224" loading="lazy">
+        <a class="path-link" href="stickers.html">Browse &amp; order →</a>
+      </article>
     </div>
+  </section>
 
-    <div class="container">
+  <section>
+    <p class="section-label">Go deeper</p>
+    <h2>Read &amp; research</h2>
+    <p class="muted">When you have more time — these pages hold the evidence and history.</p>
 
-        <div class="top-nav">
-            <a href="index.html">Home</a>
-            <a href="financeial.html">Data Sheet</a>
-            <a href="history.html">Timeline</a>
-            <a href="library-stories.html">Library Stories</a>
-            <a href="mailto:board@austinisd.org?subject=Community%20Feedback%20-%20AISD%20Budget%20%26%20Libraries">Feedback to AISD</a>
-        </div>
+    <div class="path-grid">
+      <article class="path-card">
+        <h3>Financial data sheet</h3>
+        <p>Deficit, recapture, basic allotment, charts — every stat linked to public records.</p>
+        <a class="path-link" href="financeial.html">financeial.html →</a>
+      </article>
 
-        <!-- TITLE -->
-        <h1>SOLATX</h1>
+      <article class="path-card">
+        <h3>History &amp; timeline</h3>
+        <p>Edgewood, Senate Bill 7, how recapture grew — court records and legislation.</p>
+        <a class="path-link" href="history.html">history.html →</a>
+        · <a class="path-link" href="time.html">time.html</a>
+      </article>
 
-        <!-- MISSION STATEMENT -->
-        <div class="section">
-            <h2>Mission</h2>
-            <div class="box">
-                SOLATX is a community project that explains how Texas school finance and state policy 
-                are starving Austin’s public schools and libraries — using clear, evidence‑based 
-                information the public can actually understand.
-            </div>
-        </div>
+      <article class="path-card">
+        <h3>Spanish site</h3>
+        <p>El briefing completo en español mexicano — mismos datos, mismo enfoque.</p>
+        <a class="path-link" href="inicio.html">inicio.html →</a>
+      </article>
 
-        <!-- OBJECTIVE -->
-        <div class="section">
-            <h2>Objective</h2>
-            <div class="box">
-                To translate complex history, legal decisions, and budget mechanics into accessible 
-                explanations that show why AISD faces a manufactured crisis — and how these forces 
-                directly impact librarians, libraries, and neighborhood learning spaces.
-            </div>
-        </div>
-
-        <!-- CURRENT SITUATION -->
-        <div class="section">
-            <h2>The Current Situation (2026)</h2>
-            <div class="box">
-                <span class="fact-bomb">AISD Deficit: $181,000,000</span>
-                <span class="fact-bomb">Annual Recapture: $715,500,000</span>
-                <span class="fact-bomb">Basic Allotment: $6,160 (unchanged since 2019)</span>
-                <span class="fact-bomb">State Surplus: $30,000,000,000</span>
-                <div class="fact-bomb-row" style="margin-top:1rem">
-                    <span class="fact-bomb">These figures describe a structural imbalance — not a local failure.</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- HISTORY -->
-        <div class="section">
-            <h2>How We Got Here</h2>
-            <div class="box">
-                • Edgewood ISD v. Kirby (1989–1993): Texas Supreme Court ruled the system unconstitutional four times.<br>
-                • Senate Bill 7 (1993): “Robin Hood” recapture created as a temporary fix.<br>
-                • No state income tax → long‑term dependence on local property taxes.<br>
-                • Recapture now offsets state spending instead of equalizing opportunity.<br><br>
-                These are historical facts, not interpretations.
-            </div>
-        </div>
-
-        <!-- LIBRARY IMPACT -->
-        <div class="section">
-            <h2>Impact on Libraries</h2>
-            <div class="box">
-                <span class="fact-bomb">Librarians are the cornerstone of a child's education.</span>
-                Librarians and libraries are being cut because the district is forced to absorb 
-                structural deficits created at the state level. These cuts are not about performance, 
-                value, or community need — they are downstream effects of policy design.
-                <p style="margin-top:1rem;margin-bottom:0"><a href="library-stories.html" style="color:#ff4d00;font-weight:800;font-size:1.1rem">Share your library story →</a></p>
-            </div>
-        </div>
-
-        <!-- CALL TO ACTION -->
-        <div class="section">
-            <h2>Support & Public Comment</h2>
-            <div class="cta-box">
-                Send your questions, concerns, and support to the AISD Board of Trustees:<br><br>
-                <a class="cta-link" href="mailto:board@austinisd.org">board@austinisd.org</a><br><br>
-                Public comment signup and meeting info:<br>
-                <a class="cta-link" href="https://www.austinisd.org/board">austinisd.org/board</a>
-            </div>
-        </div>
-
-        <footer>
-            Data sources: Texas Education Agency (TEA), AISD Financial Reports FY2026<br>
-            SOLATX — Built from public information for public understanding.
-        </footer>
-
+      <article class="path-card">
+        <h3>Source files on GitHub</h3>
+        <p>Open repository — verify numbers, fork the site, contribute corrections.</p>
+        <a class="path-link" href="https://github.com/Save-Atx-Libraries/save-atx-librarians" target="_blank" rel="noopener">GitHub repo →</a>
+      </article>
     </div>
+  </section>
+
+  <section>
+    <p class="section-label">Board meeting prep</p>
+    <h2>Before you show up</h2>
+    <div class="panel">
+      <ul class="checklist">
+        <li><strong>Pick one number</strong> — e.g. $181M deficit, $715M recapture, or $6,160 basic allotment. Say where it comes from.</li>
+        <li><strong>Name the root cause</strong> — state funding formula and recapture, not “AISD wasted money.”</li>
+        <li><strong>Ask for librarians by name</strong> — the 2026–27 plan cuts librarian hours on small campuses (~$897K saved).</li>
+        <li><strong>Ask what the district is requesting from the Legislature</strong> — local cuts alone do not fix the formula.</li>
+        <li><strong>Bring neighbors</strong> — sustained turnout across meetings matters more than one speech.</li>
+      </ul>
+      <div class="quote-panel">
+        <p>Librarians are the cornerstone of a child's education. Say it in your own words — then say it at the mic.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><a href="index.html">← Back to full SOLATX briefing</a> · SOLATX does not speak for AISD or the State of Texas.</p>
+</footer>
 
 </body>
 </html>
