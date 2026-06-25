@@ -1,0 +1,31 @@
+PROJECT SAVE POINT - June 24, 2026 (evening resume)
+
+Last commit: 1345072 "Save progress to resume later: Source audit + fixes..."
+
+Key work completed:
+- Full audit of external sources/links for 404s.
+- Fixed:
+  - Broken TEA link (finance subpage 404) → replaced with working main state funding link.
+  - KVUE link (access denied) → replaced with live KUT article.
+  - Dead https://saveatxlibrarians.org (Porkbun placeholder) → removed/replaced.
+- AISD meetings links: All point to https://www.austinisd.org/board/meetings with explicit signup instructions ("call 512-414-0130", public comment details, BoardDocs, watch live, etc.). Not broad pages.
+- Other files in good shape (no GitHub/Porkbun footer links, etc.).
+
+Files in git:
+- index.html, financeial.html, inicio.html, datos.html, library-stories.html, etc.
+- sitemap.xml (up to date with lastmod 2026-06-24)
+
+Root index.html:
+- Also updated in parallel during session.
+- Backup saved here as: root-index-backup-2026-06-24.html
+- (Root dir itself has no git; main repo is this subdir.)
+
+To resume tonight:
+1. Open this folder in GitHub Desktop (or `cd save-atx-librarians && git status`).
+2. Continue edits on the HTML files.
+3. When ready to deploy/push, use GitHub Desktop as usual (do not push without explicit approval).
+
+Current branch: main (1 commit ahead of origin)
+Next steps from previous: GSC submission prep if desired, or more budget content.
+
+All local only. Good to go.
