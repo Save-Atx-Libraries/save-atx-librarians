@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- Home / Main Austin ISD overview -->
   <url>
     <loc>https://solatx.org/</loc>
     <lastmod>2026-06-24</lastmod>
@@ -10,7 +9,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/inicio.html"/>
   </url>
-  <!-- Financial / Data Sheet - Austin ISD Budget 2026 focus -->
   <url>
     <loc>https://solatx.org/financeial.html</loc>
     <lastmod>2026-06-24</lastmod>
@@ -27,7 +25,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/financeial.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/datos.html"/>
   </url>
-  <!-- Spanish home -->
   <url>
     <loc>https://solatx.org/inicio.html</loc>
     <lastmod>2026-06-24</lastmod>
@@ -36,7 +33,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/inicio.html"/>
   </url>
-  <!-- History pages -->
   <url>
     <loc>https://solatx.org/history.html</loc>
     <lastmod>2026-06-24</lastmod>
@@ -53,7 +49,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://solatx.org/history.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://solatx.org/historia.html"/>
   </url>
-  <!-- Library stories and other -->
   <url>
     <loc>https://solatx.org/library-stories.html</loc>
     <lastmod>2026-06-24</lastmod>
