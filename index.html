@@ -3,73 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SOLATX — A fact-based community briefing on Austin ISD school finance, Texas recapture (Robin Hood), budget deficits, and school library funding. Built from public records.">
-  <meta name="keywords" content="Austin ISD school finance, library funding Austin, Texas school recapture, Robin Hood schools, AISD budget deficit, school librarians Austin, Texas basic allotment">
+  <meta name="description" content="Austin ISD Budget 2026: Independent analysis and data on Austin ISD financial transparency, AISD budget cuts, library funding, and school finance. Public records for Austin neighbors.">
+  <meta name="keywords" content="Austin ISD Budget 2026, Austin ISD Financial Transparency, Austin ISD Data Sheet, Austin ISD Budget Analysis, AISD budget cuts, Austin ISD libraries, AISD financial data, Texas school finance Austin ISD, Austin ISD recapture, Austin ISD deficit">
   <meta name="robots" content="index, follow">
   <meta name="author" content="SOLATX">
   <link rel="canonical" href="https://solatx.org/">
   <link rel="alternate" hreflang="en" href="https://solatx.org/">
   <link rel="alternate" hreflang="es-MX" href="https://solatx.org/inicio.html">
   <link rel="alternate" hreflang="x-default" href="https://solatx.org/">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://solatx.org/">
-  <meta property="og:title" content="SOLATX — Austin School Finance &amp; Library Funding">
-  <meta property="og:description" content="Fact-based briefing on Austin ISD school finance, Texas recapture, budget cuts, and library funding — from public records.">
-  <meta property="og:site_name" content="SOLATX">
+  <meta property="og:title" content="Austin ISD Budget 2026 | Austin ISD Financial Transparency | SOLATX">
+  <meta property="og:description" content="Austin ISD Budget 2026 and financial transparency data. Clear public records on AISD budget cuts, library funding, recapture, and school finance for Austin neighbors.">
+  <meta property="og:site_name" content="SOLATX - Austin ISD Budget Transparency">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://solatx.org/images/logo.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="SOLATX — Austin School Finance &amp; Library Funding">
-  <meta name="twitter:description" content="Austin ISD school finance, recapture, and library funding explained with verified public data.">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Austin ISD Budget 2026 | Austin ISD Financial Transparency">
+  <meta name="twitter:description" content="Austin ISD Budget Analysis, Data Sheet & Financial Transparency. Public data on budget cuts and library funding.">
   <meta name="twitter:image" content="https://solatx.org/images/logo.png">
-  <title>SOLATX — Austin School Finance &amp; Libraries</title>
+
+  <title>Austin ISD Budget 2026 | Austin ISD Financial Transparency | SOLATX</title>
+
+  <!-- JSON-LD Structured Data: Organization + WebPage + Dataset (Austin ISD focus) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebSite",
+        "@type": "Organization",
         "name": "SOLATX",
         "url": "https://solatx.org/",
-        "description": "Community education on Austin ISD school finance, Texas recapture policy, and school library funding.",
-        "inLanguage": "en",
-        "publisher": { "@type": "Organization", "name": "SOLATX", "url": "https://solatx.org/" }
+        "description": "Independent public data resource for Austin ISD budget, financial transparency, and school funding analysis.",
+        "sameAs": ["https://solatx.org/"]
+      },
+      {
+        "@type": "WebSite",
+        "name": "SOLATX - Austin ISD Budget Transparency",
+        "url": "https://solatx.org/",
+        "description": "Austin ISD Budget 2026, AISD financial transparency, and school finance data from public records.",
+        "publisher": { "@id": "https://solatx.org/#organization" }
       },
       {
         "@type": "WebPage",
-        "name": "Understanding Austin's school finance crisis",
+        "name": "Austin ISD Budget 2026 | Austin ISD Financial Transparency",
         "url": "https://solatx.org/",
-        "description": "A fact-based community briefing on Austin ISD school finance, state recapture, budget deficits, and library funding cuts.",
-        "isPartOf": { "@type": "WebSite", "name": "SOLATX", "url": "https://solatx.org/" },
+        "description": "Austin ISD Budget 2026 analysis, data on budget cuts, library funding, and financial transparency using verified public records.",
+        "isPartOf": { "@id": "https://solatx.org/#website" },
         "about": [
-          { "@type": "Thing", "name": "Austin Independent School District school finance" },
-          { "@type": "Thing", "name": "Texas school library funding" },
-          { "@type": "Thing", "name": "Robin Hood recapture" }
+          { "@type": "Thing", "name": "Austin ISD Budget 2026" },
+          { "@type": "Thing", "name": "Austin ISD Financial Transparency" },
+          { "@type": "Thing", "name": "AISD Budget Cuts" }
         ],
-        "keywords": "Austin ISD, library funding, school finance, Texas recapture, AISD budget"
+        "keywords": "Austin ISD Budget 2026, Austin ISD Financial Transparency, Austin ISD Data Sheet, Austin ISD Budget Analysis"
       }
     ]
   }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f7f6f3;
+      --bg: #f8fafc;
       --surface: #ffffff;
-      --text: #1a2332;
-      --muted: #5c6778;
-      --border: #e2e0da;
-      --accent: #2d6a6a;
-      --accent-light: #e8f4f4;
-      --warm: #c45c3e;
-      --warm-light: #fdf0ec;
-      --navy: #1a2332;
-      --shadow: 0 4px 24px rgba(26, 35, 50, 0.06);
-      --radius: 12px;
-      --max: 1080px;
-      --sidebar-w: 220px;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --accent: #0f766e;
+      --accent-light: #e6f2f0;
+      --navy: #0f172a;
+      --shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.05);
+      --radius: 8px;
+      --max: 1180px;
+      --sidebar-w: 228px;
+      --font-sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -77,11 +91,11 @@
 
     body {
       margin: 0;
-      font-family: "DM Sans", system-ui, sans-serif;
+      font-family: var(--font-sans);
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
-      font-size: 1.05rem;
+      line-height: 1.7;
+      font-size: 16px;
     }
 
     /* Left sidebar */
@@ -121,12 +135,12 @@
 
     .sidebar-brand span {
       display: block;
-      margin-top: 0.5rem;
-      font-family: "Source Serif 4", Georgia, serif;
+      margin-top: 0.45rem;
+      font-family: var(--font-serif);
       font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.14em;
-      color: #7ec8c8;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      color: #5eead4;
     }
 
     .site-sidebar nav {
@@ -815,6 +829,55 @@
     @media (max-width: 640px) {
       main { padding: 0 1.25rem 3rem; }
     }
+
+    /* Feedback Modal for Austin ISD Budget Transparency */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(15, 23, 42, 0.75);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 8px;
+      width: 92%;
+      max-width: 520px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .modal-header {
+      padding: 1rem 1.25rem;
+      background: #0f172a;
+      color: #fff;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-header h3 { margin: 0; font-size: 1.1rem; }
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .modal-body { padding: 1.25rem; }
+    .modal .feedback-form label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem; color: #0f172a; }
+    .modal .feedback-form input,
+    .modal .feedback-form textarea,
+    .modal .feedback-form select {
+      width: 100%; padding: 0.6rem 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; margin-bottom: 0.9rem;
+    }
+    .modal .feedback-form textarea { min-height: 110px; }
   </style>
 </head>
 <body>
@@ -855,15 +918,15 @@
         <img src="images/svgers_edited.png" alt="" width="210" height="210" aria-hidden="true">
       </div>
       <div class="hero-copy">
-        <span class="eyebrow">Community briefing · Public data</span>
-        <h1>Understanding Austin's school finance crisis</h1>
+        <span class="eyebrow">Public data for Austin neighbors</span>
+        <h1>Austin ISD libraries, budget &amp; school funding</h1>
         <p class="hero-lead">
-          SOLATX explains how Texas school funding policy affects Austin ISD, its libraries, and neighborhood schools — using verified public records, not opinion.
+          Straight facts on Austin ISD school finance, recapture, library budgets and proposed cuts — pulled from public records so Austin families can follow what is happening at their neighborhood schools.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#numbers">See the numbers</a>
           <a class="btn btn-secondary" href="financeial.html">Data sheet</a>
-          <a class="btn btn-secondary" href="#action">Send feedback to AISD</a>
+          <button type="button" class="btn btn-secondary" onclick="showAisdFeedbackModal()">Send Feedback on Austin ISD Budget</button>
         </div>
       </div>
     </div>
@@ -886,10 +949,10 @@
     <div class="panel panel-warm" style="margin-top:1.25rem">
       <h3 style="margin-top:0;color:var(--warm)">Why this exists</h3>
       <p>
-        SOLATX was started by a <strong>native Texan</strong> — born and raised in Austin, from <strong>mixed ethnic backgrounds</strong>, and a <strong>graduate of public schools</strong>. This project is not a government voice. It is one neighbor trying to explain a broken formula before more corners get cut from the classrooms that built us.
+        SOLATX was started by Austin neighbors who pay local property taxes and send kids (or once sent kids) to AISD schools. This is not a government voice. It is documentation of how our tax dollars move through the system — a large share leaving via recapture while neighborhood library services and classroom supports face cuts.
       </p>
         <p class="fact-bomb warm">One person cannot do everything. Every person can do something.</p>
-        <p style="margin:0">The goal is not outrage — it is <strong>balance</strong>: fair funding, informed families, and schools where every child still has a librarian.</p>
+        <p style="margin:0">The goal is not rage. It is informed community action, open discussion at board meetings, and sustained pressure on both the state formula and local priorities.</p>
     </div>
   </section>
 
@@ -1237,19 +1300,22 @@
     </div>
 
     <div class="fact-bomb-row" style="margin-top:1.25rem">
-      <span class="fact-bomb accent">The point: Symptom-level cuts happen because the district must close a legal budget gap. Root-cause change requires state legislation — a higher basic allotment, recapture reform, or new revenue sources. Local advocacy alone cannot rewrite the formula.</span>
+      <span class="fact-bomb accent">The point: These pressures come from a combination of state funding rules and local budget decisions. Recapture sends Austin property tax dollars out of the district. Library and staff cuts are one result. Real change requires both state-level reform and honest local discussion about priorities and compensation. Community involvement at board meetings and with legislators is how we push on both fronts.</span>
     </div>
   </section>
 
   <!-- COMPENSATION CONTRAST -->
   <section id="compensation-contrast">
-    <p class="section-label">Public records · Leadership vs. campus</p>
-    <h2>Who gets paid what — while librarians land on cut lists</h2>
+    <p class="section-label">Public records · Where our taxes go</p>
+    <h2>Leadership pay and campus cuts — funded by the same local property taxes</h2>
     <p>
-      Austin ISD's 2026–27 deficit plan cuts <strong>558 positions</strong>, trims librarian hours on small campuses (~<strong>$897,000</strong> in savings), and eliminates <strong>cell phone and travel stipends</strong> for central-office staff. Those are documented budget choices. So is the superintendent's compensation — approved in writing by the same board of trustees.
+      Austin ISD's 2026–27 deficit plan cuts <strong>558 positions</strong>, including reductions to librarian hours on smaller campuses (roughly <strong>$897,000</strong> in proposed savings). Central-office cell phone and some travel stipends are also being eliminated for many staff. At the same time, the superintendent's compensation package — base salary of $362,250* plus supplemental retirement and travel benefits including rental cars* — remains in place under a multi-year board-approved contract.
+    </p>
+    <p>
+      Austin homeowners pay the property taxes that generate the local revenue for AISD. A large share is sent to the state via recapture. The remaining funds support both the proposed cuts to neighborhood library services and the current leadership compensation structure.
     </p>
     <p class="muted">
-      SOLATX is not attacking individuals. These numbers come from the superintendent's board-approved contract, AISD budget announcements, and TEA salary data. The contrast speaks for itself.
+      These figures are from the publicly available superintendent contract, AISD budget materials, and TEA data (see full sources with links below*). The contrast between what is being cut on campuses and what is protected at the top is a legitimate topic for community discussion.
     </p>
 
     <div class="stats-grid">
@@ -1258,7 +1324,7 @@
         <div class="stat-label">Superintendent base salary (contract)</div>
         <div class="stat-source">
           <div class="source-links">
-            <a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Board contract PDF (§3.1)</a>
+            <a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Board contract PDF (§3.1)*</a>
           </div>
         </div>
       </div>
@@ -1320,7 +1386,7 @@
             <td>Superintendent — business travel</td>
             <td><span class="num">Reimbursed</span></td>
             <td>District pays reasonable travel costs including airline, hotels, meals, and <strong>rental car</strong> for district business.
-              <span class="src"><a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Contract §3.3</a></span>
+              <span class="src"><a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Contract §3.3*</a></span>
             </td>
           </tr>
           <tr>
@@ -1384,12 +1450,23 @@
     </div>
 
     <div class="fact-bomb-row warm" style="margin-top:1.25rem">
-      <span class="fact-bomb warm">Fact: The superintendent's base salary is more than five times the average teacher's base — while the district's deficit plan saves less than $900,000 by cutting librarian hours on small campuses.</span>
+      <span class="fact-bomb warm">Austin property taxes help fund both the superintendent's documented compensation* and the proposed library hour reductions on small campuses. This is a legitimate question for open public discussion.</span>
     </div>
     <p class="muted" style="margin-top:1rem">
-      Ask the board at public comment: If property sales and central-office cuts are on the table, what is the plan to protect campus librarians and classroom support before the next deficit cycle?
+      Bring the numbers to board meetings and ask: given the recapture of local taxes and the scale of leadership pay, what is the plan to protect librarians and direct classroom support?
       <a href="mailto:board@austinisd.org?subject=Community%20Feedback%20-%20AISD%20Compensation%20%26%20Library%20Priorities">Email board@austinisd.org →</a>
     </p>
+
+    <div style="margin-top:1.5rem; font-size:0.82rem; color:var(--muted);">
+      <strong>Sources (superintendent salary and car allowance / travel benefits):</strong>
+      <ul style="margin-top:0.35rem; padding-left:1rem;">
+        <li>* Superintendent base salary ($362,250) and auto-raises: <a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Board-approved contract PDF §3.1</a> (effective 2024–2028)</li>
+        <li>* Supplemental retirement contribution: <a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Contract PDF §3.6</a></li>
+        <li>* Business travel including rental car reimbursement: <a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/%24file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf" target="_blank" rel="noopener">Contract PDF §3.3</a></li>
+        <li>* Interim stipends (cell + travel): <a href="https://www.statesman.com/story/news/education/2024/01/25/austin-school-board-hires-matias-segura-as-superintendent/72357485007/" target="_blank" rel="noopener">Austin American-Statesman reporting on district records</a></li>
+        <li>* Librarian cuts savings figure (~$897k): <a href="https://www.kut.org/education/2026-06-03/austins-isd-budget-cuts-teachers-librarians-police" target="_blank" rel="noopener">KUT News budget breakdown</a></li>
+      </ul>
+    </div>
   </section>
 
   <!-- LIBRARIES -->
@@ -1483,8 +1560,8 @@
   <!-- ACTION -->
   <section id="action">
     <div class="action-banner">
-      <h2>Your voice matters — here is how to use it</h2>
-      <p>Facts alone do not change policy. Informed, consistent public participation does. These are official, documented channels.</p>
+      <h2>Turn frustration into action — our taxes, our schools</h2>
+      <p>Austin residents pay substantial property taxes. Much of that local revenue leaves the district through recapture. At the same time, proposed cuts target librarians and classroom supports while top administrative compensation — including six-figure salaries and travel benefits — continues. Strong feelings are understandable. The most powerful response is to channel that energy into sustained community involvement, public comment, and open discussion.</p>
       <div class="action-links">
         <a href="mailto:board@austinisd.org?subject=Community%20Feedback%20-%20AISD%20Budget%20%26%20Libraries">Email AISD Board — board@austinisd.org</a>
         <a href="https://www.austinisd.org/board">Sign up for public comment</a>
@@ -1515,14 +1592,14 @@
       </form>
     </div>
 
-    <h3 style="margin-top:2rem">A practical checklist</h3>
+    <h3 style="margin-top:2rem">Practical ways to get involved</h3>
     <ul class="checklist">
-      <li><strong>Attend a board meeting</strong> — Sign up for public comment at austinisd.org/board. Three minutes of prepared testimony is more effective than vague frustration.</li>
-      <li><strong>Cite specific numbers</strong> — Reference the deficit, recapture total, and basic allotment. Officials respond to documented facts.</li>
-      <li><strong>Name root causes</strong> — Ask what the district is doing locally <em>and</em> what they are requesting from the Legislature.</li>
-      <li><strong>Contact state representatives and senators</strong> — School finance is written in Austin (the Capitol), not only at AISD headquarters.</li>
-      <li><strong>Share this briefing</strong> — Neighbors who understand the system are more likely to show up consistently.</li>
-      <li><strong>Organize, don't just react</strong> — One meeting is a start. Budget formulas change when pressure is sustained across sessions.</li>
+      <li><strong>Attend a board meeting</strong> — Sign up for public comment at austinisd.org/board. Bring specific numbers and speak directly to how these decisions affect your neighborhood schools and libraries.</li>
+      <li><strong>Connect the dots publicly</strong> — Reference recapture (your local property taxes leaving Austin), the deficit plan, library cuts, and documented leadership compensation. Ask questions in open meetings.</li>
+      <li><strong>Ask about local choices too</strong> — While pushing the state for formula changes, ask the board and superintendent what they are doing locally with the revenue that stays here.</li>
+      <li><strong>Contact state reps</strong> — School finance law is written at the Capitol. Tell them Austin property tax dollars are funding a system that cuts neighborhood libraries while maintaining high executive pay.</li>
+      <li><strong>Talk to your neighbors</strong> — Share the data. The more people understand where their taxes are going and what the options are, the stronger the open discussion becomes.</li>
+      <li><strong>Stay consistent</strong> — One meeting or one email is a start. Lasting change comes from sustained community presence across multiple board meetings and legislative sessions.</li>
     </ul>
   </section>
 
@@ -1626,9 +1703,8 @@
 </main>
 
 <footer>
-  <p><strong>SOLATX</strong> — Built from public information for public understanding.</p>
-  <p style="margin-top:0.5rem">Data sources: Texas Education Agency (TEA), AISD financial reports, Texas Comptroller.</p>
-  <p style="margin-top:0.5rem">Not affiliated with AISD or the State of Texas</p>
+  <p><strong>SOLATX</strong> — Independent analysis of Austin ISD school finance from verified public records.</p>
+  <p style="margin-top:0.5rem">Data sources: Texas Education Agency (TEA), Austin ISD financial reports, Texas Comptroller. Not affiliated with AISD or the State of Texas.</p>
 </footer>
 
 </div><!-- .page-wrap -->
@@ -1669,7 +1745,7 @@
     if (!msg) return;
     var body = 'Topic: ' + topic + '\n\n' + msg;
     if (name) body += '\n\n— ' + name;
-    body += '\n\n(Sent via SOLATX community briefing — solatx.org)';
+    body += '\n\n(Sent via SOLATX — solatx.org)';
     window.location.href = 'mailto:board@austinisd.org?cc=feebo.atx.tees@gmail.com&subject=' +
       encodeURIComponent('Community Feedback - ' + topic) + '&body=' + encodeURIComponent(body);
   });
@@ -1690,6 +1766,81 @@
   })();
 </script>
 <script data-goatcounter="https://solatx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<!-- Austin ISD Budget Feedback Modal - exact same form as financial page -->
+<div id="aisd-feedback-modal" class="modal" onclick="if (event.target.id === 'aisd-feedback-modal') hideAisdFeedbackModal()">
+  <div class="modal-content" onclick="event.stopImmediatePropagation()">
+    <div class="modal-header">
+      <h3>Send Feedback on Austin ISD Budget &amp; Financial Transparency</h3>
+      <button class="modal-close" onclick="hideAisdFeedbackModal()" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="panel feedback-form" style="margin:0; box-shadow:none; border:0; padding:0;">
+        <p class="muted" style="margin-bottom:0.75rem;">Use this form to prepare a message to the Board of Trustees about Austin ISD budget and financial transparency. Your email app will open with the message ready to send.</p>
+        <form id="home-feedback-form">
+          <label for="home-name">Your name</label>
+          <input type="text" id="home-name" placeholder="Optional — or 'Austin parent', 'Teacher', etc.">
+          <label for="home-email">Your email</label>
+          <input type="email" id="home-email" placeholder="Optional — if you want a reply">
+          <label for="home-topic">Topic</label>
+          <select id="home-topic">
+            <option value="School libraries">School libraries</option>
+            <option value="Budget and deficit">Budget and deficit</option>
+            <option value="Recapture / school finance">Recapture / school finance</option>
+            <option value="Staff and program cuts">Staff and program cuts</option>
+            <option value="Other">Other</option>
+          </select>
+          <label for="home-message">Your message</label>
+          <textarea id="home-message" required placeholder="Share your concerns, questions, or support for Austin ISD budget transparency and library funding. Cite specific numbers if helpful…"></textarea>
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+            <button type="submit" class="btn btn-primary">Send to board@austinisd.org</button>
+            <a href="https://www.austinisd.org/board" class="btn btn-secondary" target="_blank" rel="noopener">Board meetings</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Exact same feedback form logic as on the financial page, adapted for home modal
+document.getElementById('home-feedback-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var name = document.getElementById('home-name').value.trim();
+  var email = document.getElementById('home-email').value.trim();
+  var topic = document.getElementById('home-topic').value;
+  var msg = document.getElementById('home-message').value.trim();
+  if (!msg) return;
+  var body = 'Topic: ' + topic + '\n\n' + msg;
+  if (name) body += '\n\n— ' + name;
+  if (email) body += '\n(' + email + ')';
+  body += '\n\n(Sent via SOLATX home page — solatx.org — Austin ISD Budget & Financial Transparency)';
+  var cc = 'cc=feebo.atx.tees@gmail.com&';
+  window.location.href = 'mailto:board@austinisd.org?' + cc + 'subject=' +
+    encodeURIComponent('Community Feedback - ' + topic) + '&body=' + encodeURIComponent(body);
+});
+
+function showAisdFeedbackModal() {
+  document.getElementById('aisd-feedback-modal').style.display = 'block';
+  // Optional: focus first field
+  setTimeout(function() {
+    var msg = document.getElementById('home-message');
+    if (msg) msg.focus();
+  }, 100);
+}
+
+function hideAisdFeedbackModal() {
+  document.getElementById('aisd-feedback-modal').style.display = 'none';
+}
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var modal = document.getElementById('aisd-feedback-modal');
+    if (modal && modal.style.display === 'block') hideAisdFeedbackModal();
+  }
+});
+</script>
 
 </body>
 </html>

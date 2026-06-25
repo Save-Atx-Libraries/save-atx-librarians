@@ -187,7 +187,7 @@
     </div>
 
     <div class="hidden-agenda">
-        THE HIDDEN AGENDA: By keeping funding stagnant ($6,160) during record inflation, the state creates an artificial crisis. This "manufactured starvation" is used as leverage to promote private school vouchers while the State Vault remains full.
+        Context on the basic allotment: It was held at $6,160 for years while costs rose sharply. This contributes to the gap between what local property taxes generate in Austin and what stays available for classrooms and libraries after recapture. Austin taxpayers fund the system; decisions at the state and local level determine how those dollars are used.
     </div>
 
     <hr style="border: 0; border-top: 1px solid #333; margin: 80px 0;">
@@ -195,7 +195,7 @@
     <div id="es">
         <div class="header-block" style="border-color: var(--white);">
             <h1 style="color: var(--white);">La Extracción</h1>
-            <p>Análisis Técnico de la Crisis Presupuestaria de Austin ISD y la Recaudación Estatal</p>
+            <p>Análisis de datos públicos sobre el presupuesto de Austin ISD, recaptura y financiamiento de bibliotecas</p>
         </div>
 
         <table>

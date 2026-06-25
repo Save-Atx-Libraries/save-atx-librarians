@@ -3,51 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SOLATX financial data sheet — Austin ISD $181M deficit, $715M recapture, Texas basic allotment, library funding impact. Charts and sources from public records.">
-  <meta name="keywords" content="AISD budget deficit, Austin ISD recapture, Texas basic allotment, school library funding Austin, Robin Hood Texas schools">
+  <meta name="description" content="Austin ISD Budget Analysis 2026 & Data Sheet: Detailed financial transparency data on Austin ISD deficit, recapture, library funding, and budget cuts from public records.">
+  <meta name="keywords" content="Austin ISD Budget 2026, Austin ISD Financial Transparency, Austin ISD Data Sheet, Austin ISD Budget Analysis, AISD budget cuts, Austin ISD libraries, AISD financial data, Austin ISD deficit, Texas school recapture Austin ISD">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://solatx.org/financeial.html">
   <link rel="alternate" hreflang="en" href="https://solatx.org/financeial.html">
   <link rel="alternate" hreflang="es-MX" href="https://solatx.org/datos.html">
   <link rel="alternate" hreflang="x-default" href="https://solatx.org/financeial.html">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://solatx.org/financeial.html">
-  <meta property="og:title" content="Austin ISD Financial Data Sheet — SOLATX">
-  <meta property="og:description" content="AISD deficit, recapture payments, and school funding figures from TEA and district budget documents.">
-  <meta property="og:site_name" content="SOLATX">
+  <meta property="og:title" content="Austin ISD Budget Analysis 2026 & Data Sheet | Austin ISD Financial Transparency">
+  <meta property="og:description" content="Austin ISD Budget 2026 data sheet: $181M deficit, recapture, library funding impact, and budget cuts. Public records for Austin ISD financial transparency.">
+  <meta property="og:site_name" content="SOLATX - Austin ISD Budget Transparency">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://solatx.org/images/logo.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Austin ISD Financial Data Sheet — SOLATX">
-  <meta name="twitter:description" content="Public data on Austin ISD school finance, recapture, and library funding pressure.">
-  <title>Financial Data Sheet — SOLATX</title>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Austin ISD Budget Analysis 2026 & Data Sheet">
+  <meta name="twitter:description" content="Austin ISD Financial Transparency data sheet with budget cuts, recapture, and library funding figures.">
+  <meta name="twitter:image" content="https://solatx.org/images/logo.png">
+
+  <title>Austin ISD Budget Analysis 2026 & Data Sheet | Austin ISD Financial Transparency</title>
+
+  <!-- JSON-LD: Organization + WebPage + Dataset focused on Austin ISD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Dataset",
-    "name": "Austin ISD School Finance Data Sheet",
-    "description": "Compiled public figures on Austin ISD budget deficit, state recapture, basic allotment, and library funding context.",
-    "url": "https://solatx.org/financeial.html",
-    "inLanguage": "en",
-    "creator": { "@type": "Organization", "name": "SOLATX", "url": "https://solatx.org/" },
-    "keywords": ["Austin ISD", "school finance", "library funding", "Texas recapture"],
-    "isAccessibleForFree": true
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "SOLATX",
+        "url": "https://solatx.org/",
+        "description": "Austin ISD budget transparency and financial analysis using public data."
+      },
+      {
+        "@type": "WebPage",
+        "name": "Austin ISD Budget Analysis 2026 & Data Sheet",
+        "url": "https://solatx.org/financeial.html",
+        "description": "Detailed Austin ISD Budget 2026 analysis and data sheet covering financial transparency, deficit, and library funding."
+      },
+      {
+        "@type": "Dataset",
+        "name": "Austin ISD Budget 2026 Data Sheet",
+        "description": "Public data on Austin ISD deficit ($181M), recapture ($715.5M), library funding, and budget cuts for financial transparency.",
+        "url": "https://solatx.org/financeial.html",
+        "creator": { "@type": "Organization", "name": "SOLATX", "url": "https://solatx.org/" },
+        "keywords": ["Austin ISD Budget 2026", "Austin ISD Financial Transparency", "Austin ISD Data Sheet", "Austin ISD Budget Analysis"],
+        "isAccessibleForFree": true
+      }
+    ]
   }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f7f6f3; --surface: #fff; --text: #1a2332; --muted: #5c6778;
-      --border: #e2e0da; --accent: #2d6a6a; --accent-light: #e8f4f4;
-      --warm: #c45c3e; --warm-light: #fdf0ec; --navy: #1a2332;
-      --shadow: 0 4px 24px rgba(26, 35, 50, 0.06);
-      --radius: 12px; --max: 1080px;
+      --bg: #f8fafc; --surface: #fff; --text: #0f172a; --muted: #475569;
+      --border: #e2e8f0; --accent: #0f766e; --accent-light: #e6f2f0;
+      --navy: #0f172a;
+      --shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.05);
+      --radius: 8px; --max: 1120px;
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: "DM Sans", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; font-size: 1.05rem; }
+    body { margin: 0; font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
 
     .site-header { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .header-inner { max-width: var(--max); margin: 0 auto; padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
@@ -353,6 +377,46 @@
     </div>
   </section>
 
+  <!-- Latest Updates - Austin ISD Budget 2026 -->
+  <section id="latest-updates" class="reveal">
+    <p class="section-label">Austin ISD Budget 2026 — Recent Developments</p>
+    <h2 class="reveal">Latest Austin ISD Financial Updates</h2>
+    <p>Key developments from public AISD budget documents and reporting (as of June 2026). Focused on financial transparency and impacts to neighborhood schools and libraries.</p>
+
+    <div class="stats-grid" style="margin-top:1rem;">
+      <div class="stat-card">
+        <div class="stat-value warm">$181M</div>
+        <div class="stat-label">Projected AISD budget shortfall (2026–27)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">$60M</div>
+        <div class="stat-label">One-time revenue from property sales/monetization</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value warm">558 positions</div>
+        <div class="stat-label">Proposed cuts in deficit plan</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">~$897k</div>
+        <div class="stat-label">Savings from part-time librarian reductions (small campuses)</div>
+      </div>
+    </div>
+
+    <div class="chart-panel reveal" style="margin-top:1.25rem;">
+      <h3 style="margin-top:0">Austin ISD Budget Cuts vs. Leadership Compensation</h3>
+      <p class="muted">Comparison of proposed campus savings and documented superintendent compensation (public contract data).</p>
+      <div class="bar-row">
+        <div class="bar-meta"><span>Librarian hours reduction (small campuses)</span><span>~$897,000</span></div>
+        <div class="bar-track"><div class="bar-fill warm" data-width="25">$897k savings</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-meta"><span>Superintendent base salary + retirement</span><span>~$399,000 / year</span></div>
+        <div class="bar-track"><div class="bar-fill teal" data-width="100">~$399k / yr</div></div>
+      </div>
+      <p style="font-size:0.82rem; margin-top:0.5rem;">Note: Superintendent travel benefits (including rental car) remain under contract. Source data below.</p>
+    </div>
+  </section>
+
   <section id="feedback">
     <p class="section-label reveal">Public comment</p>
     <h2 class="reveal">Send feedback to AISD</h2>
@@ -384,9 +448,8 @@
 </main>
 
 <footer>
-  <p><strong>SOLATX</strong> — Built from public information for public understanding.</p>
-  <p style="margin-top:0.5rem">Data sources: Texas Education Agency (TEA), AISD financial reports FY2026, Texas Comptroller.</p>
-  <p style="margin-top:0.5rem">Not affiliated with AISD or the State of Texas</p>
+  <p><strong>SOLATX</strong> — Independent analysis of Austin ISD school finance from verified public records.</p>
+  <p style="margin-top:0.5rem">Data sources: Texas Education Agency (TEA), Austin ISD financial reports, Texas Comptroller. Not affiliated with AISD or the State of Texas.</p>
 </footer>
 
 <script>
