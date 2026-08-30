@@ -1,29 +1,37 @@
 # SOLATX
 
-Public-record briefing for Austin ISD school finance, Austin history, and the 2025–26 budget cycle.
+Static public-record briefing for Austin ISD school finance, Austin history, and the 2025–26 budget cycle.
 
-Site: [solatx.org](https://solatx.org)
-
-This repository is the static site. It is not Austin ISD and not the State of Texas.
+Owner: **f33boatx**. Not affiliated with Austin ISD or the State of Texas.
 
 ## Read order
 
-1. `index.html` — the gap vs the 2025–26 patch
-2. `history.html` — Edgewood, Senate Bill 7, why the press called it Robin Hood
-3. `austin.html` — 1928 plan through 2026 closures
-4. `inflation.html` — $6,160 / $6,215 / inflation gap
-5. `campuses.html` — where cuts landed
-6. `money.html` — recapture tables
-7. `libraries.html` — June 18 librarian amendment
-8. `questions.html` / `meetings.html` — tests and local transcript search
+1. `index.html` — problem vs one-year patch  
+2. `history.html` — Edgewood, SB 7, why the press said Robin Hood  
+3. `austin.html` — 1928 plan through 2026 closures  
+3. `inflation.html` — $6,160 / $6,215 / inflation gap  
+4. `campuses.html` — where cuts landed  
+5. `money.html` — recapture tables  
+6. `libraries.html` — June 18 amendment  
+7. `questions.html` — tests, not verdicts  
+8. `meetings.html` — local transcript search (no upload)  
 9. `action.html` / `sources.html` / `about.html`
+
+## Accuracy rules
+
+- Prefer AISD and TEA tables. If two official pages disagree, show both (`money.html`).
+- Meeting keyword counts are not findings.
+- Footer credit is f33boatx only.
 
 ## Local preview
 
 ```bash
+cd ~/solatx.org
 python3 -m http.server 8080
 ```
 
-## Copyright
+Open `http://127.0.0.1:8080/`. To search board subtitles, use the file picker on `meetings.html`.
 
-© 2026 SOLATX. Owned by **f33boatx**. All rights reserved.
+## Deploy
+
+GitHub Pages or any static host. `CNAME` is `solatx.org`. `_headers` applies on Netlify.

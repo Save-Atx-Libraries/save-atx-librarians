@@ -1,4 +1,263 @@
 {
-  "note": "Drop local transcript files into this folder and list them here, or use the file picker on meetings.html. Nothing is uploaded. Files never leave the browser.",
-  "files": []
+  "note": "One English caption file per meeting from Desktop/New Folder. Videos are not in this repo. Files stay local unless you choose to commit them.",
+  "files": [
+    "transcripts/20250822-april-1-2024-joint-subcommittee-meeting-1080p.vtt",
+    "transcripts/20250822-joint-subcommittee-meeting-april-21-2023-1080p.srt",
+    "transcripts/20250919-Austin-ISD-Board-of-Trustees-Information-Session--September-18-2025.srt",
+    "transcripts/20250927-Austin-ISD-Board-of-Trustees-Regular-Voting-Meeting--September-25-2025.vtt",
+    "transcripts/20251008-Austin-ISD-Public-Facility-Corporation-Board-Regular-Voting-Meeting--October-7-2.vtt",
+    "transcripts/20251010-Draft-School-Consolidation-&-Boundary-Change-Process.vtt",
+    "transcripts/20251011-Austin-ISD-Board-of-Trustees-Information-Session-&-Special-Meeting--October-9-20.vtt",
+    "transcripts/20251022-Martin-Middle-School-Community-Meeting--October-21-2025.srt",
+    "transcripts/20251022-Sunset-Valley-Elementary-School-Community-Meeting--October-21-2025.srt",
+    "transcripts/20251022-ESPA\u00d1OL-Sunset-Valley-Elementary-School-Community-Meeting--October-21-2025.vtt",
+    "transcripts/20251023-Barrington-Elementary-School-Community-Meeting--October-22-2025.srt",
+    "transcripts/20251027-Dawson-Elementary-School-Community-Meeting--October-27-2025.srt",
+    "transcripts/20251028-Palm-Elementary-School-Community-Meeting--October-27-2025.srt",
+    "transcripts/20251028-ESPA\u00d1OL-Palm-Elementary-School-Community-Meeting--October-27-2025.vtt",
+    "transcripts/20251030-Maplewood-Elementary-School-Community-Meeting--October-29-2025.srt",
+    "transcripts/20251030-Wid\u00e9n-Elementary-School-Community-Meeting--October-28-2025.srt",
+    "transcripts/20251031-Austin-ISD-Board-of-Trustees-Public-Hearing--October-30-2025.srt",
+    "transcripts/20251031-Austin-ISD-Board-of-Trustees-Work-Session--October-29-2025.vtt",
+    "transcripts/20251031-Bryker-Woods-Elementary-School-Community-Meeting--October-30-2025.srt",
+    "transcripts/20251104-Austin-ISD-Board-of-Trustees-Regular-Voting-Meeting--October-302025.vtt",
+    "transcripts/20251104-Becker-Elementary-School-Community-Meeting--October-31-2025.srt",
+    "transcripts/20251104-Bedicheck-Middle-School-Community-Meeting--November-3-2025.srt",
+    "transcripts/20251104-ESPA\u00d1OL-Bedicheck-Middle-School-Community-Meeting--November-3-2025.srt",
+    "transcripts/20251105-Winn-Montessori-Community-Meeting--November-3-3025.srt",
+    "transcripts/20251105-ESPA\u00d1OL-Winn-Montessori-Community-Meeting--November-3-3025.vtt",
+    "transcripts/20251106-Oak-Springs-Elementary-School-Community-Meeting--November-5-2025.srt",
+    "transcripts/20251106-Ridgetop-Elementary-School-Community-Meeting--November-5-2025.srt",
+    "transcripts/20251110-Austin-ISD-Board-of-Trustees-Information-Session--November-62025.vtt",
+    "transcripts/20251114-Blackshear-Elementary-School-Community-Meeting--November-12-2025.srt",
+    "transcripts/20251115-Turnaround-Plan-Update---November-13-2025.vtt",
+    "transcripts/20251121-Austin-ISD-Board-of-Trustees-Public-Hearing--November-20-2025.vtt",
+    "transcripts/20251121-Austin-ISD-Board-of-Trustees-Regular-Voting-Meeting--November-20-2025.srt"
+  ],
+  "meetings": [
+    {
+      "file": "transcripts/20250822-april-1-2024-joint-subcommittee-meeting-1080p.vtt",
+      "source": "20250822-april 1, 2024   joint subcommittee meeting 1080p.en.vtt",
+      "bytes": 820420,
+      "date": "20250822",
+      "title": "april 1 2024 joint subcommittee meeting 1080p"
+    },
+    {
+      "file": "transcripts/20250822-joint-subcommittee-meeting-april-21-2023-1080p.srt",
+      "source": "20250822-joint subcommittee meeting  april 21, 2023 1080p.en.srt",
+      "bytes": 513623,
+      "date": "20250822",
+      "title": "joint subcommittee meeting april 21 2023 1080p"
+    },
+    {
+      "file": "transcripts/20250919-Austin-ISD-Board-of-Trustees-Information-Session--September-18-2025.srt",
+      "source": "20250919-Austin ISD Board of Trustees Information Session\uff1a September 18, 2025.en.srt",
+      "bytes": 1504673,
+      "date": "20250919",
+      "title": "Austin ISD Board of Trustees Information Session  September 18 2025"
+    },
+    {
+      "file": "transcripts/20250927-Austin-ISD-Board-of-Trustees-Regular-Voting-Meeting--September-25-2025.vtt",
+      "source": "20250927-Austin ISD Board of Trustees Regular Voting Meeting\uff1a September 25, 2025.en.vtt",
+      "bytes": 1396064,
+      "date": "20250927",
+      "title": "Austin ISD Board of Trustees Regular Voting Meeting  September 25 2025"
+    },
+    {
+      "file": "transcripts/20251008-Austin-ISD-Public-Facility-Corporation-Board-Regular-Voting-Meeting--October-7-2.vtt",
+      "source": "20251008-Austin ISD Public Facility Corporation Board Regular Voting Meeting\uff1a October 7, 2025.en.vtt",
+      "bytes": 560750,
+      "date": "20251008",
+      "title": "Austin ISD Public Facility Corporation Board Regular Voting Meeting  October 7 2"
+    },
+    {
+      "file": "transcripts/20251010-Draft-School-Consolidation-&-Boundary-Change-Process.vtt",
+      "source": "20251010-Draft School Consolidation & Boundary Change Process.en.vtt",
+      "bytes": 250080,
+      "date": "20251010",
+      "title": "Draft School Consolidation & Boundary Change Process"
+    },
+    {
+      "file": "transcripts/20251011-Austin-ISD-Board-of-Trustees-Information-Session-&-Special-Meeting--October-9-20.vtt",
+      "source": "20251011-Austin ISD Board of Trustees Information Session & Special Meeting\uff1a October 9, 2025.en.vtt",
+      "bytes": 2855710,
+      "date": "20251011",
+      "title": "Austin ISD Board of Trustees Information Session & Special Meeting  October 9 20"
+    },
+    {
+      "file": "transcripts/20251022-Martin-Middle-School-Community-Meeting--October-21-2025.srt",
+      "source": "20251022-Martin Middle School Community Meeting\uff1a October 21, 2025.en.srt",
+      "bytes": 405998,
+      "date": "20251022",
+      "title": "Martin Middle School Community Meeting  October 21 2025"
+    },
+    {
+      "file": "transcripts/20251022-Sunset-Valley-Elementary-School-Community-Meeting--October-21-2025.srt",
+      "source": "20251022-Sunset Valley Elementary School Community Meeting\uff1a October 21, 2025.en.srt",
+      "bytes": 460184,
+      "date": "20251022",
+      "title": "Sunset Valley Elementary School Community Meeting  October 21 2025"
+    },
+    {
+      "file": "transcripts/20251022-ESPA\u00d1OL-Sunset-Valley-Elementary-School-Community-Meeting--October-21-2025.vtt",
+      "source": "20251022-[ESPA\u00d1OL] Sunset Valley Elementary School Community Meeting\uff1a October 21, 2025.en.vtt",
+      "bytes": 617667,
+      "date": "20251022",
+      "title": "ESPA\u00d1OL Sunset Valley Elementary School Community Meeting  October 21 2025"
+    },
+    {
+      "file": "transcripts/20251023-Barrington-Elementary-School-Community-Meeting--October-22-2025.srt",
+      "source": "20251023-Barrington Elementary School Community Meeting\uff1a October 22, 2025.en.srt",
+      "bytes": 389681,
+      "date": "20251023",
+      "title": "Barrington Elementary School Community Meeting  October 22 2025"
+    },
+    {
+      "file": "transcripts/20251027-Dawson-Elementary-School-Community-Meeting--October-27-2025.srt",
+      "source": "20251027-Dawson Elementary School Community Meeting\uff1a October 27, 2025.en.srt",
+      "bytes": 469717,
+      "date": "20251027",
+      "title": "Dawson Elementary School Community Meeting  October 27 2025"
+    },
+    {
+      "file": "transcripts/20251028-Palm-Elementary-School-Community-Meeting--October-27-2025.srt",
+      "source": "20251028-Palm Elementary School Community Meeting\uff1a October 27, 2025.en.srt",
+      "bytes": 436772,
+      "date": "20251028",
+      "title": "Palm Elementary School Community Meeting  October 27 2025"
+    },
+    {
+      "file": "transcripts/20251028-ESPA\u00d1OL-Palm-Elementary-School-Community-Meeting--October-27-2025.vtt",
+      "source": "20251028-[ESPA\u00d1OL] Palm Elementary School Community Meeting\uff1a October 27, 2025.en.vtt",
+      "bytes": 539756,
+      "date": "20251028",
+      "title": "ESPA\u00d1OL Palm Elementary School Community Meeting  October 27 2025"
+    },
+    {
+      "file": "transcripts/20251030-Maplewood-Elementary-School-Community-Meeting--October-29-2025.srt",
+      "source": "20251030-Maplewood Elementary School Community Meeting\uff1a October 29, 2025.en.srt",
+      "bytes": 542971,
+      "date": "20251030",
+      "title": "Maplewood Elementary School Community Meeting  October 29 2025"
+    },
+    {
+      "file": "transcripts/20251030-Wid\u00e9n-Elementary-School-Community-Meeting--October-28-2025.srt",
+      "source": "20251030-Wid\u00e9n Elementary School Community Meeting\uff1a October 28, 2025.en.srt",
+      "bytes": 420422,
+      "date": "20251030",
+      "title": "Wid\u00e9n Elementary School Community Meeting  October 28 2025"
+    },
+    {
+      "file": "transcripts/20251031-Austin-ISD-Board-of-Trustees-Public-Hearing--October-30-2025.srt",
+      "source": "20251031-Austin ISD Board of Trustees Public Hearing\uff1a October 30, 2025.en.srt",
+      "bytes": 64955,
+      "date": "20251031",
+      "title": "Austin ISD Board of Trustees Public Hearing  October 30 2025"
+    },
+    {
+      "file": "transcripts/20251031-Austin-ISD-Board-of-Trustees-Work-Session--October-29-2025.vtt",
+      "source": "20251031-Austin ISD Board of Trustees Work Session\uff1a October 29, 2025.en.vtt",
+      "bytes": 2616305,
+      "date": "20251031",
+      "title": "Austin ISD Board of Trustees Work Session  October 29 2025"
+    },
+    {
+      "file": "transcripts/20251031-Bryker-Woods-Elementary-School-Community-Meeting--October-30-2025.srt",
+      "source": "20251031-Bryker Woods Elementary School Community Meeting\uff1a October 30, 2025.en.srt",
+      "bytes": 411112,
+      "date": "20251031",
+      "title": "Bryker Woods Elementary School Community Meeting  October 30 2025"
+    },
+    {
+      "file": "transcripts/20251104-Austin-ISD-Board-of-Trustees-Regular-Voting-Meeting--October-302025.vtt",
+      "source": "20251104-Austin ISD Board of Trustees Regular Voting Meeting\uff1a October 30,2025.en.vtt",
+      "bytes": 909291,
+      "date": "20251104",
+      "title": "Austin ISD Board of Trustees Regular Voting Meeting  October 302025"
+    },
+    {
+      "file": "transcripts/20251104-Becker-Elementary-School-Community-Meeting--October-31-2025.srt",
+      "source": "20251104-Becker Elementary School Community Meeting\uff1a October 31, 2025.en.srt",
+      "bytes": 692956,
+      "date": "20251104",
+      "title": "Becker Elementary School Community Meeting  October 31 2025"
+    },
+    {
+      "file": "transcripts/20251104-Bedicheck-Middle-School-Community-Meeting--November-3-2025.srt",
+      "source": "20251104-Bedicheck Middle School Community Meeting\uff1a November 3, 2025.en.srt",
+      "bytes": 502961,
+      "date": "20251104",
+      "title": "Bedicheck Middle School Community Meeting  November 3 2025"
+    },
+    {
+      "file": "transcripts/20251104-ESPA\u00d1OL-Bedicheck-Middle-School-Community-Meeting--November-3-2025.srt",
+      "source": "20251104-[ESPA\u00d1OL] Bedicheck Middle School Community Meeting\uff1a November 3, 2025.en-es-ehkg1hFWq8A.srt",
+      "bytes": 130395,
+      "date": "20251104",
+      "title": "ESPA\u00d1OL Bedicheck Middle School Community Meeting  November 3 2025"
+    },
+    {
+      "file": "transcripts/20251105-Winn-Montessori-Community-Meeting--November-3-3025.srt",
+      "source": "20251105-Winn Montessori Community Meeting\uff1a November 3, 3025.en.srt",
+      "bytes": 515014,
+      "date": "20251105",
+      "title": "Winn Montessori Community Meeting  November 3 3025"
+    },
+    {
+      "file": "transcripts/20251105-ESPA\u00d1OL-Winn-Montessori-Community-Meeting--November-3-3025.vtt",
+      "source": "20251105-[ESPA\u00d1OL] Winn Montessori Community Meeting\uff1a November 3, 3025.en.vtt",
+      "bytes": 700435,
+      "date": "20251105",
+      "title": "ESPA\u00d1OL Winn Montessori Community Meeting  November 3 3025"
+    },
+    {
+      "file": "transcripts/20251106-Oak-Springs-Elementary-School-Community-Meeting--November-5-2025.srt",
+      "source": "20251106-Oak Springs Elementary School Community Meeting\uff1a November 5, 2025.en.srt",
+      "bytes": 436200,
+      "date": "20251106",
+      "title": "Oak Springs Elementary School Community Meeting  November 5 2025"
+    },
+    {
+      "file": "transcripts/20251106-Ridgetop-Elementary-School-Community-Meeting--November-5-2025.srt",
+      "source": "20251106-Ridgetop Elementary School Community Meeting\uff1a November 5, 2025.en.srt",
+      "bytes": 486800,
+      "date": "20251106",
+      "title": "Ridgetop Elementary School Community Meeting  November 5 2025"
+    },
+    {
+      "file": "transcripts/20251110-Austin-ISD-Board-of-Trustees-Information-Session--November-62025.vtt",
+      "source": "20251110-Austin ISD Board of Trustees Information Session\uff1a November 6,2025.en.vtt",
+      "bytes": 3296049,
+      "date": "20251110",
+      "title": "Austin ISD Board of Trustees Information Session  November 62025"
+    },
+    {
+      "file": "transcripts/20251114-Blackshear-Elementary-School-Community-Meeting--November-12-2025.srt",
+      "source": "20251114-Blackshear Elementary School Community Meeting\uff1a November 12, 2025.en.srt",
+      "bytes": 525791,
+      "date": "20251114",
+      "title": "Blackshear Elementary School Community Meeting  November 12 2025"
+    },
+    {
+      "file": "transcripts/20251115-Turnaround-Plan-Update---November-13-2025.vtt",
+      "source": "20251115-Turnaround Plan Update - November 13, 2025.en.vtt",
+      "bytes": 609982,
+      "date": "20251115",
+      "title": "Turnaround Plan Update   November 13 2025"
+    },
+    {
+      "file": "transcripts/20251121-Austin-ISD-Board-of-Trustees-Public-Hearing--November-20-2025.vtt",
+      "source": "20251121-Austin ISD Board of Trustees Public Hearing\uff1a November 20, 2025.en.vtt",
+      "bytes": 1366211,
+      "date": "20251121",
+      "title": "Austin ISD Board of Trustees Public Hearing  November 20 2025"
+    },
+    {
+      "file": "transcripts/20251121-Austin-ISD-Board-of-Trustees-Regular-Voting-Meeting--November-20-2025.srt",
+      "source": "20251121-Austin ISD Board of Trustees Regular Voting Meeting\uff1a November 20, 2025.en.srt",
+      "bytes": 1657078,
+      "date": "20251121",
+      "title": "Austin ISD Board of Trustees Regular Voting Meeting  November 20 2025"
+    }
+  ]
 }
