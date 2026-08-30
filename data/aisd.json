@@ -1,0 +1,23 @@
+{
+  "updated": "2026-08-30",
+  "disclaimer": "Compiled from AISD, TEA, Texas Comptroller, Texas Tribune Schools Explorer, and contemporaneous reporting. Rounded figures are labeled. Always follow the source.",
+  "recapture_series": [
+    {"fy": "2014-15", "recapture": 181118956, "enrollment": 84191, "source": "AISD Recapture page"},
+    {"fy": "2015-16", "recapture": 266073630, "enrollment": 83270, "source": "AISD Budget Process / Recapture"},
+    {"fy": "2016-17", "recapture": 403324244, "enrollment": 82766, "source": "AISD Budget Process"},
+    {"fy": "2017-18", "recapture": 540290792, "enrollment": 81346, "source": "AISD Budget Process"},
+    {"fy": "2018-19", "recapture": 665251676, "enrollment": 79787, "source": "AISD Budget Process"},
+    {"fy": "2019-20", "recapture": 639599384, "enrollment": 80911, "source": "AISD Budget Process"},
+    {"fy": "2020-21", "recapture": 706687156, "enrollment": 74982, "source": "AISD Budget Process"},
+    {"fy": "2021-22", "recapture": 762800496, "enrollment": 74602, "source": "AISD Budget Process FY2026 table"},
+    {"fy": "2022-23", "recapture": 900910768, "enrollment": 73384, "source": "AISD Budget Process"},
+    {"fy": "2023-24", "recapture": 664839391, "enrollment": 73681, "source": "AISD Budget Process FY2026 table"},
+    {"fy": "2024-25", "recapture": 777158149, "enrollment": 72272, "source": "AISD Budget Process FY2026 table"},
+    {"fy": "2025-26 adopted", "recapture": 715523373, "enrollment": 72303, "source": "AISD Budget Process — FY2026 adopted"}
+  ],
+  "notes": {
+    "recapture_2021_22_alt": "AISD Recapture page lists FY2021-22 recapture as $765,741,768. Budget Process table lists $762,800,496. Both are shown on official AISD pages.",
+    "recapture_2024_25_acfr": "AISD 2025 ACFR reports $771.60 million in Chapter 49 / pass-through recapture expenses for the year ended June 30, 2025. The Budget Process table lists $777,158,149 for 2025.",
+    "enrollment_tribune": "Texas Tribune Schools Explorer (TEA data) reports 69,074 students in 2026, down 17.4% since 2016."
+  }
+}

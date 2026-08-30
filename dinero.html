@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:">
+  <title>Recaptura y el déficit — SOLATX</title>
+  <link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/solatx.css">
+  <link rel="alternate" hreflang="en" href="money.html">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="inicio.html"><img src="assets/img/mark.svg" alt=""><div><strong>SOLATX</strong><span>Austin ISD, en el expediente</span></div></a>
+      <button class="nav-toggle" type="button" aria-expanded="false">Menú</button>
+      <nav id="site-nav" class="nav">
+        <a href="inicio.html">El expediente</a>
+        <a href="historia.html">Historia</a>
+        <a href="austin-es.html">Austin</a>
+        <a href="inflacion.html">Inflación</a>
+        <a href="planteles.html">Planteles</a>
+        <a href="dinero.html" aria-current="page">El dinero</a>
+        <a href="bibliotecas.html">Bibliotecas</a>
+        <a href="preguntas.html">Preguntar por qué</a>
+        <a href="juntas.html">Juntas</a>
+        <a href="accion.html">Qué falta hacer</a>
+        <a href="fuentes.html">Fuentes</a>
+        <a class="lang" href="money.html" lang="en">English</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Capítulo · El dinero</p>
+        <h1>Siga el predial hasta que se sale, y vea qué le quedó al plantel.</h1>
+        <p class="lede">La recaptura es el Capítulo 49, no un apodo. Las propias páginas de AISD dicen que el distrito es rico en propiedad y que cientos de millones del cobro local se van al estado cada año. Esa es la expresión fiscal de la herida. Vender edificios y aparcar el sueldo de bibliotecarios en reserva es cómo se cerró un solo año. El contrato de seis cifras y el viaje con carro rentado son líneas públicas. Merecen el mismo escrutinio. Un apodo no es una auditoría.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap">
+        <div class="stats">
+          <article class="stat"><b>$715.5M</b><span>Recaptura adoptada FY2025–26 ($715,523,373). Matrícula usada: 72,303. Poco menos de la mitad de un presupuesto de egresos de $1.70 mil millones.</span><small><a href="https://www.austinisd.org/budget/process">AISD Budget Process</a></small></article>
+          <article class="stat"><b>$8.3B</b><span>Recaptura acumulada, FY2000–01 a FY2024–25, según AISD.</span></article>
+          <article class="stat"><b>$181M</b><span>Hueco proyectado 2026–27. El paquete adoptado usó recortes profundos más dinero de una vez por propiedades.</span></article>
+          <article class="stat"><b>69,074</b><span>Matrícula 2026 en datos TEA vía Texas Tribune (−17.4% desde 2016). La tabla de recaptura de AISD usó 72,303 para la columna adoptada FY2026.</span></article>
+        </div>
+        <p class="note">Salen dos conteos de matrícula. SOLATX no escoge favorito. Los dos se etiquetan.</p>
+        <div class="chart">
+          <h3>Recaptura adoptada (millones)</h3>
+          <div data-recapture-chart></div>
+          <p class="note">Del archivo <a href="data/aisd.json">data/aisd.json</a>. Si la gráfica sale vacía, JavaScript está apagado; la tabla en inglés en <a href="money.html">money.html</a> tiene las filas.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap">
+        <h2>El mismo cobro, distintas líneas</h2>
+        <p class="deck">Cifras del contrato aprobado por la junta y de archivos de sueldo de la TEA. Están aquí porque son públicas, y porque el parche de bibliotecarios se tasó en menos de $1 millón.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Línea</th><th>Monto</th><th>Expediente</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Base del superintendente</td><td class="num">$362,250 / año</td><td>Contrato §3.1, feb. 2024–ago. 2028. <a href="https://go.boarddocs.com/tx/austinisd/Board.nsf/files/CZU9LV23917F/$file/2024%20Austin%20ISD%20Superintendent%20Contract%20M.%20Segura.pdf">PDF BoardDocs</a></td></tr>
+              <tr><td>Retiro suplementario</td><td class="num">$36,750 / año</td><td>Pagado por el empleador, contrato §3.6</td></tr>
+              <tr><td>Viaje de trabajo</td><td>Reembolsado, incl. carro rentado</td><td>Contrato §3.3</td></tr>
+              <tr><td>Base promedio de maestro (2025)</td><td class="num">$63,367</td><td>Nuevo: $54,565; 6+ años: $67,722. Tribune / TEA</td></tr>
+              <tr><td>Recorte propuesto de bibliotecarios</td><td class="num">~$897k–$977,500</td><td>11.5 FTE / 23 planteles. No se ejecutó. Fondo de reserva hasta recortes de reemplazo en agosto.</td></tr>
+              <tr><td>Junta de fideicomisarios</td><td class="num">$0 sueldo</td><td>Junta voluntaria que adopta el presupuesto y el contrato.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="callout">Estas líneas ya son públicas. No son rumor. Tampoco son prueba de un delito. Son el resto local que todavía hay que escrutar el mismo año que el distrito vende tierra y recorta tiempo de plantel. Auditar, aquí, quiere decir: poner el contrato, los reembolsos de viaje, las suposiciones de venta de propiedad y la lista de recortes de campus en un solo paquete de la junta y dejarlos ahí hasta que las cifras cuadren con un niño en un salón. La recaptura es lo que se lleva el estado. No disculpa un paquete de seis cifras sin examinar, ni el inmobiliario de una vez puesto en lugar de una fórmula.</p>
+        <p class="note">El superintendente dirigió operaciones, instalaciones y construcción antes del contrato de 2024. El plan 2026–27 cuenta con del orden de $60 millones por vender o monetizar propiedad del distrito. Esas dos cosas caben en el mismo escrutinio, no como apodo, como pregunta: ¿se usa la tierra como ingreso de operación mientras se le dice al salón que espere?</p>
+        <div class="pager">
+          <a href="planteles.html"><small>Atrás</small> ← Planteles</a>
+          <a href="bibliotecas.html"><small>Siguiente</small> Bibliotecas →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap"><p class="owner">© 2026 SOLATX. Owned by <strong>f33boatx</strong>. All rights reserved.</p></div>
+  </footer>
+  <script src="assets/js/solatx.js"></script>
+</body>
+</html>

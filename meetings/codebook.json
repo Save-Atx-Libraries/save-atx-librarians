@@ -1,0 +1,54 @@
+{
+  "themes": [
+    {
+      "id": "recapture",
+      "label": "Recapture / Robin Hood",
+      "needles": ["recapture", "robin hood", "chapter 49", "property wealthy", "property-rich"]
+    },
+    {
+      "id": "enrollment",
+      "label": "Enrollment / ADA",
+      "needles": ["enrollment", "average daily attendance", "ada", "declining", "under-enrolled", "underenrolled"]
+    },
+    {
+      "id": "closures",
+      "label": "Closures / consolidation",
+      "needles": ["clos", "consolidat", "repurpos", "surplus", "boundary"]
+    },
+    {
+      "id": "staffing",
+      "label": "Teachers / class size / shuffle",
+      "needles": ["class size", "planning period", "reassign", "shuffle", "teacher", "ratio", "stipend"]
+    },
+    {
+      "id": "libraries",
+      "label": "Libraries",
+      "needles": ["librarian", "library", "libraries"]
+    },
+    {
+      "id": "transport",
+      "label": "Buses / hubs",
+      "needles": ["bus", "transport", "hub", "two-mile", "2-mile"]
+    },
+    {
+      "id": "inflation",
+      "label": "Inflation / allotment / legislature",
+      "needles": ["inflation", "basic allotment", "legislature", "capitol", "formula", "hb 2", "house bill"]
+    },
+    {
+      "id": "turnaround",
+      "label": "Failing campuses / TAP / takeover",
+      "needles": ["turnaround", "takeover", "unacceptable", "accountability", "burnet", "webb", "tea"]
+    },
+    {
+      "id": "central",
+      "label": "Central office vs campus",
+      "needles": ["central office", "headquarters", "campus is carrying", "brunt", "vacancy"]
+    },
+    {
+      "id": "public",
+      "label": "Public comment markers",
+      "needles": ["public comment", "my name is", "i am a parent", "i am a teacher", "i am a student", "my child"]
+    }
+  ]
+}
