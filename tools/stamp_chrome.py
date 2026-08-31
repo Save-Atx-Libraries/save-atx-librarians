@@ -147,7 +147,7 @@ def rail_links(items, current: str, numbered: bool) -> str:
         href, *rest = row
         if numbered:
             num, label = rest
-            inner = f'<span class="n">{num}</span><span>{label}</span>'
+            inner = f'<span class="n">{num}</span> <span>{label}</span>'
         else:
             label = rest[0]
             inner = f"<span>{label}</span>"
