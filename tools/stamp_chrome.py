@@ -24,6 +24,7 @@ STORY_EN = [
     ("questions.html", "09", "What the meetings show"),
 ]
 FILES_EN = [
+    ("wooldridge.html", "Wooldridge · last year’s staff"),
     ("action.html", "What still needs doing"),
     ("sources.html", "Sources"),
     ("about.html", "About"),
@@ -40,6 +41,7 @@ STORY_ES = [
     ("preguntas.html", "09", "Lo que muestran las juntas"),
 ]
 FILES_ES = [
+    ("wooldridge-es.html", "Wooldridge · el personal del año pasado"),
     ("accion.html", "Qué falta hacer"),
     ("fuentes.html", "Fuentes"),
     ("acerca.html", "Acerca"),
@@ -56,6 +58,7 @@ PAGES = {
     "campuses.html": ("en", "planteles.html", "07 · Campuses took the load"),
     "libraries.html": ("en", "bibliotecas.html", "08 · The librarian bandage"),
     "questions.html": ("en", "preguntas.html", "09 · What the meetings show"),
+    "wooldridge.html": ("en", "wooldridge-es.html", "The files · Wooldridge last year"),
     "action.html": ("en", "accion.html", "The files · What still needs doing"),
     "sources.html": ("en", "fuentes.html", "The files · Sources"),
     "about.html": ("en", "acerca.html", "The files · About"),
@@ -68,6 +71,7 @@ PAGES = {
     "planteles.html": ("es", "campuses.html", "07 · Los planteles cargaron"),
     "bibliotecas.html": ("es", "libraries.html", "08 · El parche de bibliotecarios"),
     "preguntas.html": ("es", "questions.html", "09 · Lo que muestran las juntas"),
+    "wooldridge-es.html": ("es", "wooldridge.html", "Los archivos · Wooldridge el año pasado"),
     "accion.html": ("es", "action.html", "Los archivos · Qué falta hacer"),
     "fuentes.html": ("es", "sources.html", "Los archivos · Fuentes"),
     "acerca.html": ("es", "about.html", "Los archivos · Acerca"),
