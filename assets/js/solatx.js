@@ -2,13 +2,25 @@
   "use strict";
 
   var toggle = document.querySelector(".nav-toggle");
-  var nav = document.querySelector(".nav");
-  if (toggle && nav) {
+  var rail = document.querySelector(".rail");
+  var backdrop = document.querySelector(".backdrop");
+  function setOpen(open) {
+    if (!rail) return;
+    rail.classList.toggle("open", open);
+    if (toggle) toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    if (backdrop) backdrop.classList.toggle("show", open);
+  }
+  if (toggle && rail) {
     toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      setOpen(!rail.classList.contains("open"));
     });
   }
+  if (backdrop) {
+    backdrop.addEventListener("click", function () { setOpen(false); });
+  }
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape") setOpen(false);
+  });
 
   document.querySelectorAll('a[href^="http"]').forEach(function (a) {
     try {

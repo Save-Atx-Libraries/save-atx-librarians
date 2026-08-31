@@ -13,30 +13,49 @@
 </head>
 <body>
   <a class="skip" href="#main">Saltar al contenido</a>
-  <header class="site-header">
-    <div class="wrap bar">
-      <a class="brand" href="inicio.html"><img src="assets/img/mark.svg" alt=""><div><strong>SOLATX</strong><span>Austin ISD, en el expediente</span></div></a>
-      <button class="nav-toggle" type="button" aria-expanded="false">Menú</button>
-      <nav id="site-nav" class="nav">
-        <a href="inicio.html">El expediente</a>
-        <a href="historia.html">Historia</a>
-        <a href="austin-es.html">Austin</a>
-        <a href="inflacion.html">Inflación</a>
-        <a href="planteles.html" aria-current="page">Planteles</a>
-        <a href="dinero.html">El dinero</a>
-        <a href="bibliotecas.html">Bibliotecas</a>
-        <a href="preguntas.html">Preguntar por qué</a>
-        <a href="juntas.html">Juntas</a>
-        <a href="accion.html">Qué falta hacer</a>
-        <a href="fuentes.html">Fuentes</a>
-        <a class="lang" href="campuses.html" lang="en">English</a>
-      </nav>
-    </div>
+  <button class="backdrop" type="button" aria-label="Close menu"></button>
+  <aside class="rail" id="site-nav">
+    <a class="brand" href="inicio.html">
+      <img src="assets/img/mark.svg" alt="">
+      <div>
+        <strong>SOLATX</strong>
+        <span>Austin ISD, en el expediente</span>
+      </div>
+    </a>
+    <p class="rail-tag">La historia, en orden</p>
+    <p class="rail-note">Recaptura, luego la “crisis” presupuestal. Léala de arriba abajo.</p>
+    <nav aria-label="La historia, en orden">
+      <ol class="story">
+        <li><a href="inicio.html"><span class="n">01</span><span>Empiece aquí</span></a></li>
+        <li><a href="historia.html"><span class="n">02</span><span>La recaptura es orden de corte</span></a></li>
+        <li><a href="austin-es.html"><span class="n">03</span><span>Cómo Austin se volvió “rico”</span></a></li>
+        <li><a href="inflacion.html"><span class="n">04</span><span>Se congeló la asignación</span></a></li>
+        <li><a href="dinero.html"><span class="n">05</span><span>La factura de recaptura</span></a></li>
+        <li><a href="crisis-es.html"><span class="n">06</span><span>La “crisis” presupuestal 2026</span></a></li>
+        <li><a href="planteles.html" aria-current="page"><span class="n">07</span><span>Los planteles cargaron</span></a></li>
+        <li><a href="bibliotecas.html"><span class="n">08</span><span>El parche de bibliotecarios</span></a></li>
+        <li><a href="preguntas.html"><span class="n">09</span><span>Lo que muestran las juntas</span></a></li>
+      </ol>
+    </nav>
+    <p class="rail-tag">Los archivos</p>
+    <nav aria-label="Los archivos">
+      <ul class="files">
+        <li><a href="accion.html"><span>Qué falta hacer</span></a></li>
+        <li><a href="fuentes.html"><span>Fuentes</span></a></li>
+        <li><a href="acerca.html"><span>Acerca</span></a></li>
+      </ul>
+    </nav>
+    <a class="lang" href="campuses.html" lang="en" hreflang="en">English</a>
+    <p class="rail-foot">Registros públicos. No es AISD. No es el Estado de Texas.</p>
+  </aside>
+  <header class="mast">
+    <p class="here">Está aquí: <b>07 · Los planteles cargaron</b></p>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menú</button>
   </header>
   <main id="main">
     <section class="hero">
       <div class="wrap">
-        <p class="kicker">Capítulo · Planteles</p>
+        <p class="kicker">Capítulo 07 · Los planteles cargaron</p>
         <h1>El distrito se quedó en el edificio. Se recorrió del día escolar.</h1>
         <p class="lede">“Falta de involucramiento” aquí no es decir que AISD desapareció. Es una afirmación que se puede checar contra la lista de recortes 2026–27: menos adultos en el plantel, menos tiempo de planeación, el camión más lejos, escuelas del barrio cerradas — mientras la brecha estructural se le dejó al Congreso. Los fideicomisarios nombraron el desbalance en la sala.</p>
       </div>
@@ -73,14 +92,40 @@
         </div>
         <p class="prose">Reacomodar maestros, subir el cupo y pedirle a un maestro que aliste a los niños para un país polarizado es la carga que no se ve en la diapositiva de “red de seguridad.” Eso no se arregla con un sitio ni con un feed. Véase <a href="dinero.html">el contrato y las ventas de propiedad</a> en la misma cuenta.</p>
         <div class="pager">
-          <a href="inflacion.html"><small>Atrás</small> ← Inflación</a>
-          <a href="dinero.html"><small>Siguiente</small> Recaptura y el déficit →</a>
+          <a href="crisis-es.html"><small>Atrás</small> ← La “crisis” presupuestal 2026</a>
+          <a href="bibliotecas.html"><small>Siguiente</small> El parche de bibliotecarios →</a>
         </div>
       </div>
     </section>
   </main>
   <footer class="site-footer">
-    <div class="wrap"><p class="owner">© 2026 SOLATX. Owned by <strong>f33boatx</strong>. All rights reserved.</p></div>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h2>SOLATX</h2>
+          <p>Educación comunitaria a partir de registros públicos. No está afiliado a Austin ISD ni al Estado de Texas. Verifique cada cifra en la <a href="fuentes.html">página de fuentes</a>.</p>
+        </div>
+        <div>
+          <h2>Capítulos</h2>
+          <ul>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="dinero.html">Recaptura</a></li>
+            <li><a href="crisis-es.html">La “crisis”</a></li>
+            <li><a href="planteles.html">Planteles</a></li>
+            <li><a href="fuentes.html">Fuentes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contacte a AISD, no a nosotros</h2>
+          <ul>
+            <li><a href="mailto:board@austinisd.org">board@austinisd.org</a></li>
+            <li><a href="https://www.austinisd.org/board/meetings">Comentario público · 512-414-0130</a></li>
+            <li><a href="accion.html">Qué falta hacer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="owner">© 2026 SOLATX. Owned by <strong>f33boatx</strong>. All rights reserved. Copyright and site ownership rest with f33boatx.</p>
+    </div>
   </footer>
   <script src="assets/js/solatx.js"></script>
 </body>
