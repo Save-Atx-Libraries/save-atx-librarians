@@ -366,6 +366,20 @@ main {
 .prose p { margin: 0 0 1rem; }
 .prose ul, .prose ol { padding-left: 1.2rem; }
 .prose li { margin: 0.35rem 0; }
+.glossary {
+  max-width: var(--measure);
+  margin: 0;
+}
+.glossary dt {
+  font-weight: 700;
+  margin: 1.15rem 0 0.3rem;
+  font-size: 1.02rem;
+}
+.glossary dt:first-child { margin-top: 0; }
+.glossary dd {
+  margin: 0;
+  color: var(--ink-soft);
+}
 .note {
   font-size: 0.88rem;
   color: var(--muted);

@@ -26,6 +26,7 @@ STORY_EN = [
 FILES_EN = [
     ("wooldridge.html", "Wooldridge · 2025–26 staff"),
     ("action.html", "What still needs doing"),
+    ("glossary.html", "What these words mean"),
     ("sources.html", "Sources"),
     ("about.html", "About"),
 ]
@@ -43,6 +44,7 @@ STORY_ES = [
 FILES_ES = [
     ("wooldridge-es.html", "Wooldridge · personal 2025–26"),
     ("accion.html", "Qué falta hacer"),
+    ("glosario.html", "Qué quieren decir estas palabras"),
     ("fuentes.html", "Fuentes"),
     ("acerca.html", "Acerca"),
 ]
@@ -60,6 +62,7 @@ PAGES = {
     "questions.html": ("en", "preguntas.html", "09 · What the meetings show"),
     "wooldridge.html": ("en", "wooldridge-es.html", "The files · Congratulations, Wooldridge"),
     "action.html": ("en", "accion.html", "The files · What still needs doing"),
+    "glossary.html": ("en", "glosario.html", "The files · What these words mean"),
     "sources.html": ("en", "fuentes.html", "The files · Sources"),
     "about.html": ("en", "acerca.html", "The files · About"),
     "inicio.html": ("es", "index.html", "01 · Empiece aquí"),
@@ -73,6 +76,7 @@ PAGES = {
     "preguntas.html": ("es", "questions.html", "09 · Lo que muestran las juntas"),
     "wooldridge-es.html": ("es", "wooldridge.html", "Los archivos · Felicidades, Wooldridge"),
     "accion.html": ("es", "action.html", "Los archivos · Qué falta hacer"),
+    "glosario.html": ("es", "glossary.html", "Los archivos · Qué quieren decir estas palabras"),
     "fuentes.html": ("es", "sources.html", "Los archivos · Fuentes"),
     "acerca.html": ("es", "about.html", "Los archivos · Acerca"),
 }
@@ -108,7 +112,11 @@ PAGERS = {
     ),
     "questions.html": (
         "libraries.html", "The librarian bandage",
-        "action.html", "What still needs doing",
+        "glossary.html", "What these words mean",
+    ),
+    "glossary.html": (
+        "questions.html", "What the meetings show",
+        "sources.html", "Sources",
     ),
     "historia.html": (
         "inicio.html", "Empiece aquí",
@@ -140,7 +148,11 @@ PAGERS = {
     ),
     "preguntas.html": (
         "bibliotecas.html", "El parche de bibliotecarios",
-        "accion.html", "Qué falta hacer",
+        "glosario.html", "Qué quieren decir estas palabras",
+    ),
+    "glosario.html": (
+        "preguntas.html", "Lo que muestran las juntas",
+        "fuentes.html", "Fuentes",
     ),
 }
 
@@ -166,7 +178,7 @@ def chrome(current: str, lang: str, alt: str, here: str) -> tuple[str, str]:
         home = "inicio.html"
         tagline = "Austin ISD, en el expediente"
         story_h = "La historia, en orden"
-        story_note = "Recaptura, luego la “crisis” presupuestal. Léala de arriba abajo."
+        story_note = "La recaptura, los recortes de 2026 y lo que perdieron los estudiantes."
         files_h = "Los archivos"
         menu = "Menú"
         here_l = "Está aquí"
@@ -175,7 +187,7 @@ def chrome(current: str, lang: str, alt: str, here: str) -> tuple[str, str]:
         story, files = STORY_ES, FILES_ES
         brand_href = "inicio.html"
         ch_h, contact_h = "Capítulos", "Contacte a AISD, no a nosotros"
-        blurb = "Educación comunitaria a partir de registros públicos. No está afiliado a Austin ISD ni al Estado de Texas. Verifique cada cifra en la <a href=\"fuentes.html\">página de fuentes</a>."
+        blurb = "Informe de registros públicos sobre las finanzas de Austin ISD. No está afiliado a Austin ISD ni al Estado de Texas. Verifique cada cifra en la <a href=\"fuentes.html\">página de fuentes</a>."
         comment = "Comentario público · 512-414-0130"
         still = ("accion.html", "Qué falta hacer")
         sources = ("fuentes.html", "Fuentes")
@@ -191,7 +203,7 @@ def chrome(current: str, lang: str, alt: str, here: str) -> tuple[str, str]:
         home = "index.html"
         tagline = "Austin ISD, on the record"
         story_h = "The story, in order"
-        story_note = "Recapture, then the budget “crisis.” Read top to bottom."
+        story_note = "Recapture, the 2026 cuts, and what students lost."
         files_h = "The files"
         menu = "Menu"
         here_l = "You are here"
@@ -200,7 +212,7 @@ def chrome(current: str, lang: str, alt: str, here: str) -> tuple[str, str]:
         story, files = STORY_EN, FILES_EN
         brand_href = "index.html"
         ch_h, contact_h = "Chapters", "Contact AISD, not us"
-        blurb = "Community education from public records. Not affiliated with Austin ISD or the State of Texas. Verify every figure on the <a href=\"sources.html\">sources page</a>."
+        blurb = "Public-record briefing on Austin ISD finance. Not affiliated with Austin ISD or the State of Texas. Verify every figure on the <a href=\"sources.html\">sources page</a>."
         comment = "Public comment · 512-414-0130"
         still = ("action.html", "What still needs doing")
         sources = ("sources.html", "Sources")
