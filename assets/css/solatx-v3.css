@@ -357,6 +357,9 @@ main {
   margin: 0 0 0.8rem;
   max-width: 24ch;
 }
+[id] {
+  scroll-margin-top: 3.2rem;
+}
 .section .deck {
   max-width: var(--measure);
   color: var(--ink-soft);
