@@ -21,8 +21,6 @@ The site is an old-school left-rail contents list. The homepage is a front door.
 
 Meeting search, caption read, and yearbook are **out of this folder for now**. They are saved for editing at `~/solatx-hold/meetings-section/`.
 
-Spanish mirrors start at `inicio.html`. The 2026 chapter is `crisis-es.html`.
-
 ## Accuracy rules
 
 - Prefer AISD and TEA tables. If two official pages disagree, show both (`money.html`).

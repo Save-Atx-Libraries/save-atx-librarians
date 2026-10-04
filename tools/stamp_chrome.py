@@ -30,55 +30,23 @@ FILES_EN = [
     ("sources.html", "Sources"),
     ("about.html", "About"),
 ]
-STORY_ES = [
-    ("inicio.html", "01", "Empiece aquí"),
-    ("historia.html", "02", "La recaptura es orden de corte"),
-    ("austin-es.html", "03", "Cómo Austin se volvió “rico”"),
-    ("inflacion.html", "04", "Se congeló la asignación"),
-    ("dinero.html", "05", "La factura de recaptura"),
-    ("crisis-es.html", "06", "La “crisis” presupuestal 2026"),
-    ("planteles.html", "07", "Los planteles cargaron"),
-    ("bibliotecas.html", "08", "El parche de bibliotecarios"),
-    ("preguntas.html", "09", "Lo que muestran las juntas"),
-]
-FILES_ES = [
-    ("wooldridge-es.html", "Wooldridge · personal 2025–26"),
-    ("accion.html", "Qué falta hacer"),
-    ("glosario.html", "Qué quieren decir estas palabras"),
-    ("fuentes.html", "Fuentes"),
-    ("acerca.html", "Acerca"),
-]
 
 # page -> (lang, alt href, you-are-here)
 PAGES = {
-    "index.html": ("en", "inicio.html", "01 · Start here"),
-    "history.html": ("en", "historia.html", "02 · Recapture is a court order"),
-    "austin.html": ("en", "austin-es.html", "03 · How Austin was drawn “rich”"),
-    "inflation.html": ("en", "inflacion.html", "04 · The allotment froze"),
-    "money.html": ("en", "dinero.html", "05 · The recapture bill"),
-    "crisis.html": ("en", "crisis-es.html", "06 · The 2026 budget “crisis”"),
-    "campuses.html": ("en", "planteles.html", "07 · Campuses took the load"),
-    "libraries.html": ("en", "bibliotecas.html", "08 · The librarian bandage"),
-    "questions.html": ("en", "preguntas.html", "09 · What the meetings show"),
-    "wooldridge.html": ("en", "wooldridge-es.html", "The files · Congratulations, Wooldridge"),
-    "action.html": ("en", "accion.html", "The files · What still needs doing"),
-    "glossary.html": ("en", "glosario.html", "The files · What these words mean"),
-    "sources.html": ("en", "fuentes.html", "The files · Sources"),
-    "about.html": ("en", "acerca.html", "The files · About"),
-    "inicio.html": ("es", "index.html", "01 · Empiece aquí"),
-    "historia.html": ("es", "history.html", "02 · La recaptura es orden de corte"),
-    "austin-es.html": ("es", "austin.html", "03 · Cómo Austin se volvió “rico”"),
-    "inflacion.html": ("es", "inflation.html", "04 · Se congeló la asignación"),
-    "dinero.html": ("es", "money.html", "05 · La factura de recaptura"),
-    "crisis-es.html": ("es", "crisis.html", "06 · La “crisis” presupuestal 2026"),
-    "planteles.html": ("es", "campuses.html", "07 · Los planteles cargaron"),
-    "bibliotecas.html": ("es", "libraries.html", "08 · El parche de bibliotecarios"),
-    "preguntas.html": ("es", "questions.html", "09 · Lo que muestran las juntas"),
-    "wooldridge-es.html": ("es", "wooldridge.html", "Los archivos · Felicidades, Wooldridge"),
-    "accion.html": ("es", "action.html", "Los archivos · Qué falta hacer"),
-    "glosario.html": ("es", "glossary.html", "Los archivos · Qué quieren decir estas palabras"),
-    "fuentes.html": ("es", "sources.html", "Los archivos · Fuentes"),
-    "acerca.html": ("es", "about.html", "Los archivos · Acerca"),
+    "index.html": ("en", "", "01 · Start here"),
+    "history.html": ("en", "", "02 · Recapture is a court order"),
+    "austin.html": ("en", "", "03 · How Austin was drawn “rich”"),
+    "inflation.html": ("en", "", "04 · The allotment froze"),
+    "money.html": ("en", "", "05 · The recapture bill"),
+    "crisis.html": ("en", "", "06 · The 2026 budget “crisis”"),
+    "campuses.html": ("en", "", "07 · Campuses took the load"),
+    "libraries.html": ("en", "", "08 · The librarian bandage"),
+    "questions.html": ("en", "", "09 · What the meetings show"),
+    "wooldridge.html": ("en", "", "The files · Congratulations, Wooldridge"),
+    "action.html": ("en", "", "The files · What still needs doing"),
+    "glossary.html": ("en", "", "The files · What these words mean"),
+    "sources.html": ("en", "", "The files · Sources"),
+    "about.html": ("en", "", "The files · About"),
 }
 
 PAGERS = {
@@ -118,42 +86,6 @@ PAGERS = {
         "questions.html", "What the meetings show",
         "sources.html", "Sources",
     ),
-    "historia.html": (
-        "inicio.html", "Empiece aquí",
-        "austin-es.html", "Cómo se dibujó Austin",
-    ),
-    "austin-es.html": (
-        "historia.html", "La recaptura es orden de corte",
-        "inflacion.html", "Se congeló la asignación",
-    ),
-    "inflacion.html": (
-        "austin-es.html", "Cómo se dibujó Austin",
-        "dinero.html", "La factura de recaptura",
-    ),
-    "dinero.html": (
-        "inflacion.html", "Se congeló la asignación",
-        "crisis-es.html", "La “crisis” presupuestal 2026",
-    ),
-    "crisis-es.html": (
-        "dinero.html", "La factura de recaptura",
-        "planteles.html", "Los planteles cargaron",
-    ),
-    "planteles.html": (
-        "crisis-es.html", "La “crisis” presupuestal 2026",
-        "bibliotecas.html", "El parche de bibliotecarios",
-    ),
-    "bibliotecas.html": (
-        "planteles.html", "Los planteles cargaron",
-        "preguntas.html", "Preguntar por qué",
-    ),
-    "preguntas.html": (
-        "bibliotecas.html", "El parche de bibliotecarios",
-        "glosario.html", "Qué quieren decir estas palabras",
-    ),
-    "glosario.html": (
-        "preguntas.html", "Lo que muestran las juntas",
-        "fuentes.html", "Fuentes",
-    ),
 }
 
 
@@ -173,57 +105,29 @@ def rail_links(items, current: str, numbered: bool) -> str:
 
 
 def chrome(current: str, lang: str, alt: str, here: str) -> tuple[str, str]:
-    if lang == "es":
-        skip = "Saltar al contenido"
-        home = "inicio.html"
-        tagline = "Austin ISD, en el expediente"
-        story_h = "La historia, en orden"
-        story_note = "La recaptura, los recortes de 2026 y lo que perdieron los estudiantes."
-        files_h = "Los archivos"
-        menu = "Menú"
-        here_l = "Está aquí"
-        lang_lab = "English"
-        foot_note = "Registros públicos. No es AISD. No es el Estado de Texas."
-        story, files = STORY_ES, FILES_ES
-        brand_href = "inicio.html"
-        ch_h, contact_h = "Capítulos", "Contacte a AISD, no a nosotros"
-        blurb = "Informe de registros públicos sobre las finanzas de Austin ISD. No está afiliado a Austin ISD ni al Estado de Texas. Verifique cada cifra en la <a href=\"fuentes.html\">página de fuentes</a>."
-        comment = "Comentario público · 512-414-0130"
-        still = ("accion.html", "Qué falta hacer")
-        sources = ("fuentes.html", "Fuentes")
-        footer_links = [
-            ("historia.html", "Historia"),
-            ("dinero.html", "Recaptura"),
-            ("crisis-es.html", "La “crisis”"),
-            ("planteles.html", "Planteles"),
-            ("fuentes.html", "Fuentes"),
-        ]
-    else:
-        skip = "Skip to content"
-        home = "index.html"
-        tagline = "Austin ISD, on the record"
-        story_h = "The story, in order"
-        story_note = "Recapture, the 2026 cuts, and what students lost."
-        files_h = "The files"
-        menu = "Menu"
-        here_l = "You are here"
-        lang_lab = "Español"
-        foot_note = "Public records. Not AISD. Not the State of Texas."
-        story, files = STORY_EN, FILES_EN
-        brand_href = "index.html"
-        ch_h, contact_h = "Chapters", "Contact AISD, not us"
-        blurb = "Public-record briefing on Austin ISD finance. Not affiliated with Austin ISD or the State of Texas. Verify every figure on the <a href=\"sources.html\">sources page</a>."
-        comment = "Public comment · 512-414-0130"
-        still = ("action.html", "What still needs doing")
-        sources = ("sources.html", "Sources")
-        footer_links = [
-            ("history.html", "History"),
-            ("money.html", "Recapture"),
-            ("crisis.html", "The “crisis”"),
-            ("campuses.html", "Campuses"),
-            ("sources.html", "Sources"),
-        ]
-
+    skip = "Skip to content"
+    home = "index.html"
+    tagline = "Austin ISD, on the record"
+    story_h = "The story, in order"
+    story_note = "Recapture, the 2026 cuts, and what students lost."
+    files_h = "The files"
+    menu = "Menu"
+    here_l = "You are here"
+    foot_note = "Public records. Not AISD. Not the State of Texas."
+    story, files = STORY_EN, FILES_EN
+    brand_href = "index.html"
+    ch_h, contact_h = "Chapters", "Contact AISD, not us"
+    blurb = "Public-record briefing on Austin ISD finance. Not affiliated with Austin ISD or the State of Texas. Verify every figure on the <a href=\"sources.html\">sources page</a>."
+    comment = "Public comment · 512-414-0130"
+    still = ("action.html", "What still needs doing")
+    sources = ("sources.html", "Sources")
+    footer_links = [
+        ("history.html", "History"),
+        ("money.html", "Recapture"),
+        ("crisis.html", "The “crisis”"),
+        ("campuses.html", "Campuses"),
+        ("sources.html", "Sources"),
+    ]
     header = f'''<a class="skip" href="#main">{skip}</a>
   <button class="backdrop" type="button" aria-label="Close menu"></button>
   <aside class="rail" id="site-nav">
@@ -247,7 +151,6 @@ def chrome(current: str, lang: str, alt: str, here: str) -> tuple[str, str]:
 {rail_links(files, current, False)}
       </ul>
     </nav>
-    <a class="lang" href="{alt}" lang="{'en' if lang == 'es' else 'es'}" hreflang="{'en' if lang == 'es' else 'es'}">{lang_lab}</a>
     <p class="rail-foot">{foot_note}</p>
   </aside>
   <header class="mast">
