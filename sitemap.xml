@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://solatx.org/</loc></url>
-  <url><loc>https://solatx.org/history.html</loc></url>
-  <url><loc>https://solatx.org/austin.html</loc></url>
-  <url><loc>https://solatx.org/inflation.html</loc></url>
+  <url><loc>https://solatx.org/facts.html</loc></url>
   <url><loc>https://solatx.org/money.html</loc></url>
-  <url><loc>https://solatx.org/crisis.html</loc></url>
-  <url><loc>https://solatx.org/campuses.html</loc></url>
-  <url><loc>https://solatx.org/libraries.html</loc></url>
+  <url><loc>https://solatx.org/staff.html</loc></url>
+  <url><loc>https://solatx.org/board.html</loc></url>
+  <url><loc>https://solatx.org/meetings.html</loc></url>
   <url><loc>https://solatx.org/questions.html</loc></url>
-  <url><loc>https://solatx.org/wooldridge.html</loc></url>
-  <url><loc>https://solatx.org/action.html</loc></url>
-  <url><loc>https://solatx.org/glossary.html</loc></url>
   <url><loc>https://solatx.org/sources.html</loc></url>
-  <url><loc>https://solatx.org/about.html</loc></url>
 </urlset>
